@@ -1,0 +1,314 @@
+<nav class="navbar navbar-default navbar-custom">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href=""><img class="navbar-brand" href="" src="images/pulled-logo.png"/></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li id="header-logout" class="dark"><a href="#"><span>VENDOR'S ACCOUNT <i class="fa fa-angle-down"></i></span></a></li>
+        <li id="header-login" class="header-item">
+          <a href="#" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+            <span>LOGIN</span>
+          </a>
+          <form class="collapse login-form" id="bs-example-navbar-collapse-2">
+            <div class="form-group">
+              <input type="email" class="form-control login-email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control login-pwd" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<body>
+  <div class="container-fluid">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 clearfix">
+      <div class="section-title"> Credit Application</div>
+
+      <form class="application-form clearfix">
+        <div class="clearfix">
+          <div class="input-2-title">First name</div>
+          <div class="input-2-title">Last name</div>
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+
+        <div class="clearfix">
+          <div class="input-2-title">Mailing Address</div>
+          <div class="input-2-title">Phone</div>
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+
+        <div class="clearfix">
+          <div class="input-3-title">City</div>
+          <div class="input-3-title">State</div>
+          <div class="input-3-title">Zip</div>
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+
+        <div class="clearfix">
+          <div class="input-1-title">Shipping Addres</div>
+          <div class="input-2-title normal"><input class='glyphicon glyphicon-unchecked green' type="checkbox"/>Same as mailing address</div>
+          <div class="input-2-title">Year Business Began</div>
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+
+        <div class="clearfix">
+          <div class="input-3-title">City</div>
+          <div class="input-3-title">State</div>
+          <div class="input-3-title">Zip</div>
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+        <div class="form-group input-3">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+
+        <div class="input-1-title ownership"><span>OWNERSHIP</span> (select applicable ownership type)</div>
+        <div class="input-1-title ownership-type">
+          <div class="selected" id="partnership">Partnership</div><div class="divider-bar"> / </div><div id="company">Company</div>
+        </div>
+
+        <div id="subform-partnership">
+          <div class="clearfix">
+            <div class="input-2-title">Owners Name</div>
+            <div class="input-2-title">Social Security #</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Address</div>
+            <div class="input-2-title">Home Phone</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Drivers Licence # and State</div>
+            <div class="input-2-title">Spouse’s Name</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="input-1-title">Home Ownership:   <i class="fa fa-dot-circle-o green" id="partner1-home-yes"></i> YES   <i class="fa fa-circle-o green" id="partner1-home-no"></i> NO</div>
+          <div id="partner1-amount">
+            <div class="input-1-title">Amount of equity</div>
+            <div class="form-group input-2">
+              <input type="name" class="form-control input-grey-box" placeholder="">
+            </div>
+          </div>
+          <div class="section-divider"></div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Owners Name</div>
+            <div class="input-2-title">Social Security #</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Address</div>
+            <div class="input-2-title">Home Phone</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Drivers Licence # and State</div>
+            <div class="input-2-title">Spouse’s Name</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="input-1-title">Home Ownership:   <i class="fa fa-dot-circle-o green" id="partner2-home-yes"></i> YES   <i class="fa fa-circle-o green" id="partner2-home-no"></i> NO</div>
+          <div id="partner2-amount">
+            <div class="input-1-title">Amount of equity</div>
+            <div class="form-group input-2">
+              <input type="name" class="form-control input-grey-box" placeholder="">
+            </div>
+          </div>
+          <div class="section-divider"></div>
+        </div>
+
+        <div id="subform-company">
+          <div class="clearfix">
+            <div class="input-2-title">State of incorporation</div>
+            <div class="input-2-title">Federal ID number</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="input-1-title">Is Business site owned?   <i class="fa fa-dot-circle-o green" id="business-site-owned-yes"></i> YES   <i class="fa fa-circle-o green" id="business-site-owned-no"></i> NO</div>
+          <div id="business-site-owned">
+            <div class="input-1-title">Amount of equity</div>
+            <div class="form-group input-2 input-margin-right-2">
+              <input type="name" class="form-control input-grey-box" placeholder="">
+            </div>
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Principal's name</div>
+            <div class="input-2-title">Title</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Address</div>
+            <div class="input-2-title">Social Sec. #</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Principal's name</div>
+            <div class="input-2-title">Title</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Address</div>
+            <div class="input-2-title">Social Sec. #</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Principal's name</div>
+            <div class="input-2-title">Title</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-2-title">Address</div>
+            <div class="input-2-title">Social Sec. #</div>
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+        </div>
+
+        <div class="input-1-title type-of-business">TYPE OF BUSINESS</div>
+        <div class="input-1-title type-of-business-description">Please, describe your business and what types of materials you plan to purchase</div>
+        <div class="form-group input-1">
+          <textarea type="name" class="form-control input-grey-box" placeholder=""></textarea>
+        </div>
+        <div class="input-1-title">P.O. Required?   <i class="fa fa-dot-circle-o green" id="po-required-yes"></i> YES   <i class="fa fa-circle-o green" id="po-required-no"></i> NO</div>
+        <div class="input-1-title">Job Name Required?   <i class="fa fa-dot-circle-o green" id="job-name-required-yes"></i> YES   <i class="fa fa-circle-o green" id="job-name-required-no"></i> NO</div>
+        <div class="input-1-title">Are your purchase for relsale?   <i class="fa fa-dot-circle-o green" id="for-resale-yes"></i> YES   <i class="fa fa-circle-o green" id="for-resale-no"></i> NO</div>
+        <div id="resale-number">
+          <div class="input-1-title">Resale Number</div>
+          <div class="form-group input-2">
+            <input type="name" class="form-control input-grey-box" placeholder="">
+          </div>
+        </div>
+        <div class="input-1-title">Contractor’s License Number</div>
+        <div class="form-group input-2">
+          <input type="name" class="form-control input-grey-box" placeholder="">
+        </div>
+      </form>
+      <div type="submit" class="save-button right submit">Save</div>
+    </div><!-- /.checkout-container -->
+  </div><!-- /.container-fluid -->
+  <footer class="footer">
+    <div class="footer-wrapper">
+      <div class="container">
+        <p class="text-muted">pulled.inc</p>
+        <a href="mailto:pullers@gmail.com">pullers@gmail.com</a>
+        <p class="text-muted">24 street 1234</p>
+      </div>
+    </div>
+  </footer>
+</body>

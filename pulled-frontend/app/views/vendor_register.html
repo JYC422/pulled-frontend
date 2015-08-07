@@ -1,0 +1,143 @@
+<nav class="navbar navbar-default navbar-custom">
+<div class="container-fluid">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href=""><img class="navbar-brand" href="" src="images/pulled-logo.png"/></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li id="header-logout" class="dark"><a href="#"><span>VENDOR'S ACCOUNT <i class="fa fa-angle-down"></i></span></a></li>
+      <li id="header-login" class="header-item">
+        <a href="#" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+          <span>LOGIN</span>
+        </a>
+        <form class="collapse login-form" id="bs-example-navbar-collapse-2">
+          <div class="form-group">
+            <input type="email" class="form-control login-email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control login-pwd" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+
+<body>
+<div class="container-fluid">
+  <div class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <h1> Register </h1>
+    <form class="register-form">
+      <fieldset>
+        <legend>General Information</legend>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>Company Name</label>
+            <input class="form-control input-grey-box">
+          </div>
+          <div class="form-group">
+            <label>Licence Number</label>
+            <input class="form-control input-grey-box">
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>Contact</label>
+            <input class="form-control input-grey-box">
+          </div>
+          <div class="form-group">
+            <label>Tax ID Number</label>
+            <input class="form-control input-grey-box">
+          </div>
+        </div>
+        <legend>Select Locations <i class="fa fa-question-circle" data-toggle="tooltip" title="Text goes here"></i></legend>
+        <div class="location-form clearfix">
+          <div class="col-xs-6 form-group">
+            <input class="form-control input-grey-box" placeholder="Vendor name">
+          </div>
+          <div class="col-xs-6 form-group">
+            <input class="form-control input-grey-box" placeholder="Vendor email">
+          </div>
+          <div class="col-xs-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>San Francisco</option>
+              <option>Los Angeles</option>
+              <option>San Jose</option>
+              <option>Las Vegas</option>
+            </select>
+          </div>
+          <div class="col-xs-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>California</option>
+              <option>Nebraska</option>
+              <option>Florida</option>
+              <option>Virginia</option>
+              <option>Alabama</option>
+            </select>
+          </div>
+          <div class="col-xs-4 form-group">
+            <input class="form-control input-grey-box" placeholder="Zip">
+          </div>
+        </div>
+        <div id="add-vendor">
+          + Add New Vendor
+        </div>
+      </fieldset>
+      <!-- <div class="selection-header clearfix">
+        <div class="manufacturer-selection">
+          Manufacturers selection
+        </div>
+        <div class="all-manufacturer">
+          All Manufacturers
+        </div>
+        <div class="selected-manufacturer">
+          Manufacturers selected
+        </div>
+      </div>
+      <select multiple="multiple" id="manufacturer-select" name="manufacturer-select[]">
+        <option value='contractor1'>Ewing Los Angeles</option>
+        <option value='contractor2'>Ewing Valencia</option>
+        <option value='contractor2'>Ewing Irvine</option>
+        <option value='contractor2'>Ewing San Diego</option>
+        <option value='contractor2'>Village Nurseries Orange</option>
+        <option value='contractor2'>Village Nurseries Sacramento</option>
+        <option value='contractor2'>HD Supply Irvine</option>
+        <option value='contractor2'>HD Supply Valencia</option>
+        <option value='contractor2'>DM Color Oceanside</option>
+        <option value='contractor2'>White Cap Los Angeles</option>
+        <option value='contractor2'>White Cap Valencia</option>
+        <option value='contractor2'>Stock Building Valencia</option>
+      </select>
+
+      <fieldset>
+        <div class="manufacturer-selector">
+          <button class="btn-manufacturer-selector active">All Manufacturers in category</button>
+          <button class="btn-manufacturer-selector">All Manufacturers in your region</button>
+          <button class="btn-manufacturer-selector">All Manufacturers in your location</button>
+        </div>
+      </fieldset> -->
+      <button type="submit" class="btn btn-default btn-custom">Sign Up</button>
+    </form>
+  </div>
+</div><!-- /.container-fluid -->
+<footer class="footer">
+  <div class="footer-wrapper">
+    <div class="container">
+      <p class="text-muted">pulled.inc</p>
+      <a href="mailto:pullers@gmail.com">pullers@gmail.com</a>
+      <p class="text-muted">24 street 1234</p>
+    </div>
+  </div>
+</footer>
+</body>

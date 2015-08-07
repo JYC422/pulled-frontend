@@ -1,0 +1,219 @@
+.invoice-summary-table {
+  margin: auto;
+  margin-bottom: 25px;
+  width: 95%;
+  border: 1px solid #cbcbcb;
+  border-bottom: none;
+}
+
+.cell-background {
+  background-color: #f7f9f9;
+}
+
+.invoice-filters {
+  width: 95%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.invoice-filters span {
+  font-size: 17px;
+  color: black;
+}
+
+.job-data {
+  width: 16.6666%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.job-img {
+  height: 60px;
+  width: 60px;
+  background-color: #c9c9c9;
+  margin-bottom: 10px;
+}
+
+.job-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.invoice-data {
+  width: 83.3333%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.invoice-contracted-content, .invoice-expanded-content {
+  display: table;
+  width: 100%;
+}
+
+.invoice-expanded {
+  display: none;
+}
+
+.invoice-expanded-content {
+  position: relative;
+}
+
+.invoice-expanded-content:after {
+  content : "";
+  position: absolute;
+  bottom: 0;
+  left: 2.5%;
+  height  : 1px;
+  width   : 95%;  /* or 100px */
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.job-profile {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+  margin-bottom: 15px;
+}
+
+.invoice-contracted-content .sub-table {
+  display: table-cell;
+  width: 60%;
+}
+
+.invoice-expanded-content .sub-table {
+  display: table-cell;
+  width: 80%;
+}
+
+.invoice-contracted-content .amount-paid {
+  display: table-cell;
+  width: 20%;
+  font-weight: bold;
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.sub-table-invoice-row {
+  display: table;
+  width: 100%;
+}
+
+.sub-table-invoice-row.grey {
+  background-color: #f7f9f9;
+}
+
+.sub-table-invoice-row.first {
+  margin-top: 25px;
+}
+
+.sub-table-invoice-row.last {
+  margin-bottom: 15px;
+}
+
+/* TODO: Remove Invoice Summary's css*/
+
+.invoice-contracted-content .sub-table .sub-table-invoice-row .invoice-vendor {
+  display: table-cell;
+  width: 33.3333%;
+  color: #4ac59a;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.invoice-expanded-content .sub-table .sub-table-invoice-row .invoice-vendor {
+  display: table-cell;
+  width: 25%;
+  color: #4ac59a;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.invoice-contracted-content .sub-table .sub-table-invoice-row .invoice-vendor {
+  display: table-cell;
+  width: 33.3333%;
+  text-align: left;
+}
+
+.invoice-expanded-content .sub-table .sub-table-invoice-row .invoice-vendor {
+  display: table-cell;
+  width: 25%;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.invoice-contracted-content .sub-table .sub-table-invoice-row .invoice-date-of-purchase {
+  display: table-cell;
+  width: 33.3333%;
+  vertical-align: middle;
+}
+
+.invoice-expanded-content .sub-table .sub-table-invoice-row .invoice-date-of-purchase {
+  display: table-cell;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.invoice-expanded-content .sub-table .sub-table-invoice-row .invoice-amount-paid {
+  display: table-cell;
+  width: 25%;
+  vertical-align: middle;
+}
+
+.invoice-show-expanded {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.invoice-show-expanded-content {
+  display: table;
+  width: 80%;
+  margin-left: 20%;
+}
+
+.see-invoice-full-details {
+  width: 40%;
+  margin-left: 20%;
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+  font-size: 18px;
+  cursor: hand;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.invoice-show-less {
+  display: table-cell;
+  width: 40%;
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: hand;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.invoice-account-total {
+  display: table-cell;
+  width: 20%;
+  font-size: 20px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.invoice-total {
+  display: table-cell;
+  width: 20%;
+  font-size: 22px;
+  font-weight: bold;
+  vertical-align: middle;
+}

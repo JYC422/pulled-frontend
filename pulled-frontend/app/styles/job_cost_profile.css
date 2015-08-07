@@ -1,0 +1,217 @@
+.job-cost-table {
+  margin: auto;
+  margin-bottom: 25px;
+  width: 100%;
+  border: 1px solid #cbcbcb;
+  border-bottom: none;
+  margin-top: 75px;
+}
+
+.job-cost-item {
+  margin-bottom: 10px;
+}
+
+.job-cost-item-left {
+  float: left;
+  text-align: left;
+  font-size: 16px;
+  width: 25%;
+}
+
+.job-cost-item-right {
+  float: left;
+  text-align: left;
+  font-size: 16px;
+  width: 75%;
+}
+
+.cell-background {
+  background-color: #f7f9f9;
+}
+
+.job-cost-filters {
+  width: 95%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.job-cost-filters span {
+  font-size: 17px;
+  color: black;
+}
+
+.job-cost-job-data {
+  width: 16.6666%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.job-cost-data {
+  width: 83.3333%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.job-cost-contracted-content, .job-cost-expanded-content {
+  display: table;
+  width: 100%;
+}
+
+.job-cost-expanded {
+  display: none;
+}
+
+.job-cost-expanded-content {
+  position: relative;
+}
+
+.job-cost-contracted-content .sub-table, .job-cost-expanded-content .sub-table {
+  display: table-cell;
+  width: 100%;
+}
+
+.job-cost-contracted-content .amount-paid {
+  display: table-cell;
+  width: 20%;
+  font-weight: bold;
+  font-size: 22px;
+  vertical-align: middle;
+}
+
+.sub-table-job-cost-row {
+  display: table;
+  table-layout:fixed;
+  width: 100%;
+}
+
+.sub-table-job-cost-row.grey {
+  background-color: #f7f9f9;
+}
+
+.sub-table-job-cost-row.first {
+  margin-top: 25px;
+}
+
+.sub-table-job-cost-row.last {
+  margin-bottom: 15px;
+}
+
+.sub-table-job-cost-row .job-cost-vendors {
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  width: 20%;
+  border-left: 10px solid white;
+}
+
+.sub-table-job-cost-row .job-date-of-purchase {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+}
+
+.sub-table-job-cost-row .job-cost-total-amount {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+}
+
+.sub-table-job-cost-row .job-bid-summary {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+  color: #4ac59a;
+}
+
+.sub-table-job-cost-row .job-invoice-summary {
+  display: table-cell;
+  width: 20%;
+  vertical-align: middle;
+  border-right: 10px solid white;
+  color: #4ac59a;
+}
+
+.sub-table-job-cost-row .job-bid-summary.open-modal,
+.sub-table-job-cost-row .job-invoice-summary.open-modal {
+  cursor: hand;
+  cursor: pointer;
+}
+
+.job-cost-show-expanded {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.job-cost-show-expanded-content {
+  display: table;
+  width: 100%;
+}
+
+.see-job-cost-full-details {
+  width: 100%;
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+  font-size: 18px;
+  vertical-align: middle;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.job-cost-show-less {
+  display: table-cell;
+  width: 100%;
+  text-align: center;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-size: 18px;
+  vertical-align: middle;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.job-cost-account-total {
+  display: table-cell;
+  width: 20%;
+  font-size: 20px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.job-cost-total {
+  display: table-cell;
+  width: 20%;
+  font-size: 22px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.job-cost-modal-img {
+  height: 75px;
+  width: 75px;
+  background-color: #c9c9c9;
+  float: left;
+  margin-right: 15px;
+}
+
+.job-cost-items-table {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.job-cost-items-table tr:nth-child(odd) {
+  background: #f7f9f9;
+}
+
+.job-cost-items-table th {
+  background: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 10px;
+}

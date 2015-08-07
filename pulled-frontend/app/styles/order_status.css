@@ -1,0 +1,78 @@
+@import 'checkout.css';
+
+.order-status-container {
+  color: black;
+  font-weight: lighter;
+}
+
+.order-status-header {
+  font-weight: normal;
+}
+
+.order-status-item-container .vendor-name {
+  font-size: 14px;
+}
+
+.orders-status {
+  border-bottom: 2px solid #e8e8e8;
+  margin-top: 20px;
+  padding-bottom: 15px;
+}
+
+.order-vendors {
+  display: none;
+}
+
+.toggleVendors {
+  cursor: pointer;
+  font-weight: bold;
+  padding-top: 3px;
+}
+
+.order-status-date {
+  font-size: 18px;
+}
+
+.order-status-total-price {
+  padding-top: 3px;
+}
+
+.order-status-date > span, .order-status-total-price > span{
+  font-weight: normal;
+}
+
+.vendor-order-summary {
+  padding-left: 10px;
+  background-color: #f7f9f9;
+  border-bottom: none;
+}
+
+.status-detail {
+  font-size: 18px;
+}
+
+.status-detail span {
+  font-weight: bold;
+}
+
+.status-on-transit {
+  color: #6bb712;
+}
+
+.status-delivered {
+  color: #4ac59a;
+}
+
+.button-success {
+  color: white;
+  background: #4bc69a;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}

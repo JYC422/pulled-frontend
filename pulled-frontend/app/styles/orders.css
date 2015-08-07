@@ -1,0 +1,133 @@
+#orders .container-fluid {
+  margin-top: 50px;
+}
+
+.green-table .invoice-vendor {
+  color: #4ac59a;
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+/* CATEGORIES COLLAPSE */
+#orders a[data-toggle="collapse"] {
+  text-decoration: none;
+}
+
+#orders a[data-toggle="collapse"] span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#orders a[data-toggle="collapse"] .collapse-arrow:after {
+  font-weight: 700;
+  font-size: 21px;
+  margin-right: 12px;
+  font-family: 'FontAwesome';
+  content: "\f107";
+}
+
+#orders a[data-toggle="collapse"].collapsed .collapse-arrow:after {
+  content: "\f106";
+}
+
+#orders .categories-collapse > .panel > .panel-heading {
+  background-color: #ffffff;
+  height: 51px;
+  color: #000000;
+  font-weight: normal;
+  padding: 14px 15px;
+}
+
+#orders .categories-collapse .panel, .categories-collapse .panel-heading {
+  border-radius: 0;
+}
+
+#orders .panel-body {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* SUBCATEGORIES COLLAPSE */
+
+#orders .subcategories-collapse > .panel > .panel-heading {
+  background-color: #f0f0f0;
+  border-color: #cacaca;
+}
+
+#orders .subcategories-collapse .panel-heading a[data-toggle="collapse"]:before {
+  color: black;
+}
+
+#orders .subcategories-collapse .panel-heading a[data-toggle="collapse"] {
+  font-weight: 200;
+}
+
+#orders .panel-without-padding {
+  padding: 0;
+}
+
+#orders .green-table {
+  margin: 0;
+}
+
+.order-management-modal-table {
+  width: 100%;
+}
+
+.order-management-modal-table tbody tr {
+  text-align: center;
+  height: 70px;
+  border-bottom: 5px solid white;
+  background-color: #f7f9f9;
+}
+.order-management-modal-table thead tr th {
+  text-align: center;
+  background-color: white;
+  border-bottom: none;
+  height: 40px;
+}
+
+.order-management-modal-table .table-spacing {
+  width: 5%;
+}
+
+.order-management-modal-table .text-left {
+  text-align: left;
+}
+
+.order-management-modal-table .dropdown-menu  {
+  right: -35px;
+}
+
+.order-management-modal-table .active {
+  color: #4ac59a;
+}
+
+.order-management-modal-table .pending {
+  color: #cc2d2d;
+}
+
+.order-management-modal-table .delivered {
+  color: #b7b7b7;
+}
+
+.order-management-modal-table .product-image {
+  float: left;
+  min-width: 30%;
+}
+
+.order-management-modal-table .product-image img {
+  height: 50px;
+  width: 50px;
+}
+
+.order-management-modal-table .product-desc {
+  line-height: 50px;
+  padding: 0px;
+  float: left;
+  text-align: left;
+}
+
+

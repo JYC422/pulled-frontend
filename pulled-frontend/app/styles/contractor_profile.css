@@ -1,0 +1,9 @@
+td.rating {
+  color: #868686;
+}
+
+#contractor-management table .btn-custom {
+  font-weight: normal;
+  padding: 1px 15px;
+  font-size: 18px;
+}

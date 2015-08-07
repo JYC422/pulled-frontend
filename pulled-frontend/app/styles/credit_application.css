@@ -1,0 +1,190 @@
+.credit-application-container {
+  display: none;
+}
+
+.section-title {
+  margin-top: 20px;
+  color: #184350;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.application-form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.application-form .input-1-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  width:  calc(100% - 15px);
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+  white-space: pre-wrap;
+}
+
+.application-form .input-1-title.ownership {
+  font-weight: 400;
+}
+
+.application-form .input-1-title.ownership span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.application-form .input-1-title.type-of-business {
+  font-size: 16px;
+}
+
+.application-form .input-1-title.type-of-business-description {
+  font-weight: 400;
+  margin-right: 30%;
+  width: 70%;
+}
+
+.application-form .input-2-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  width:  calc(50% - 15px);
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.application-form .input-2-title.normal {
+  font-weight: normal;
+}
+
+.application-form .glyphicon-unchecked.green {
+  color: #4bc69a;
+}
+
+.application-form .fa-dot-circle-o.green,
+.application-form .fa-circle-o.green {
+  color: #4bc69a;
+}
+
+.application-form .input-3-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+  width:  calc(33.3333% - 15px);
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.application-form .input-2 {
+  background-color: #f7f7f7;
+  border: 0px;
+  width:  calc(50% - 10px);
+  float: left;
+  margin-right: 10px;
+}
+
+.application-form .input-margin-right-2 {
+  margin-right: 50%;
+}
+
+.application-form .input-3 {
+  background-color: #f7f7f7;
+  border: 0px;
+  width:  calc(33.3333% - 10px);
+  float: left;
+  margin-right: 10px;
+}
+
+.application-form .ownership-type {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.application-form .ownership-type .selected {
+  border-bottom: 2px solid #4bc69a;
+}
+
+.application-form .section-divider {
+  height: 2px;
+  float: left;
+  width: 30%;
+  background-color: #f7f7f7;
+  margin-left: 5%;
+  margin-right: 65%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.application-form .divider-bar {
+  display: inline-block;
+  float: left;
+}
+
+#partnership {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#company {
+  display: inline-block;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+
+.save-button {
+  color: white;
+  background: #4bc69a;
+  height: 35px;
+  width: 105px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.save-button.right {
+  float: right;
+}
+
+.save-button.submit {
+  height: 35px;
+  width: 155px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 0px;
+}
+
+.cancel-button {
+  color: white;
+  background: orange;
+  height: 35px;
+  width: 105px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+  float: right;
+  height: 35px;
+  width: 155px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+#subform-company {
+  display: none;
+}

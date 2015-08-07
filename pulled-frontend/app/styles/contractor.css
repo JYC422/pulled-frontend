@@ -1,0 +1,229 @@
+.contractor-container {
+  display: none;
+  min-height: 700px;
+}
+
+#contractor-search-results {
+  display: none;
+}
+
+#search_result {
+  display: none;
+}
+
+#search {
+  display: none;
+}
+
+.contractor-header {
+  background: #ffffff;
+  color: #52727b;
+  line-height: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-bottom: 1px solid #dcdcdc;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contractor-header-item {
+  border-top: 1px solid #dcdcdc;
+  width: 20%;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+  float: left;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.contractor-header-item.active span {
+  color: #4bc69a;
+  border-bottom: 2px solid #4bc69a;
+  padding-bottom: 2px;
+}
+
+.container-header {
+  background: white;
+  margin-left: 20px;
+  color: #858585;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.container-data-header {
+  text-align: center;
+  vertical-align: middle;
+  color: #717171;
+  font-size: 17px;
+  min-height: 50px;
+  background: #ffffff;
+  display: table;
+  width: 100%;
+  border-bottom: 2px solid #4ac59a;
+}
+
+.container-data-header-item {
+  text-align: center;
+  color: #000000;
+  font-size: 17px;
+  border-right: 1px solid #cbcbcb;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container-data-header-item.last {
+  border-right: none;
+}
+
+.container-data-header-item.last {
+  border-right: none;
+}
+
+.container-data-item {
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  min-height: 70px;
+  display: table;
+  width: 100%;
+  border-bottom: 2px solid #c9c9c9;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.first-item {
+  background: #f7f9f9;
+}
+
+.first-item.active {
+  background: #f1f3e8;
+}
+
+.last-item {
+  border-right: none;
+}
+
+.search-section-wrapper {
+  min-height: 600px;
+}
+
+#assign-job-modal .job-row,
+#assign-job-modal .empty-job-row {
+  width: 100%;
+  background-color: #f2f4f5;
+  padding: 10px 20px;
+  color: #aeaeaf;
+  font-weight: 500;
+  border-bottom: 1px solid #e0e7ea;
+  min-height: 41px;
+}
+
+#assign-job-modal .job-row {
+  cursor: pointer;
+  cursor: hand;
+}
+
+#assign-job-modal .job-row.active {
+  color: #083643;
+}
+
+#assign-job-modal .job-row i {
+  display: none;
+}
+
+#assign-job-modal .job-row.active i {
+  display: block;
+  float: right;
+  color: #4ac59a;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+#assign-job-modal .add-new-job {
+  color: #4ac59a;
+  border-bottom: 1px solid;
+  padding: 2px 0;
+  margin-top: 20px;
+  width: 95px;
+  font-weight: 500;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#assign-job-modal .save-btn,
+#edit-job-modal .save-btn {
+  background-color: #4ac59a;
+  color: #ffffff;
+  width: 100px;
+  height: 35px;
+  font-weight: 600;
+  cursor: pointer;
+  cursor: hand;
+  position: absolute;
+  bottom: 8px;
+  right: 15px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 4px;
+}
+
+#assign-job-modal .job-creation {
+  margin-bottom: 40px;
+}
+
+#assign-job-modal .top-spacing {
+  margin-top: 15px;
+}
+
+#assign-job-modal .input-2 {
+  background-color: #f7f7f7;
+  border: 0px;
+  width:  calc(50% - 10px);
+  float: left;
+  margin-right: 10px;
+}
+
+#assign-job-modal .input-1-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #9b9e9f;
+  width:  100%;
+  float: left;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+#assign-job-modal .bootstrap-select {
+  width: 100%;
+}
+
+#assign-job-modal .col-sm-4 {
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+#edit-job-modal .job-edition {
+  width: 90%;
+  margin-bottom: 50px;
+}
+
+#edit-job-modal .input-title {
+  margin-bottom: 5px;
+  color: #083643;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#edit-job-modal .form-group.last,
+#edit-job-modal .form-group.first {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#edit-job-modal .form-group.left {
+  padding-left: 0px;
+}

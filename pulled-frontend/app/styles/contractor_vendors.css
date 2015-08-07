@@ -1,0 +1,34 @@
+.green-table .list-of-orders {
+  color: #a8a8a8;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.green-table .credit-application {
+  font-weight: bold;
+}
+
+.green-table .credit-application.request {
+  color: #4ac59a;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.green-table .account-status {
+  color: #4ac59a;
+  font-weight: bold;
+}
+
+.green-table .account-status.past-due {
+  color: #f4ab5e;
+}
+
+.green-table .account-status.on-hold {
+  color: #b7b7b7;
+}
+
+.green-table .account-status.days-over {
+  color: #cc2d2d;
+}

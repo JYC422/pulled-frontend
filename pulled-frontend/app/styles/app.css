@@ -1,0 +1,392 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+  src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+.clear-div {
+  clear: both;
+}
+
+body  {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+input[type="text"] {
+  background: #eee;
+  border: none;
+  border-radius: 0;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+hr {
+  border-top: 3px solid grey;
+}
+
+p {
+  text-align: center;
+}
+
+ol {
+  margin-bottom: 50px;
+}
+
+input[type=checkbox].glyphicon{
+  visibility: hidden;
+  margin-right: 8px!important;
+  margin-top: 0px!important;
+  display: inline;
+  height: 15px;
+  width: 15px;
+}
+
+input[type=checkbox].glyphicon:before {
+  visibility: visible;
+}
+
+input[type=checkbox].glyphicon.glyphicon-unchecked:checked:before {
+  content: "\e067";
+}
+
+textarea {
+  resize:vertical;
+}
+
+.navbar-brand {
+  margin-top: 5px;
+}
+.navbar-header {
+  margin-left: 15px !important;
+  margin-top: 5px !important;
+}
+.navbar-default {
+  border: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  margin-top: 5px !important;
+  color: white;
+  font-family: 'Montserrat Bold', sans-serif;
+}
+
+.navbar-default .navbar-nav.black > li > a {
+  color: #000000;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: transparent;
+  color: #4bc69a;
+}
+
+.btn-custom {
+  background: #4bc69a;
+  color: #ffffff;
+  border-color: #4bc69a;
+}
+
+.btn-custom:hover {
+  background: #37a27d;
+  color: #ffffff;
+}
+
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.navbar-custom {
+  background: #ffffff;
+  margin-bottom: 0px;
+}
+
+.header-item {
+  margin: 5px;
+  text-align: center;
+}
+
+.search-for-items {
+  color: #08354a;
+  font-size: 36px;
+  text-align: center;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 70px;
+  font-weight: 400;
+}
+
+.landing-img {
+  background-image: url("../images/landing-bg.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-position: center top;
+  max-height: 750px;
+  min-height: 400px;
+}
+
+.hidden-landing-img {
+  width: 100%;
+}
+
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 16;
+  background-color: rgba(0, 0, 0, 0.0);
+  border-radius: 0px;
+  transition: background-color 0.5s ease;
+}
+
+.landing-info {
+  position: absolute;
+  top: 150px;
+  color: white;
+  padding: 20px;
+}
+
+.landing-img-title {
+  font-size: 49px;
+  text-align: center;
+  font-family: 'Montserrat Bold', sans-serif;
+}
+
+.landing-img-title span{
+  font-size: 57px;
+  font-weight: bold;
+}
+
+.landing-img-content {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.landing-img-btn {
+  font-size: 24px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  margin: auto;
+  margin-top: 40px;
+  width: 220px;
+  line-height: 60px;
+  height: 60px;
+  cursor: hand;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #4bc69a;
+}
+
+.not-transparent {
+  background-color: #ffffff;
+}
+
+.input-grey-box {
+  background-color: #f7f7f7;
+  border: none;
+  box-shadow: none;
+}
+.input-grey-box:focus, .input-grey-box:focus {
+  box-shadow: 0 2px 1px #dadada;
+}
+
+.opportunities-section {
+  background-color: #48ada1;
+  color: #ffffff;
+}
+
+.title-oportunities {
+  margin: auto;
+  margin-bottom: 50px;
+  font-size: 36px;
+}
+
+.opportunity-wrapper {
+  text-align: center;
+  font-size: 14px;
+}
+
+.opportunity-wrapper .opportunity-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.opportunity-wrapper .opportunity-content {
+  text-align: left;
+}
+
+.opportunity-wrapper .opportunity-img {
+  height: 80px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.green-table {
+  color: #000000;
+  font-size: 17px;
+  text-align: center;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #cbcbcb;
+  word-break: break-word;
+}
+
+/* table header */
+.green-table th {
+  border-right: 1px solid #cbcbcb;
+  font-weight: normal;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.green-table .main-cell {
+  background-color: #f7f9f9;
+  font-weight: bold;
+}
+
+/* table elements */
+
+.green-table td {
+  padding: 5px;
+  position: relative;
+  height: 90px;
+}
+
+.green-table tbody tr {
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.green-table .cell-bottom-text {
+  margin-top: 10px;
+  font-size: 15px;
+  color: rgb(200, 200, 200);
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+/* table helpers */
+
+.green-table.green-border thead {
+  border-bottom: 2px solid #4ac59a;
+}
+
+.green-table.green-border-bottom tr {
+  border-bottom: 2px solid #ebebeb;
+}
+
+#header-logout {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#header-logout.dark > a {
+  color: #083643;
+}
+
+.status-filter {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: right;
+  line-height: 34px;
+}
+
+.status-filter select {
+  margin-right: 10px;
+  width: 140px;
+}
+
+.status-filter input {
+  width: 190px;
+}
+
+.status-filter span {
+  margin-right: 10px;
+}
+
+.status-filter .bootstrap-select {
+  width: 150px !important;
+  margin-right: 5px;
+}
+
+.status-filter .dropdown-menu.open,
+.status-filter .dropdown-menu.inner {
+  background-color: #efefef;
+}
+
+.status-filter .dropdown-menu.inner li a:focus,
+.status-filter .dropdown-toggle:focus,
+.status-filter button.dropdown-toggle.btn:focus {
+  outline: none !important;
+}
+
+.status-filter .dropdown-menu.inner li a {
+  border-bottom: 1px solid white;
+}
+
+/* input icons addons */
+
+.inner-addon {
+    position: relative;
+}
+
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.left-addon .glyphicon  {
+  left:  0px;
+}
+.right-addon .glyphicon {
+  right: 0px;
+}
+
+.left-addon input  {
+  padding-left:  30px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
+
+.company-container .container-fluid,
+.vendor-container .container-fluid,
+.contractor-container .container-fluid {
+  margin-bottom: 50px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container > .navbar-header,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-collapse {
+  margin-right: 0;
+}
+
+.modal-backdrop {
+  bottom: 0;
+  position: fixed;
+}

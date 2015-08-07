@@ -1,0 +1,652 @@
+@media (max-width: 1495px) {
+  .vendor-header-item {
+    font-size: 14px;
+  }
+
+  #inventory-summary .categories-collapse {
+    margin: 0px 35px;
+  }
+
+  .vendor-container-header {
+    padding-right: 35px;
+  }
+}
+
+@media (max-width: 1340px) {
+  .landing-info {
+    top: 100px;
+  }
+
+  .contractor-header-item {
+    font-size: 13px;
+  }
+
+  .vendor-header-item {
+    font-size: 14px;
+    border-top: none;
+  }
+
+  .inventory-sorter .bootstrap-select button {
+    width: 80%;
+  }
+  .vendor-header {
+    padding-right: 0;
+    padding-left: 0;
+    border-top: 2px solid #dcdcdc;
+  }
+
+  #contractor-edit .modal-dialog {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1286px) {
+  .result-price {
+    font-size: 22px;
+  }
+
+  .landing-info {
+    top: 70px;
+  }
+
+  .landing-img-title {
+    font-size: 35px;
+  }
+
+  .landing-img-title span {
+    font-size: 38px;
+  }
+
+  .landing-img-content {
+    font-size: 23px;
+  }
+
+  .landing-img-btn {
+    margin-top: 25px;
+  }
+
+  .container-data-item {
+    font-size: 16px;
+  }
+
+  .invoice-contracted-content {
+    font-size: 18px;
+  }
+
+  .job-name {
+    font-size: 16px;
+  }
+
+  .see-invoice-full-details, .invoice-show-less {
+    font-size: 18px;
+  }
+
+  .invoice-contracted-content .amount-paid {
+    font-size: 18px;
+  }
+
+  .invoice-account-total, .invoice-total {
+    font-size: 18px;
+  }
+
+  .see-bid-full-details, .bid-show-less {
+    font-size: 18px;
+  }
+
+  .bid-account-total, .bid-total {
+    font-size: 18px;
+  }
+
+  .title-oportunities {
+    font-size: 30px;
+  }
+
+  .opportunity-wrapper {
+    font-size: 12px;
+  }
+
+  .opportunity-wrapper .opportunity-title {
+    font-size: 16px;
+  }
+
+  .opportunity-wrapper .opportunity-img {
+    height: 60px;
+  }
+
+  .contractor-header-item{
+    font-size: 14px;
+  }
+
+  .vendor-header-item {
+    font-size: 13px;
+  }
+
+  #inventory-summary .green-table .product-image img {
+    height: 50px;
+    width: 50px;
+  }
+  .invoice-filters select {
+    width: 100px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .vendor-header-item {
+    font-size: 15px;
+    width: 33%;
+  }
+}
+
+@media (max-width: 1074px) {
+  .company-container .deny-credit-button {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1063px) {
+  .company-container .deny-credit-button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .result-price {
+    font-size: 19px;
+  }
+
+  #search .nav-tabs-custom {
+    max-width: 90%;
+  }
+
+  .opportunity-wrapper {
+    margin-bottom: 15px;
+  }
+
+  .landing-img-btn {
+    font-size: 20px;
+    width: 180px;
+    line-height: 42px;
+    height: 50px;
+  }
+
+  .landing-img-title {
+    font-size: 29px;
+  }
+
+  .landing-img-title span {
+    font-size: 32px;
+  }
+
+  .landing-img-content {
+    font-size: 20px;
+  }
+
+  .green-table .rating {
+    font-size: 8px;
+  }
+
+  #inventory-summary .categories-collapse {
+    margin: 0px 5px;
+  }
+
+  .vendor-container-header {
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-for-items {
+    font-size: 28px;
+    max-width: 100%;
+  }
+
+  #search .contractor-search-form {
+    max-width: 90%;
+  }
+
+  #search .contractor-search-form .btn-custom {
+    margin-top: 4px;
+  }
+
+  .filter-section {
+    width: 25%;
+    float: left;
+  }
+
+  .payment-form {
+    width: 100%
+  }
+
+  .result-select {
+    margin-top: 0;
+  }
+
+  .result-details {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #search .nav-tabs-custom {
+    max-width: 100%;
+  }
+
+  .project-name {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  .filter-by {
+    font-size: 15px;
+  }
+
+  .vendor-header-item {
+    margin-top: -10px;
+  }
+
+  .contractor-header-item,
+  .vendor-header-item,
+  .company-header-item {
+    width: 50%;
+    font-size: 17px;
+  }
+
+  .landing-img {
+    background-size: auto 100%;
+    background-attachment: inherit;
+  }
+
+  .container-data-item {
+    font-size: 14px;
+  }
+
+  .invoice-contracted-content {
+    font-size: 16px;
+  }
+
+  .job-name {
+    font-size: 14px;
+  }
+
+  .see-invoice-full-details, .invoice-show-less {
+    font-size: 16px;
+  }
+
+  .invoice-contracted-content .amount-paid {
+    font-size: 16px;
+  }
+
+  .invoice-account-total, .invoice-total {
+    font-size: 16px;
+  }
+
+  .see-bid-full-details, .bid-show-less {
+    font-size: 16px;
+  }
+
+  .bid-account-total, .bid-total {
+    font-size: 16px;
+  }
+
+  .container-data-header-item {
+    font-size: 14px;
+  }
+
+  .landing-img-title {
+    font-size: 27px;
+  }
+
+  .landing-img-title span {
+    font-size: 30px;
+  }
+
+  .sign-up-img .landing-img-content{
+    font-size: 24px;
+  }
+
+  .landing-img-content {
+    font-size: 18px;
+  }
+
+  .landing-img-btn {
+    font-size: 20px;
+    margin-top: 25px;
+    width: 150px;
+    line-height: 32px;
+    height: 40px;
+  }
+
+  .title-oportunities {
+    font-size: 26px;
+  }
+
+  .opportunity-wrapper {
+    font-size: 11px;
+  }
+
+  .opportunity-wrapper .opportunity-title {
+    font-size: 14px;
+  }
+
+  .opportunity-wrapper .opportunity-img {
+    height: 40px;
+  }
+  .carousel-indicators-custom > li, .carousel-indicators-custom > li.active {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+
+  .carousel-indicators-custom > li:last-child {
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+
+  .green-table {
+    font-size: 14px;
+  }
+
+  .green-table .rating i {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  #categories .category-header {
+    line-height: 25px;
+  }
+
+  #categories .category-header .name {
+    font-size: 15px;
+  }
+
+  #categories .category-header i {
+    margin-left: 4px;
+    font-size: 13px;
+  }
+
+  #categories .category-header .edit {
+    font-size: 15px;
+    width: 20px;
+    margin-right: 10px;
+    background-color: #ffffff;
+  }
+
+  #categories .category-header .delete {
+    font-size: 15px;
+    width: 20px;
+    margin-right: 20px;
+    background-color: #ffffff;
+  }
+
+  #categories .category-header .edit i,
+  #categories .category-header .delete i {
+    font-size: 16px;
+  }
+
+  #categories .subcategories td {
+    height: 25px;
+    font-size: 16px;
+  }
+
+  #categories .subcategories td:nth-child(1) {
+    font-size: 14px;
+  }
+
+  #inventory-summary .bootstrap-select button {
+    font-size: 12px;
+  }
+
+  .inventory-sorter p {
+    width: 100%;
+  }
+
+  .inventory-sorter .bootstrap-select button {
+    width: 50%;
+  }
+
+  #contractor-management table .btn-custom {
+    font-size: 12px;
+  }
+
+  .inventory-sorter .select-subcategories {
+    margin-left: 0;
+  }
+
+  #inventory-summary .add-item-to-inventory {
+    margin: 20px 10px;
+  }
+
+  .inventory-summary-header button {
+    font-size: 15px;
+  }
+
+  .mobile-card-table td {
+    height: 100%;
+  }
+
+  .mobile-card-table td.st-key {
+    font-weight: bold;
+    width: 20%;
+    border-right: 2px solid #4ac59a;
+  }
+
+  .mobile-card-table td.st-val {
+    padding: 0;
+  }
+
+  .mobile-card-table td.st-val button {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .company-container .mobile-card-table td.st-val button .deny-credit-button,
+  .company-container .mobile-card-table td.st-val button .accept-credit-button, {
+    margin: auto;
+  }
+
+  .mobile-card-table .rating i {
+    width: auto;
+  }
+
+  .invoice-filters div {
+    display: inline-flex;
+  }
+
+  .invoice-total-mobile {
+    font-size: 15px;
+    margin: 5px;
+  }
+
+  .invoice-expanded-content:after {
+    border-bottom: none;
+  }
+
+  .container-data-header-mobile {
+    font-size: 13px;
+    border-bottom: 2px solid #4ac59a;
+    color: #717171;
+  }
+  .container-data-header-item.visible-xs {
+    margin: 7% auto;
+    border-right: none;
+  }
+
+  .popover {
+    max-width: 98%;
+    left: 5px !important;
+  }
+
+  .see-invoice-full-details {
+    width: 60%;
+    margin-left: 15%;
+  }
+
+  .job-data, .container-data-header-item.first {
+    width: 45.6666% !important;
+  }
+
+  .modal-body .invoice-item .invoice-item-left, .modal-body .invoice-item  .invoice-item-right {
+    font-size: 12px;
+  }
+
+  #price-management .tier-tabs {
+    width: 100%;
+  }
+
+  #price-management .tier-tabs > .nav-tabs {
+    font-size: 10px;
+  }
+
+  #price-management .tier-details span {
+    display: none;
+  }
+
+  #price-management .tier-range div {
+    margin-bottom: 5px;
+  }
+
+  .tier-range select, .tier-range input {
+    width: 40%;
+  }
+
+  .tier-margin input, .tier-markup input{
+    width: 100%;
+  }
+
+  .tier-range select {
+    margin-bottom: 8px;
+  }
+
+  .ms-container {
+    background-size: 5%;
+  }
+
+  #tier-contractors-management .ms-container .ms-selectable, .ms-container .ms-selection {
+    width: 45%;
+  }
+
+  #tier-contractors-management .modal-body {
+    margin: 5px;
+  }
+
+  #inventory-summary .categories-collapse {
+    margin: 0;
+  }
+
+  .vendor-container-header {
+    padding-right: 0px;
+  }
+
+  .order-management-modal-table .product-desc {
+    text-align: center;
+    width: 100%;
+  }
+
+  .selection-container .as-vendor,
+  .selection-container .as-contractor {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-info {
+    top: 70px;
+  }
+
+  .contractor-header-item,
+  .vendor-header-item,
+  .company-header-item {
+    width: 100%;
+    font-size: 17px;
+  }
+  .container-data-item {
+    font-size: 12px;
+  }
+
+  .invoice-contracted-content {
+    font-size: 14px;
+  }
+
+  .job-name {
+    font-size: 12px;
+  }
+
+  .see-invoice-full-details, .invoice-show-less {
+    font-size: 14px;
+  }
+
+  .invoice-contracted-content .amount-paid {
+    font-size: 14px;
+  }
+
+  .invoice-account-total, .invoice-total {
+    font-size: 14px;
+  }
+
+  .see-bid-full-details, .bid-show-less {
+    font-size: 14px;
+  }
+
+  .bid-account-total, .bid-total {
+    font-size: 14px;
+  }
+
+  .container-data-header-item {
+    font-size: 12px;
+  }
+
+  .job-img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .invoice-modal-img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .green-table {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  #categories .category-header {
+    line-height: 20px;
+  }
+
+  #categories .category-header .name {
+    font-size: 12px;
+  }
+
+  #categories .category-header i {
+    margin-left: 3px;
+    font-size: 10px;
+  }
+
+  #categories .subcategories td {
+    height: 20px;
+    font-size: 14px;
+  }
+
+  #categories .subcategories td:nth-child(1) {
+    font-size: 13px;
+  }
+
+  .status-filter input {
+    width: 130px;
+  }
+
+  #payments-management-modal .payments-details {
+    width: 100%;
+  }
+
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .landing-img-content {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,146 @@
+
+.modal-content {
+  color: #000000;
+}
+
+.modal-header {
+  position: relative;
+  border-bottom: none;
+  margin-left: 35px;
+  margin-right: 25px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.modal-header:after {
+  content : "";
+  position: absolute;
+  bottom: 0;
+  height  : 1px;
+  width   : 90%;
+  border-bottom: 1px solid #4ac59a;
+}
+
+.modal-title {
+  margin-top: 13px;
+  color: #717171;
+  font-weight: bold;
+}
+
+.modal-header .close {
+  height: 28px;
+  opacity: 0.5;
+}
+
+.modal-header button.close span {
+  font-size: 50px;
+  font-weight: 100;
+  position: relative;
+  top: -4px
+}
+
+.modal-header .close:hover,
+.modal-header .close:focus {
+  opacity: 1.0;
+}
+
+.modal-body {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.modal-divider {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  width: 90%;
+  background: #4ac59a;
+}
+
+.invoice-modal-img {
+  height: 80px;
+  width: 80px;
+  background-color: #c9c9c9;
+  float: left;
+  margin-right: 15px;
+}
+
+.modal-account-total {
+  width: 100%;
+  display: table;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.modal-account-total-title {
+  width: 70%;
+  display: table-cell;
+  text-align: right;
+}
+
+.modal-account-total-value {
+  width: 30%;
+  display: table-cell;
+  text-align: center;
+  font-weight: bold;
+}
+
+.photos-title {
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.photos-container {
+  width: 90%;
+}
+
+.invoice-item {
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.invoice-item-left {
+  float: left;
+  text-align: left;
+  font-size: 16px;
+  width: 25%;
+  margin-left: 10%;
+}
+
+.invoice-item-right {
+  float: left;
+  text-align: left;
+  font-size: 16px;
+  width: 65%;
+}
+
+.invoice-items-table {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
+}
+
+.invoice-items-table tr:nth-child(odd) {
+  background: #f7f9f9;
+}
+
+.invoice-items-table th {
+  background: #ffffff;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.invoice-items-table .table-spacing {
+  width: 10%;
+}
+
+.invoice-items-table .text-left {
+  text-align: left;
+}

@@ -1,0 +1,156 @@
+.register-container {
+  min-height: 700px;
+}
+
+.register-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.register-form legend {
+  font-size: 18px;
+  border-bottom: none;
+  font-weight: bold;
+}
+
+.register-form fieldset {
+  margin-bottom: 20px;
+}
+
+.register-form label {
+  color: #8d8d8d;
+}
+
+.register-form fieldset > div, .register-form fieldset > div > .form-group {
+  padding-left: 0;
+}
+
+.vendors-selector,
+.manufacturer-selector {
+  margin-top: 20px;
+}
+
+.btn-vendors-selector,
+.btn-manufacturer-selector {
+  background-color: #eeeded;
+  border: none;
+  border-radius: 3px;
+  padding: 7px;
+  margin-right: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 13px;
+}
+
+.btn-vendors-selector.active,
+.btn-manufacturer-selector.active {
+  background-color: #4ac59a;
+  color: white;
+}
+
+.selection-header {
+  color: #083643;
+  margin-bottom: 5px;
+}
+
+.vendors-selection,
+.manufacturer-selection {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.all-vendors,
+.all-manufacturer {
+  width: 45%;
+  float: left;
+}
+
+.selected-vendors,
+.selected-manufacturer {
+  width: 45%;
+  float: right;
+}
+
+#vendors-select,
+#manufacturer-select {
+  width: 100%;
+}
+
+#ms-vendors-select,
+#ms-manufacturer-select {
+  background: none;
+  width: 100%;
+}
+
+#ms-vendors-select .ms-selectable .ms-list,
+#ms-vendors-select .ms-selection,
+#ms-manufacturer-select .ms-selectable .ms-list,
+#ms-manufacturer-select .ms-selection {
+  background-color: #f7f7f7;
+}
+
+.ms-container .ms-list {
+  border: none;
+}
+
+#ms-vendors-select .ms-container .ms-selection .ms-list {
+  height: 250px;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable {
+  border-bottom: none;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable span {
+  width: 50%;
+}
+
+.credit-application-btn {
+  float: right;
+  width: 50%;
+  text-align: right;
+  color: #4ac59a;
+  text-decoration: underline;
+}
+
+#categories-dropdown,
+#categories-dropdown .dropdown-menu {
+  width: 100%;
+}
+
+.category-dropdown-btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 35px;
+  background-color: #f7f7f7;
+  margin-bottom: 5px;
+  line-height: 35px;
+  cursor: pointer;
+  cursor: hand;
+}
+.category-dropdown-btn .fa {
+  height: 35px;
+  line-height: 35px;
+  float: right;
+  text-align: center;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.location-form {
+  margin-top: 15px;
+}
+
+#add-vendor {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.btn-custom {
+  float: right;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}

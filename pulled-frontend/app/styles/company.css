@@ -1,0 +1,337 @@
+.company-container {
+  display: none;
+  min-height: 700px;
+}
+
+.company-header {
+  background: #ffffff;
+  color: #52727b;
+  line-height: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-bottom: 1px solid #dcdcdc;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.company-header-item {
+  border-top: 1px solid #dcdcdc;
+  width: 33.33333%;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+  float: left;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.company-header-item.active span {
+  color: #4bc69a;
+  border-bottom: 2px solid #4bc69a;
+  padding-bottom: 2px;
+}
+
+
+.company-container-header {
+  width: 100%;
+  margin: 10px 0;
+  padding-right: 65px;
+}
+
+.company-container-header button {
+  float: right;
+}
+
+.company-container .section-title {
+  font-size: 24px;
+  color: #083643;
+  font-weight: bold;
+  margin: 10px;
+  margin-top: 35px;
+}
+
+.company-container .sub-section-title {
+  font-size: 18px;
+  color: #083643;
+  font-weight: 500;
+  margin: 10px;
+  margin-top: 25px;
+}
+
+.company-container .sub-section-sub-title {
+  font-size: 22px;
+  color: #000000;
+  font-weight: 100;
+  margin: 10px;
+}
+
+.company-container .form-group {
+  margin-top: 15px;
+}
+
+.company-container .form-group.first {
+  padding-left: 0;
+}
+
+.company-container .form-group.last {
+  padding-right: 0;
+}
+
+.company-container .save-button {
+  color: white;
+  background: #4bc69a;
+  height: 45px;
+  width: 200px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.company-container .save-button-container {
+  padding-top: 40px;
+  margin: 15px;
+  margin-top: 20px;
+  width: calc(100% -30px);
+  border-top: 2px solid #d8d8d8;
+}
+
+.company-container .filter-category span {
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  margin-left: 25px;
+}
+
+.company-container .form-control.category-select {
+  float: left;
+  width: 200px;
+  margin-left: 15px;
+}
+
+.company-container .list-group {
+  max-height: 400px;
+  overflow-y: scroll;
+  border: none;
+}
+
+.company-container .list-group-item {
+  border: none;
+  background-color: #f7f7f7;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.company-container .list-group-item.active {
+  color: #000000;
+  background-color: #e5e5e5;
+}
+
+.company-container .detail-item {
+  border-top: 1px solid #d8d8d8;
+  padding: 10px;
+}
+
+.company-container .detail-item span {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.company-container .account-button {
+  color: white;
+  background: #4bc69a;
+  height: 35px;
+  width: 160px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0px;
+  cursor: pointer;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.company-container .edit-button {
+  color: #999999;
+  background: #f7f7f7;
+  height: 35px;
+  width: 160px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #d1d0d0;
+  cursor: pointer;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.company-container .contractor-name {
+  width: 100%;
+}
+
+.company-container .view-details {
+  width: 100%;
+  color: #4ac59a;
+  font-size: 12px;
+  cursor: hand;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.company-container .accept-credit-button {
+  display: inline-block;
+  background-color: #b4b4b4;
+  border: none;
+  margin: auto;
+  width: 100px;
+}
+
+.company-container .deny-credit-button {
+  display: inline-block;
+  background-color: #b4b4b4;
+  border: none;
+  margin: auto;
+  width: 100px;
+  margin-left: 10px;
+}
+
+.company-container .green-table tr:nth-child(odd) td {
+  background-color: #f7f7f7;
+}
+
+.company-container label {
+  margin-top: 10px;
+}
+
+.company-container .information-field {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.company-container .location-info {
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.company-container .save-info {
+  width: 90px;
+}
+
+#new-vendor-modal .vendor-edition,
+#edit-vendor-modal .vendor-edition {
+  width: 90%;
+}
+
+#new-vendor-modal .input-title,
+#edit-vendor-modal .input-title {
+  margin-bottom: 5px;
+  color: #083643;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#new-vendor-modal .form-group.last,
+#new-vendor-modal .form-group.first,
+#edit-vendor-modal .form-group.last,
+#edit-vendor-modal .form-group.first {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#new-vendor-modal .form-group.left,
+#edit-vendor-modal .form-group.left {
+  padding-left: 0px;
+}
+
+#new-vendor-modal button,
+#edit-vendor-modal button {
+  float: right;
+}
+
+#credit-app-details-modal .ca-item {
+  margin-bottom: 10px;
+}
+
+#credit-app-details-modal .ca-item-left {
+  float: left;
+  text-align: left;
+  font-size: 13px;
+  width: 35%;
+}
+
+#credit-app-details-modal .ca-item-right {
+  float: left;
+  text-align: left;
+  font-size: 13px;
+  width: 65%;
+  font-weight: bold;
+}
+
+#credit-app-details-modal .ca-title {
+  font-size: 16px;
+  width: 100%;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+  border-bottom: 1px solid #b4b4b4;
+}
+
+#credit-app-details-modal .bold {
+  font-weight: bold;
+}
+
+#credit-app-details-modal .ownership-type {
+  float: right;
+  text-align: left;
+  font-size: 13px;
+  width: 65%;
+  font-weight: bold;
+}
+
+#edit-company-modal .modal-body {
+  margin-top: 0;
+}
+
+#edit-company-modal .vendor-edition {
+  width: 90%;
+}
+
+#edit-company-modal .advice {
+  color: #d9d9d9;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+#edit-company-modal .input-title {
+  margin-bottom: 5px;
+  color: #083643;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#edit-company-modal .form-group.last,
+#edit-company-modal .form-group.first {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#edit-company-modal .form-group.left {
+  padding-left: 0px;
+}
+
+#edit-company-modal button {
+  float: right;
+}
+

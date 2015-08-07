@@ -1,0 +1,240 @@
+.inventory-summary-header button {
+  float: left;
+  font-size: 18px;
+}
+
+.inventory-sorter .bootstrap-select button {
+  width: 100%;
+}
+
+.inventory-sorter p {
+  font-size: 17px;
+  text-align: left;
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.inventory-sorter .select-categories {
+  float: left;
+}
+
+.inventory-sorter .select-subcategories {
+  float: left;
+  margin-left: 10px;
+}
+
+.inventory-sorter .dropdown-menu .check-mark:before {
+  color: #4ac59a;
+}
+
+.inventory-form .input-half-width {
+  width: 50%;
+}
+
+.inventory-form .input-width-dropdown {
+  width: 58%;
+}
+
+.inventory-form input {
+  box-shadow: none;
+}
+
+.inventory-form .units-text {
+  margin-right: 8px;
+}
+
+.inventory-form .form-inline label[for='id'] {
+  margin-right: 25px
+}
+
+.inventory-form .form-inline label[for='sku'] {
+  margin-right: 10px;
+}
+
+.category-data-details {
+  margin-bottom: 10px;
+}
+
+.inventory-form .selectDiv {
+  width: 60%;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+  background: url('../img/dropdown-button.png') no-repeat right #FEFEFE;
+  border: #ccc 1px solid;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  z-index: 100;
+  margin-left: 3px;
+}
+.inventory-form .form-control {
+  height: 28px;
+}
+
+.inventory-form .selectDefault {
+  padding-left: 8px;
+}
+
+.inventory-form .selectDiv select {
+  margin: 0px;
+  padding:0px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 101;
+}
+
+.inventory-form .selectDiv select:focus {
+  outline: none;
+}
+
+.inventory-form select {
+  background: transparent;
+  width: 168px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+  color: #000;
+
+  width: 140px;
+  height: 34px;
+  overflow: hidden;
+  border: 2px solid #000;
+}
+
+.inventory-form label {
+  font-weight: normal;
+}
+
+.inventory-form .form-upload-picture img {
+  width: 135px;
+  margin-bottom: 5px;
+}
+
+.inventory-form .subcategories-inputs .form-inline:nth-child(even){
+  background-color: #f5f5f5;
+}
+
+.inventory-form .subcategories-inputs .form-inline {
+  padding: 5px;
+  padding-left: 25px;
+}
+
+.inventory-form .subcategories-inputs .form-inline:last-child {
+  margin-bottom: 15px;
+}
+
+.inventory-form .subcategories-inputs .tier-label {
+  padding-left: 10px;
+}
+
+.inventory-form .subcategories-inputs .tier-label {
+  padding-left: 10px;
+}
+
+.inventory-form .subcategories-inputs .tier-label + .selectDiv {
+  width: 30%;
+}
+
+.btn-add-item-inventory {
+  margin-left: 40%;
+  width: 23%;
+}
+
+#inventory-summary .green-table .product-image {
+  float: left;
+  min-width: 30%;
+}
+
+#inventory-summary .green-table .product-image img {
+  height: 60px;
+  width: 60px;
+}
+
+#inventory-summary .green-table .product-desc {
+  float: left;
+  text-align: left;
+}
+
+#inventory-summary .green-table td {
+  height: 100%;
+}
+
+
+/* CATEGORIES COLLAPSE */
+#inventory-summary a[data-toggle="collapse"] {
+  text-decoration: none;
+}
+
+#inventory-summary a[data-toggle="collapse"] span {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#inventory-summary a[data-toggle="collapse"] .collapse-arrow:after {
+  font-weight: 700;
+  font-size: 21px;
+  margin-right: 12px;
+  font-family: 'FontAwesome';
+  content: "\f107";
+}
+
+#inventory-summary a[data-toggle="collapse"].collapsed .collapse-arrow:after {
+  content: "\f106";
+}
+
+#inventory-summary .categories-collapse > .panel > .panel-heading {
+  background-color: #ffffff;
+  height: 51px;
+  color: #000000;
+  font-weight: normal;
+  padding: 14px 15px;
+}
+
+#inventory-summary .categories-collapse .panel, .categories-collapse .panel-heading {
+  border-radius: 0;
+}
+
+/* SUBCATEGORIES COLLAPSE */
+
+#inventory-summary .subcategories-collapse > .panel > .panel-heading {
+  background-color: #f0f0f0;
+  border-color: #cacaca;
+}
+
+#inventory-summary .subcategories-collapse .panel-heading a[data-toggle="collapse"]:before {
+  color: black;
+}
+
+#inventory-summary .subcategories-collapse .panel-heading a[data-toggle="collapse"] {
+  font-weight: 200;
+}
+
+#inventory-summary .panel-without-padding {
+  padding: 0;
+}
+
+#inventory-summary .green-table {
+  margin: 0;
+}
+
+#inventory-summary tbody tr {
+  border-bottom: none;
+}
+
+#inventory-summary tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}

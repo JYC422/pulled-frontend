@@ -1,0 +1,208 @@
+.tier-tabs {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tier-tabs > .nav-tabs {
+  border: none;
+  margin-top: 20px;
+}
+
+.tier-tabs > .nav-tabs > li {
+  margin: 0 5px;
+}
+
+
+.nav-tabs > li > a {
+  border: 1px solid #d6d5d6;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  padding: 4px 32px;
+  color: black;
+  font-family: 'Montserrat';
+}
+
+.nav-tabs > li.active > a {
+  background-color: #4ac59a;
+  color: white;
+}
+
+.nav-tabs > li > a:focus, .nav-tabs > li > a:hover {
+  color: black;
+  background-color: #f7f7f7;
+  border: inherit;
+  cursor: pointer;
+  border: 1px solid  #d6d5d6;
+  opacity: 1;
+}
+
+.nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  background-color: #4ac59a;
+  color: white;
+  cursor: pointer;
+}
+
+.tier-tabs .tab-content {
+  margin: 25px 0;
+}
+
+/* CATEGORIES COLLAPSE */
+#price-management .panel-group  .panel-heading  a[data-toggle="collapse"] {
+  text-decoration: none;
+}
+
+#price-management .panel-body {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#price-management .categories-collapse .panel, .categories-collapse .panel-heading {
+  border-radius: 0;
+}
+
+#price-management .categories-collapse > .panel > .panel-heading a[data-toggle="collapse"]:after,
+  #price-management .subcategories-collapse > .panel > .panel-heading a[data-toggle="collapse"]:after {
+  font-family: 'FontAwesome';
+  content: "\f107";
+  float: right;
+  font-size: 19px;
+}
+
+#price-management .categories-collapse > .panel > .panel-heading a[data-toggle="collapse"]:after {
+  color: white;
+}
+
+#price-management .categories-collapse > .panel > .panel-heading a[data-toggle="collapse"].collapsed:after,
+  #price-management .subcategories-collapse > .panel > .panel-heading a[data-toggle="collapse"].collapsed:after {
+  content: "\f106";
+}
+
+#price-management .categories-collapse > .panel > .panel-heading {
+  background-color: #0f5b70;
+  height: 51px;
+  color: white;
+  font-weight: normal;
+  padding: 17px 15px;
+}
+
+#price-management .categories-collapse .panel, .categories-collapse .panel-heading {
+  border-radius: 0;
+}
+
+/* SUBCATEGORIES COLLAPSE */
+
+#price-management .subcategories-collapse > .panel > .panel-heading {
+  background-color: white;
+  border-color: #afafaf;
+}
+
+#price-management .subcategories-collapse .panel-heading a[data-toggle="collapse"]:after {
+  color: black;
+}
+
+#price-management .subcategories-collapse .panel-heading a[data-toggle="collapse"] {
+  font-weight: 200;
+}
+
+#price-management .panel-without-padding {
+  padding: 0;
+}
+
+/* TIERS SUBCATEGORIES COLLAPSE */
+
+.tiers-subcategories-collapse .tier-details {
+  margin-right: 20px;
+  font-weight: 300;
+}
+
+.tiers-subcategories-collapse .panel:nth-child(even) .panel-heading {
+  background-color: #edf2f4;
+}
+
+.tiers-subcategories-collapse .pane:nth-child(odd) .panel-heading {
+  background-color: #fafbfb;
+}
+
+.tiers-subcategories-collapse {
+  margin-bottom: 0;
+}
+
+.tiers-subcategories-collapse .panel {
+  margin-top: 0 !important;
+}
+
+.tiers-subcategories-collapse a[data-toggle="collapse"] {
+  font-weight: 500 !important;
+}
+
+.tiers-subcategories-collapse .panel {
+  border: none;
+}
+
+.tiers-subcategories-collapse .panel-body {
+  background-color: #fcfcfc;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.tiers-subcategories-collapse .panel-body > .row {
+  padding: 12px;
+  border-bottom: 1px solid #d5d5d5;
+  margin: 0;
+}
+
+.tiers-subcategories-collapse .tier-details a {
+  color: #4ac59a;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.tiers-subcategories-collapse .tier-range select {
+  background-color: #edf2f4;
+}
+
+.tiers-subcategories-collapse .tier-range label {
+  font-weight: normal;
+}
+
+.tiers-subcategories-collapse input {
+  height: 30px;
+}
+
+.tiers-subcategories-collapse .tier-markup input {
+  background-color: white;
+  border: 2px inset;
+}
+
+.tiers-subcategories-collapse .tier-markup input + .tooltip {
+  opacity: 1;
+}
+
+.tiers-subcategories-collapse .tier-markup input + .tooltip .tooltip-arrow {
+  border-top-color: #a3ceda;
+}
+
+.tiers-subcategories-collapse .tier-markup input + .tooltip .tooltip-inner {
+  background-color: #a3ceda;
+}
+
+/* TIERS CONTRACTORS MANAGEMENT */
+
+#tier-contractors-management .ms-container {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+#tier-contractors-management .ms-container .ms-selectable, .ms-container .ms-selection {
+  width: 40%;
+  border: 1px solid #cbcbcb;
+}
+
+.tier-contractors-management-header {
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #0f5b70;
+}

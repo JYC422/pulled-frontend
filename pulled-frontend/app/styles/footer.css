@@ -1,0 +1,58 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #083643;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer-wrapper {
+  background: #083643;
+  padding: 50px 0;
+}
+
+.footer-wrapper.landing {
+  background: #ffffff;
+}
+
+.footer-wrapper > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-wrapper > .container > a, .footer-wrapper > .container > p {
+  color: white;
+}
+
+.footer-wrapper.landing > .container > a, .footer-wrapper.landing > .container > p {
+  color: #08354a;
+}
+
+code {
+  font-size: 80%;
+}

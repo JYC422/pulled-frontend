@@ -1,0 +1,44 @@
+.section-wrapper {
+  min-height: 400px;
+}
+
+.info-wrapper {
+  padding: 50px 0;
+}
+
+.info-wrapper .info {
+  margin: auto 30%;
+}
+
+.info-wrapper > p {
+  max-width: 520px;
+  margin: auto;
+}
+
+.carousel-oportunities {
+  margin-top: 70px;
+}
+
+.carousel-indicators-custom {
+  color: black;
+  position: relative;
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+}
+
+.carousel-indicators-custom > li, .carousel-indicators-custom > li.active {
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  background: #eee;
+  margin-right: 60px;
+}
+
+.carousel-indicators-custom > li:last-child {
+  margin-right: 0;
+}
+
+.carousel-indicators-custom > li.active {
+  border: 3px solid grey;
+}

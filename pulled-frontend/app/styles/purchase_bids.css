@@ -1,0 +1,102 @@
+.purchase-bids-container {
+  min-height: 700px;
+}
+
+.purchase-bids-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.purchase-bids-container h4 {
+  font-weight: 200;
+  margin-top: 20px;
+}
+
+.purchase-bids-container h4 span {
+  font-weight: 500;
+}
+
+.purchase-bids-container .selection-header {
+  margin-top: 20px;
+}
+
+.purchase-bids-container .bids-header {
+  float: left;
+  width: 45%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #4ac59a;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.purchase-bids-container .purchase-header {
+  float: right;
+  width: 45%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #4ac59a;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#ms-purchase-bids-select {
+  width: 100%;
+}
+
+#ms-purchase-bids-select .ms-list {
+  height: 500px;
+}
+
+#ms-purchase-bids-select .ms-list .right {
+  float: right;
+}
+
+#ms-purchase-bids-select .ms-list i {
+  float: right;
+  cursor: hand;
+  cursor: pointer;
+  height: 40px;
+  line-height: 38px;
+  width: 35px;
+  font-size: 20px;
+  text-align: right;
+  color: #a3a3a3;
+}
+
+#ms-purchase-bids-select .ms-list li {
+  height: 40px;
+  line-height: 40px;
+  color: #000000;
+  background-color: #f7f7f7;
+}
+
+#ms-purchase-bids-select .ms-list li:hover {
+  background-color: #ffffff;
+}
+
+.purchase-bids-container .checkout-button {
+  color: white;
+  background: #4bc69a;
+  height: 45px;
+  width: 200px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+  font-weight: bold;
+  font-size: 18px;
+  border: 0px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.purchase-bids-container .checkout-button-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  float: right;
+  width: 45%;
+}

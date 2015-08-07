@@ -1,0 +1,284 @@
+.vendor-container {
+  display: none;
+  min-height: 700px;
+}
+
+.vendor-header {
+  background: #ffffff;
+  color: #52727b;
+  line-height: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-bottom: 1px solid #dcdcdc;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.vendor-header-item {
+  border-top: 1px solid #dcdcdc;
+  width: 20%;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+  float: left;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.vendor-header-item.active span {
+  color: #4bc69a;
+  border-bottom: 2px solid #4bc69a;
+  padding-bottom: 2px;
+}
+
+.container-header {
+  background: white;
+  margin-left: 20px;
+  color: #858585;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.container-data-header {
+  text-align: center;
+  color: #717171;
+  font-size: 17px;
+  line-height: 50px;
+  background: #bfd870;
+  display: table;
+  width: 100%;
+}
+
+.container-data-header-item {
+  text-align: center;
+  color: #717171;
+  font-size: 17px;
+  border-right: 1px solid white;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container-data-item {
+  text-align: center;
+  color: #717171;
+  font-size: 16px;
+  min-height: 70px;
+  display: table;
+  width: 100%;
+}
+
+.container-data-item.active {
+  background: #f1f3e8;
+  border-right: 1px solid white;
+}
+
+.container-data-item-col {
+  border-bottom: 1px solid #c9c9c9;
+  border-right: 1px solid white;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.container-data-item-img {
+  height: 50px;
+  width: 50px;
+  background-color: #c9c9c9;
+}
+
+.first-item {
+  background: #fafbf6;
+}
+
+.first-item.active {
+  background: #f1f3e8;
+}
+
+.last-item {
+  border-right: none;;
+}
+
+.green-table .list-of-orders {
+  color: #a8a8a8;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.vendor-container-header {
+  width: 100%;
+  margin: 10px 0;
+  padding-right: 65px;
+}
+
+.vendor-container-header button {
+  float: right;
+}
+
+#contractor-edit .modal-dialog {
+  width: 60%;
+  margin: auto;
+}
+
+#contractor-edit .category,
+#contractor-edit .add-category  {
+  font-size: 16px;
+  background-color: #f6f6f6;
+  width: 100%;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  min-height: 58px;
+  padding: 10px;
+  line-height: 38px;
+}
+
+#contractor-edit .category span {
+  font-weight: bold;
+}
+
+#add-collapse {
+  padding: 0px 15px;
+}
+
+#contractor-edit .collapsed-body {
+  border-top: 2px solid #acacac;
+  padding: 20px 0px;
+}
+
+#contractor-edit .add-category .bootstrap-select {
+  width: 150px !important;
+  margin-left: 5px;
+}
+
+#contractor-edit .add-category .category-tier .bootstrap-select {
+  width: 50px !important;
+}
+
+#contractor-edit .btn-save-container {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#contractor-edit .btn-save {
+  width: 20%;
+  min-width: 150px;
+}
+
+#contractor-edit .btn-add-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#contractor-edit .btn-add {
+  float: right;
+  width: 60px;
+}
+
+#payments-management-modal .payments-details {
+  width: 70%;
+}
+
+#payments-management-modal .contractor-name {
+  color: #083643;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#payments-management-modal .payments-management-modal-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#payments-management-modal .payments-management-modal-table thead {
+  border-bottom: 2px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+#payments-management-modal .payments-management-modal-table thead th,
+#payments-management-modal .payments-management-modal-table tbody tr {
+  height: 25px;
+}
+
+#payments-management-modal .payments-management-modal-table .text-right {
+  text-align: right;
+}
+
+#payments-management-modal .payments-management-modal-table .text-center {
+  text-align: center;
+}
+
+#payments-management-modal .new-income-title {
+  margin-top: 15px;
+  font-weight: 500;
+  border-bottom: 2px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+#payments-management-modal .new-income {
+  margin-top: 15px;
+}
+
+#payment-date-input {
+  width: 50%;
+  float: left;
+}
+
+#payment-date-input .input-group-addon {
+  border: none;
+  background-color: #eee;
+}
+
+#payment-income-input {
+  width: 30%;
+  float: right;
+}
+
+#payments-management-modal .payments-resume {
+  width: 100%;
+}
+
+#payments-management-modal .payments-resume .total-amount{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  margin-top: 10px;
+}
+
+#payments-management-modal .payments-resume .amount-paid {
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  margin-bottom: 5px;
+}
+
+#payments-management-modal .payments-resume .left-amount {
+  border-top: 2px solid #d9d9d9;
+  padding-top: 10px;
+  text-align: right;
+  color: #d9d9d9;
+  width: 100%;
+}
+
+#payments-management-modal .payments-resume .total-amount span,
+#payments-management-modal .payments-resume .amount-paid span {
+  font-weight: 600;
+  color: #083643;
+  margin-left: 10px;
+}
+
+#payments-management-modal .payments-resume .left-amount span {
+  font-weight: 600;
+  color: #083643;
+  font-size: 16px;
+  margin-left: 10px;
+}
+#payments-management-modal .form-group {
+  margin-bottom: 5px;
+}
+
+#payments-management-modal .save-income {
+  float: right;
+}
