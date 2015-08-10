@@ -48,7 +48,7 @@
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
-  <body ng-app="pulledApp">
+  <body ng-app="pulledApp" ng-controller="ApplicationCtrl">
     <div ng-view=""></div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -62,7 +62,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -91,7 +91,12 @@
         <script src="scripts/js/vendor.js"></script>
         <script src="scripts/js/vendor_register.js"></script>
 
+        <!-- directives  -->
+        <script src="scripts/directives/login.js"></script>
+        <!-- directives  -->
+
         <!-- controllers  -->
+        <script src="scripts/controllers/application.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!--  end controllers  -->

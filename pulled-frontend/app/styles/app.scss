@@ -176,18 +176,24 @@ textarea {
 }
 
 .landing-img-btn {
+  color: white;
+  margin: auto;
+  display: block;
+  margin-top: 5%;
   font-size: 24px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  margin: auto;
-  margin-top: 40px;
   width: 220px;
   line-height: 60px;
-  height: 60px;
-  cursor: hand;
   cursor: pointer;
   border-radius: 4px;
   background-color: #4bc69a;
+
+  &.active, &:hover {
+    color: white ;
+    text-decoration: none;
+  };
+
+
 }
 
 .not-transparent {

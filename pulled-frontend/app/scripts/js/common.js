@@ -33,10 +33,6 @@ function isMobile(){
 }
 
 $(document).ready(function() {
-  $(".sign_up_btn").click(function(){
-    window.location.href = '/sign_up.html';
-  });
-
   $(".as-contractor-button").click(function(){
     window.location.href = '/contractor_register.html';
   });

@@ -8,9 +8,9 @@
  * Controller of the pulledApp
  */
 angular.module('pulledApp')
-  .controller('MainCtrl', ['User', function (User) {
+  .controller('MainCtrl', ['User', '$localStorage', function (User, $localStorage) {
 
-    // var new_user = { user: { email: "hello@hello.com",
+    // var new_user = { user: { email: "hello1@hello.com",
     //                         password: "12345678",
     //                         password_confirmation :"12345678"
     //                       }
