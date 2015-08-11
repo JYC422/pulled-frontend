@@ -20,18 +20,12 @@
       <a href=""><img class="navbar-brand" href="" src="images/pulled-logo-white.png"/></a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <!-- <li class="header-item"><a href="#"><span>SECTIONS</span></a></li>
-        <li class="header-item"><a href="#"><span>PURCHASE</span></a></li>
-        <li class="header-item"><a href="#"><span>HOW IT WORKS</span></a></li> -->
         <li id="header-logout" ng-if="userSession"  class="header-item"><a href=""><span>LOGOUT</span></a></li>
-        <li id="header-login" ng-if="!userSession"  class="header-item">
-          <a href="" class="collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
-            <span>LOGIN</span>
-          </a>
-          <form class="collapse login-form" id="bs-example-navbar-collapse-2">
+        <li id="header-login" ng-if="!userSession" class="header-item">
+          <a login ><span>LOGIN</span></a>
+          <form ng-submit = "signIn()" collapse="isCollapsed">
             <div class="form-group">
               <input type="email" class="form-control login-email" placeholder="Email">
             </div>
