@@ -14,7 +14,14 @@ angular
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')
 
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $httpProvider) {
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.headers.common["Accept"] = "application/json";
+    $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+    $httpProvider.interceptors.push('PulledTokenInterceptor');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -58,9 +65,14 @@ angular
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: 'MainCtrl',
+        controller: 'SearchCtrl',
       })
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .run(function(PulledTokenInterceptor, Session, $rootScope){
+    PulledTokenInterceptor.authentication_token(Session.getAuthToken);
+    PulledTokenInterceptor.authentication_email(Session.getAuthEmail);
   });

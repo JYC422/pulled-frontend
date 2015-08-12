@@ -20,21 +20,21 @@ $(".contractor-header-item").click(function(){
 });
 
 $(document).ready(function() {
-  $("#search-section").show();
-  if(window.location.hash && window.location.hash.substring(1) == "search-results") {
-    $("#search_result").show();
-    $("#contractor-search-results").show();
-  } else {
-    $("#search").show();
-  }
-    // document.getElementById("search_result_json").innerHTML =  JSON.stringify(publications_data);
-  $(".container-data-header").each(function(){
-    var children_count = $(this).children('.container-data-header-item').length;
-    var new_width = (100 / children_count);
-    $(this).children('.container-data-header-item').css('width', new_width + "%");
-  });
+  // $("#search-section").show();
+  // if(window.location.hash && window.location.hash.substring(1) == "search-results") {
+  //   $("#search_result").show();
+  //   $("#contractor-search-results").show();
+  // } else {
+  //   $("#search").show();
+  // }
+  //   // document.getElementById("search_result_json").innerHTML =  JSON.stringify(publications_data);
+  // $(".container-data-header").each(function(){
+  //   var children_count = $(this).children('.container-data-header-item').length;
+  //   var new_width = (100 / children_count);
+  //   $(this).children('.container-data-header-item').css('width', new_width + "%");
+  // });
 
-  $('.mobile-card-table').cardtable( { myClass:'stacktable small-only' } );
+  // $('.mobile-card-table').cardtable( { myClass:'stacktable small-only' } );
 });
 
 $(".container-data-item.invoice").click(function(){
