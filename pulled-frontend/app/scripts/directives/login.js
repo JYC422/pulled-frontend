@@ -6,8 +6,6 @@ directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, 
     templateUrl: 'views/login.html',
     scope: true,
     link: function(scope, elem, attr, controller) {
-      scope.showUpperLogin = attr.showupperlogin;
-      console.log(scope.showUpperLogin);
       scope.isCollapsed = true;
       $('#login-btn').click(function(){
         scope.isCollapsed = !scope.isCollapsed;
@@ -17,8 +15,8 @@ directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, 
       $rootScope.userSession = Session.hasCurrentUser;
 
       scope.user = {
-        email: 'guillermo@toptierlabs.com',
-        password: 'password',
+        email: '',
+        password: '',
       };
 
       scope.signIn = function(){

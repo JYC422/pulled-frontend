@@ -1,4 +1,5 @@
 describe('Directive: login', function() {
+
   var $compile,
       $rootScope;
 
@@ -34,4 +35,5 @@ describe('Directive: login', function() {
     // Check that the compiled element contains the templated content
     expect(element.html()).toContain('<li id="header-login" ng-show="!userSession()" class="header-item">');
   });
+
 });

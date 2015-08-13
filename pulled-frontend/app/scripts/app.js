@@ -14,6 +14,9 @@ angular
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')
 
+  //For testing purposes
+  .constant('toastr', toastr)
+
   .config(function ($routeProvider, $httpProvider) {
 
     $httpProvider.defaults.useXDomain = true;
@@ -65,7 +68,15 @@ angular
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: 'MainCtrl',
+        controller: '',
+      })
+      .when('/500', {
+        templateUrl: '500.html',
+        controller: '',
+      })
+      .when('/404', {
+        templateUrl: '404.html',
+        controller: '',
       })
       .otherwise({
         redirectTo: '/'
