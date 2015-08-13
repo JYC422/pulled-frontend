@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('pulledApp').
-directive('login', ['$rootScope', 'Session', function($rootScope, Session){
+directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, Session, Validation){
   return {
     templateUrl: 'views/login.html',
+    scope: true,
     link: function(scope, elem, attr, controller) {
       scope.showUpperLogin = attr.showupperlogin;
       console.log(scope.showUpperLogin);
@@ -23,10 +24,8 @@ directive('login', ['$rootScope', 'Session', function($rootScope, Session){
       scope.signIn = function(){
         Session.signIn({user: scope.user}).then(function(response){
         toastr.success('Welcome ' + response.email, 'Login Success');
-        console.log(response);
         }, function(reason){
-          toastr.error(reason.data.errors[0]);
-          console.log(reason);
+          Validation.validate(reason);
         });
       };
 

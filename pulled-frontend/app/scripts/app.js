@@ -65,7 +65,7 @@ angular
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: 'SearchCtrl',
+        controller: 'MainCtrl',
       })
       .otherwise({
         redirectTo: '/'

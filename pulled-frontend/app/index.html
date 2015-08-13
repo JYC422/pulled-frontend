@@ -50,7 +50,9 @@
     <!-- endbuild -->
   </head>
   <body ng-app="pulledApp" ng-controller="ApplicationCtrl">
+    <ng-include src="'views/header.html'"></ng-include>
     <div ng-view=""></div>
+    <ng-include src="'views/footer.html'"></ng-include>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -96,8 +98,8 @@
 
         <!-- services  -->
         <script src="scripts/services/session.js"></script>
+        <script src="scripts/services/validation.js"></script>
         <!-- services  -->
-
 
         <!-- directives  -->
         <script src="scripts/directives/login.js"></script>
@@ -106,7 +108,6 @@
 
         <!-- controllers  -->
         <script src="scripts/controllers/application.js"></script>
-        <script src="scripts/controllers/search.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!--  end controllers  -->
@@ -114,7 +115,6 @@
         <!-- resources  -->
         <script src="scripts/resources/user.js"></script>
         <script src="scripts/resources/interceptor.js"></script>
-
         <!-- end resources  -->
 
         <!-- endbuild -->

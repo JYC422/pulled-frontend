@@ -9,4 +9,11 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
 
+It will be needed to install these  if are not yet added
+
+ npm install grunt-karma --save-dev
+ npm install karma-phantomjs-launcher --save-dev
+ npm install karma-jasmine --save-dev
+
+
 Running `grunt test` will run the unit tests with karma.
