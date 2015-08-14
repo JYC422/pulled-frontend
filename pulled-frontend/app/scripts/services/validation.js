@@ -6,10 +6,22 @@ angular.module('pulledApp')
     var service = {};
 
     service.validate = function(response) {
+      console.log(response);
       switch(response.status) {
         case 401:
           var errorMessage = response.data.error || response.data.errors[0];
           toastr.error(errorMessage);
+          break;
+        case 400:
+          var errorMessage = '';
+          if (response.data.error) {
+            var errors = JSON.parse(response.data.error);
+            console.log(errors.email);
+            if (errors.email) {
+              errorMessage = 'Email: ' + errors.email.join(',') + '\n';
+            };
+            toastr.error(errorMessage);
+          }
           break;
         case 404:
           $location.path('/404');

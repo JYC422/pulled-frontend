@@ -10,7 +10,7 @@ angular.module('pulledApp')
       var promise= defered.promise;
 
       User.signIn(user, function(data){
-        setSession(data);
+        service.setSession(data);
         defered.resolve(data);
       }, function(responseHeaders){
         defered.reject(responseHeaders);
@@ -53,18 +53,18 @@ angular.module('pulledApp')
       return new User($localStorage.userSession);
     };
 
+    service.setSession = function(user){
+      $localStorage.user = {
+        email: user.email,
+        authToken: user.token
+      };
+    };
+
 
     // PRIVATE FUNCTIONS
 
     var clearSession = function(){
       $localStorage.$reset();
-    };
-
-    var setSession = function(user){
-      $localStorage.user = {
-        email: user.email,
-        authToken: user.token
-      };
     };
 
     return service;

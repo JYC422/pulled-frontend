@@ -4,7 +4,8 @@ angular.module('pulledApp')
   .controller('ApplicationCtrl', function () {
 
   	toastr.options = {
-  		positionClass: "toast-top-center"
+  		positionClass: "toast-top-center",
+      escapeHtml: true
   	};
 
   });

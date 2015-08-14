@@ -28,7 +28,7 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'SignUpCtrl',
       })
       .when('/sign_up', {
         templateUrl: 'views/sign_up.html',
@@ -54,7 +54,7 @@ angular
         templateUrl: 'views/order_status.html',
         controller: 'MainCtrl',
       })
-      
+
       .when('/purchase_bids', {
         templateUrl: 'views/purchase_bids.html',
         controller: 'MainCtrl',
@@ -65,11 +65,11 @@ angular
       })
       .when('/vendor', {
         templateUrl: 'views/vendor.html',
-        controller: 'MainCtrl',
+        // controller: 'MainCtrl',
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: 'MainCtrl',
+        controller: 'SignUpCtrl',
       })
       .when('/500', {
         templateUrl: '500.html'
