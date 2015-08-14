@@ -7,12 +7,24 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngStorage',
+    'ui.bootstrap'
   ])
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')
 
-  .config(function ($routeProvider) {
+  //For testing purposes
+  .constant('toastr', toastr)
+
+  .config(function ($routeProvider, $httpProvider) {
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    $httpProvider.defaults.headers.common.Accept = "application/json";
+    $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+    $httpProvider.interceptors.push('PulledTokenInterceptor');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -42,6 +54,7 @@ angular
         templateUrl: 'views/order_status.html',
         controller: 'MainCtrl',
       })
+      
       .when('/purchase_bids', {
         templateUrl: 'views/purchase_bids.html',
         controller: 'MainCtrl',
@@ -58,7 +71,18 @@ angular
         templateUrl: 'views/vendor_register.html',
         controller: 'MainCtrl',
       })
+      .when('/500', {
+        templateUrl: '500.html'
+      })
+      .when('/404', {
+        templateUrl: '404.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .run(function(PulledTokenInterceptor, Session){
+    PulledTokenInterceptor.authentication_token(Session.getAuthToken);
+    PulledTokenInterceptor.authentication_email(Session.getAuthEmail);
   });

@@ -24,7 +24,6 @@ $(document).ready(function() {
   $('.selectpicker').selectpicker();
 
   $("#inventory-summary").show();
-  $('.mobile-card-table').cardtable( { myClass:'stacktable small-only' } );
 
   // inventory dropdown
   $.each($('.selectDiv'), function(){
