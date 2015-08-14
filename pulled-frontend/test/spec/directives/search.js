@@ -1,6 +1,10 @@
+'use strict';
+
 describe('Directive: search', function() {
   var $compile,
       element,
+      scope,
+      $httpBackend,
       $rootScope,
       $location;
 
@@ -26,7 +30,7 @@ describe('Directive: search', function() {
 
      var fakedMainResponse = {"token":"B8PH2ZsMz25WKzdTcNyy",
                               "email":"foo@test.com"
-                             }
+                             };
 
      $httpBackend.when('GET', 'http://localhost:3000/api/v1/users/sign_in').respond(fakedMainResponse);
 
@@ -41,13 +45,13 @@ describe('Directive: search', function() {
   it('check if search redirects to vendor inventory', function() {
     var isolated = element.scope();
     isolated.getSearchResults('vendor');
-    expect($location.path).toHaveBeenCalledWith('/contractor')
+    expect($location.path).toHaveBeenCalledWith('/vendor');
   });
 
   it('check if search redirects to search results', function() {
     var isolated = element.scope();
     isolated.getSearchResults('contractor');
-    expect($location.path).toHaveBeenCalledWith('/contractor')
+    expect($location.path).toHaveBeenCalledWith('/contractor');
   });
 
 });

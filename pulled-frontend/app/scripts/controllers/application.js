@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('ApplicationCtrl', ['$rootScope', '$scope', '$localStorage', 'Session', function ($rootScope, $scope, $localStorage, Session) {
+  .controller('ApplicationCtrl', function () {
 
   	toastr.options = {
   		positionClass: "toast-top-center"
   	};
 
-  }
-]);
+  });

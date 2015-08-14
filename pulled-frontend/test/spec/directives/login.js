@@ -1,6 +1,9 @@
+'use strict';
+
 describe('Directive: login', function() {
 
   var $compile,
+      $httpBackend,
       $rootScope;
 
   // Load the myApp module, which contains the directive
@@ -19,7 +22,7 @@ describe('Directive: login', function() {
 
      var fakedMainResponse = {"token":"B8PH2ZsMz25WKzdTcNyy",
                               "email":"guillermo@toptierlabs.com"
-                             }
+                             };
 
      $httpBackend.when('GET', 'http://localhost:3000/api/v1/users/sign_in').respond(fakedMainResponse);
      $httpBackend.when('GET', 'views/').respond(fakedMainResponse);

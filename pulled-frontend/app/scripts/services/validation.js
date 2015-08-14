@@ -1,10 +1,11 @@
+'use strict';
+
 angular.module('pulledApp')
-  .factory('Validation', ['User', '$localStorage', '$q', '$rootScope', function (User, $localStorage, $q, $rootScope) {
+  .factory('Validation', ['User', '$localStorage', '$q', '$rootScope', '$location', function (User, $localStorage, $q, $rootScope, $location) {
 
     var service = {};
 
     service.validate = function(response) {
-      console.log(response);
       switch(response.status) {
         case 401:
           var errorMessage = response.data.error || response.data.errors[0];
@@ -20,7 +21,7 @@ angular.module('pulledApp')
         default:
           toastr.error('Something unexpected occured, please try again');
       }
-    }
+    };
 
     return service;
 

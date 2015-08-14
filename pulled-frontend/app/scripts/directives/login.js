@@ -5,7 +5,7 @@ directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, 
   return {
     templateUrl: 'views/login.html',
     scope: true,
-    link: function(scope, elem, attr, controller) {
+    link: function(scope) {
       scope.isCollapsed = true;
       $('#login-btn').click(function(){
         scope.isCollapsed = !scope.isCollapsed;
@@ -34,5 +34,5 @@ directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, 
       };
 
     }
-  }
-}])
+  };
+}]);

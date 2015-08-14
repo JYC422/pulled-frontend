@@ -1,8 +1,9 @@
+"use strict";
+
 angular.module('pulledApp')
-  .factory('Session', ['User', '$localStorage', '$q', '$rootScope', function (User, $localStorage, $q, $rootScope) {
+  .factory('Session', ['User', '$localStorage', '$q', function (User, $localStorage, $q) {
 
     var service = {};
-    var userSession = '';
 
     service.signIn = function(user) {
       var defered= $q.defer();
@@ -18,11 +19,7 @@ angular.module('pulledApp')
       return promise;
     };
 
-    service.getSession = function(){
-      return $localStorage.user;
-    }
-
-    service.signOut = function(user) {
+    service.signOut = function() {
       var defered= $q.defer();
       var promise= defered.promise;
 
@@ -53,7 +50,7 @@ angular.module('pulledApp')
     };
 
     service.getSession = function(){
-      return user = new User($localStorage.userSession);
+      return new User($localStorage.userSession);
     };
 
 
@@ -67,9 +64,8 @@ angular.module('pulledApp')
       $localStorage.user = {
         email: user.email,
         authToken: user.token
-      }
+      };
     };
-
 
     return service;
 

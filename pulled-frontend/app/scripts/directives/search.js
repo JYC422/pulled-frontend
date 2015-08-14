@@ -6,28 +6,25 @@ directive("search", ['Session', '$location', 'Validation', function(Session, $lo
     restrict: "EA",
     templateUrl: "views/search.html",
     scope: true,
-    link: function(scope, elem, attr, controller) {
-
+    link: function(scope) {
 
       scope.search = function() {
   	    if (!Session.hasCurrentUser()){
   	      $('#loginModal').modal('show');
   	    } else {
-  	      getSearchResults();
+  	      scope.getSearchResults();
   	    }
-  	  }
+  	  };
 
   	  scope.signIn = function(){
   	    Session.signIn({user: scope.user}).then(function(response){
   	    toastr.success('Welcome ' + response.email, 'Login Success');
-  	    getSearchResults('vendor');
+  	    scope.getSearchResults('vendor');
   	    }, function(reason){
           console.log(reason);
           Validation.validate(reason);
   	    });
   	  };
-
-
 
       //TODO, change hardcoded vendor on switch with scope.user.type
   	  scope.getSearchResults = function (userType) {
@@ -39,18 +36,20 @@ directive("search", ['Session', '$location', 'Validation', function(Session, $lo
   	      break;
   	      case 'vendor':
   	        getVendorProducts();
-  	        $location.path('/contractor');
-  	      break
+  	        $location.path('/vendor');
+  	      break;
   	    }
-  	  }
+  	  };
+
+      //Private Functions
 
   	  var getVendorProducts = function() {
   	    // TODO, make request to obtain products
-  	  }
+  	  };
 
   	  var getContractorProducts = function() {
   	    // TODO, make request to obtain products
-  	  }
+  	  };
 		}
-  }
+  };
 }]);

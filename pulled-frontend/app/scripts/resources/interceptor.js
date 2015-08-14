@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module('pulledApp')
   .factory('PulledTokenInterceptor', function(){
     var authentication_token;
@@ -7,7 +9,6 @@ angular.module('pulledApp')
       authentication_token: function(token){
         authentication_token = token;
       },
-
       authentication_email: function(email){
         authentication_email = email;
       },
@@ -17,5 +18,5 @@ angular.module('pulledApp')
         config.headers["X-USER-EMAIL"] = authentication_email();
         return config;
       }
-    }
-})
+    };
+});

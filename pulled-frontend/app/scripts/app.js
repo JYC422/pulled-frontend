@@ -21,7 +21,7 @@ angular
 
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    $httpProvider.defaults.headers.common["Accept"] = "application/json";
+    $httpProvider.defaults.headers.common.Accept = "application/json";
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
     $httpProvider.interceptors.push('PulledTokenInterceptor');
 
@@ -54,6 +54,7 @@ angular
         templateUrl: 'views/order_status.html',
         controller: 'MainCtrl',
       })
+      
       .when('/purchase_bids', {
         templateUrl: 'views/purchase_bids.html',
         controller: 'MainCtrl',
@@ -68,22 +69,20 @@ angular
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: '',
+        controller: 'MainCtrl',
       })
       .when('/500', {
-        templateUrl: '500.html',
-        controller: '',
+        templateUrl: '500.html'
       })
       .when('/404', {
-        templateUrl: '404.html',
-        controller: '',
+        templateUrl: '404.html'
       })
       .otherwise({
         redirectTo: '/'
       });
   })
 
-  .run(function(PulledTokenInterceptor, Session, $rootScope){
+  .run(function(PulledTokenInterceptor, Session){
     PulledTokenInterceptor.authentication_token(Session.getAuthToken);
     PulledTokenInterceptor.authentication_email(Session.getAuthEmail);
   });

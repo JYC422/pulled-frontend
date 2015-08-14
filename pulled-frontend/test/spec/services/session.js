@@ -1,8 +1,13 @@
+'use strict';
+
 describe('Service: Session', function () {
 
   var $http,
-      API,
       fakedMainResponse,
+      $localStorage,
+      API_URL,
+      User,
+      $httpBackend,
       Session;
 
   // Load the myApp module, which contains the directive
@@ -14,7 +19,7 @@ describe('Service: Session', function () {
   $http =_$http_;
   API_URL = _API_URL_;
   Session = _Session_;
-  User = _User_
+  User = _User_;
 
   // Set up the mock http service responses
    $httpBackend = $injector.get('$httpBackend');
@@ -31,51 +36,27 @@ describe('Service: Session', function () {
   it('should expose getSession function', function(){
     expect(Session.getSession).toBeDefined();
     expect((typeof Session.getSession)).toEqual('function');
-  })
+  });
 
-  it('should expose getSession function', function(){
-    expect(Session.getSession).toBeDefined();
-    expect((typeof Session.getSession)).toEqual('function');
-  })
   it('should expose signIn function', function(){
     expect(Session.signIn).toBeDefined();
     expect((typeof Session.signIn)).toEqual('function');
-  })
+  });
 
   it('should expose signOut function', function(){
     expect(Session.signOut).toBeDefined();
     expect((typeof Session.signOut)).toEqual('function');
-  })
+  });
 
   it('should expose getAuthToken function', function(){
     expect(Session.getAuthToken).toBeDefined();
     expect((typeof Session.getAuthToken)).toEqual('function');
-  })
+  });
 
   it('should expose hasCurrentUser function', function(){
     expect(Session.hasCurrentUser).toBeDefined();
     expect((typeof Session.hasCurrentUser)).toEqual('function');
-  })
-
-  it('should expose getSession function', function(){
-    expect(Session.getSession).toBeDefined();
-    expect((typeof Session.getSession)).toEqual('function');
-  })
-
-  it('should expose getSession function', function(){
-    expect(Session.getSession).toBeDefined();
-    expect((typeof Session.getSession)).toEqual('function');
-  })
-
-  it('should expose getSession function', function(){
-    expect(Session.getSession).toBeDefined();
-    expect((typeof Session.getSession)).toEqual('function');
-  })
-
-  it('should expose getSession function', function(){
-    expect(Session.getSession).toBeDefined();
-    expect((typeof Session.getSession)).toEqual('function');
-  })
+  });
 
   describe("signIn function", function() {
     it("should set session properly", function () {
