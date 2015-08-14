@@ -44,7 +44,7 @@ angular
       })
       .when('/contractor_register', {
         templateUrl: 'views/contractor_register.html',
-        controller: 'MainCtrl',
+        controller: 'SignUpCtrl',
       })
       .when('/credit_application', {
         templateUrl: 'views/credit_application.html',

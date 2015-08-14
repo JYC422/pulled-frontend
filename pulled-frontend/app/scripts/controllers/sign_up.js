@@ -4,7 +4,7 @@ angular.module('pulledApp')
   .controller('SignUpCtrl', ['Register', '$scope', 'Validation', function (Register, $scope, Validation) {
 
   var resource = {
-      email: '',
+      email: 'fdsfdf',
       company_name: "ff",
       contact: "ff",
       personal_contact: "ff",
@@ -51,7 +51,7 @@ angular.module('pulledApp')
 
 
   initializeCtrl();
-  console.log($scope.vendor);
+  console.log($scope.contractor);
   // $scope.signUp($scope.contractor);
 
 }]);
