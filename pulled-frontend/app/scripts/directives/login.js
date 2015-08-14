@@ -15,8 +15,8 @@ directive('login', ['$rootScope', 'Session', 'Validation', function($rootScope, 
       $rootScope.userSession = Session.hasCurrentUser;
 
       scope.user = {
-        email: '',
-        password: '',
+        email: 'guillermo@toptierlabs.com',
+        password: 'password',
       };
 
       scope.signIn = function(){

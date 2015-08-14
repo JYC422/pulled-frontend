@@ -1,19 +1,19 @@
 <div class="container-fluid">
   <div style="margin-top: 4%; margin-bottom: 4%;}" class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
     <h1> Register </h1>
-    <form class="register-form" ng-submit = "signUp()">
+    <form class="register-form" ng-submit="signUp(vendor)">
       <fieldset>
         <legend>General Information</legend>
         <div class="col-xs-6">
           <div class="form-group">
             <label>Company Name</label>
-            <input class="form-control input-grey-box">
+            <input  class="form-control input-grey-box">
           </div>
         </div>
         <div class="col-xs-6">
           <div class="form-group">
             <label>Company Email</label>
-            <input class="form-control input-grey-box">
+            <input ng-model="vendor.email" type="email" class="form-control input-grey-box">
           </div>
         </div>
         <div class="col-xs-6">

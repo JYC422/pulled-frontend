@@ -4,7 +4,7 @@ angular.module('pulledApp')
   .controller('SignUpCtrl', ['Register', '$scope', 'Validation', function (Register, $scope, Validation) {
 
   var resource = {
-      email: 'hiperguille10@gmail.com',
+      email: '',
       company_name: "ff",
       contact: "ff",
       personal_contact: "ff",
@@ -19,6 +19,7 @@ angular.module('pulledApp')
     };
 
   $scope.signUp = function(user) {
+    console.log(user);
     Register.signUp({user: user}).then(function(response){
     toastr.success('Welcome ' + response.email, 'Login Success');
     }, function(reason){
@@ -42,13 +43,15 @@ angular.module('pulledApp')
 
   var createVendorInstance = function() {
     $scope.vendor = {};
-    angular.extend(resource, $scope.vendor);
-    $scope.vendor.license_number = "";
-    $scope.vendor.tax_id_number = "";
+    angular.copy(resource, $scope.vendor);
+    $scope.vendor.license_number = "fdsf";
+    $scope.vendor.tax_id_number = "dsfsd";
     $scope.vendor.type= 'Vendor';
   };
 
 
   initializeCtrl();
+  console.log($scope.vendor);
+  // $scope.signUp($scope.contractor);
 
 }]);
