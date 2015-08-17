@@ -1,118 +1,180 @@
-.sign-up-img {
-  background-image: url("../images/sign_up_header_image.png");
-  background-size: cover;
-  background-position: center top;
-  max-height: 750px;
-  min-height: 400px;
+$blue_label: #083643;
+
+.register-container {
+  min-height: 700px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 40px;
+  }
 }
 
-.sign-up-img .landing-info {
-  position: absolute;
-  top: 150px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.00);
-  padding: 20px;
-}
+.register-form {
+  legend {
+    font-size: 16px;
+    border-bottom: none;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 10px;
+  }
 
-.sign-up-img .landing-img-title,
-.sign-up-img .landing-img-content {
-  text-align: center;
-  font-weight: 400;
-}
+  fieldset {
+    margin-bottom: 20px;
+  }
 
-.sign-up-img .landing-img-title span {
-  font-weight: 400;
-}
-
-.sign-up-img .landing-img-content {
-  font-size: 26px;
-}
-
-.selection-container {
-  width: 100%;
-  padding: 30px;
-}
-
-.selection-container .as-contractor,
-.selection-container .as-vendor {
-  border: 1px solid #dfe7dc;
-  width: 100%;
-  max-width: 400px;
-  margin: auto;
-  background-color: #ffffff;
-}
-.selection-container .as-contractor .top-image {
-  height: 200px;
-  width: 100%;
-  background-image: url("../img/contractor_sign_up_img.png");
-  background-size: cover;
-  background-position: center top;
-}
-
-.selection-container .as-vendor .top-image {
-  height: 200px;
-  width: 100%;
-  background-image: url("../img/vendor_sign_up_img.png");
-  background-size: cover;
-  background-position: center top;
-}
-
-.selection-container .as-contractor .divider-title {
-  height: 50px;
-  line-height: 50px;
-  border-top: 7px solid #5ca72e;
-  width: 100%;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 100;
-}
-
-.selection-container .as-vendor .divider-title {
-  height: 50px;
-  line-height: 50px;
-  border-top: 7px solid #50b595;
-  width: 100%;
-  text-align: center;
-  font-size: 26px;
-  font-weight: 100;
-}
-
-.selection-container .as-contractor .explanation,
-.selection-container .as-vendor .explanation {
-  width: 100%;
-  padding: 20px;
-}
-
-.selection-container .as-contractor .explanation .title,
-.selection-container .as-vendor .explanation .title{
-  font-weight: 600;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-.as-contractor-button {
-  font-size: 18px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  margin: auto;
-  margin-top: 30px;
-  width: 220px;
-  line-height: 52px;
-  height: 60px;
-  cursor: pointer;
-  color: black;
-  border: 4px solid #65b633;
-  display: block;
-
-  &:hover {
-    text-decoration: none;
-    color: black;
+  label {
+    color: #8d8d8d;
   }
 
 
+  fieldset > div, fieldset > div > .form-group {
+    padding-left: 0;
+  }
+
+  .form-control {
+    border-radius: 0;
+  }
+
+  .form-actions {
+    float: right;
+
+    a {
+      margin-right: 15px;
+      line-height: 5;
+      color: #666666;
+    }
+  }
 }
 
-.as-vendor-button {
-  @extend .as-contractor-button;
-  border: 3px solid #4bc69a;
+.vendors-selector,
+.manufacturer-selector {
+  margin-top: 20px;
+}
+
+.btn-vendors-selector,
+.btn-manufacturer-selector {
+  background-color: #eeeded;
+  border: none;
+  border-radius: 3px;
+  padding: 7px;
+  margin-right: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 13px;
+}
+
+.btn-vendors-selector.active,
+.btn-manufacturer-selector.active {
+  background-color: #4ac59a;
+  color: white;
+}
+
+.selection-header {
+  color: #083643;
+  margin-bottom: 5px;
+}
+
+.vendors-selection,
+.manufacturer-selection {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.all-vendors,
+.all-manufacturer {
+  width: 45%;
+  float: left;
+}
+
+.selected-vendors,
+.selected-manufacturer {
+  width: 45%;
+  float: right;
+}
+
+#vendors-select,
+#manufacturer-select {
+  width: 100%;
+}
+
+#ms-vendors-select,
+#ms-manufacturer-select {
+  background: none;
+  width: 100%;
+}
+
+#ms-vendors-select .ms-selectable .ms-list,
+#ms-vendors-select .ms-selection,
+#ms-manufacturer-select .ms-selectable .ms-list,
+#ms-manufacturer-select .ms-selection {
+  background-color: #f7f7f7;
+}
+
+.ms-container .ms-list {
+  border: none;
+}
+
+#ms-vendors-select .ms-container .ms-selection .ms-list {
+  height: 250px;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable {
+  border-bottom: none;
+}
+
+.ms-container .ms-selectable li.ms-elem-selectable span {
+  width: 50%;
+}
+
+.credit-application-btn {
+  float: right;
+  width: 50%;
+  text-align: right;
+  color: #4ac59a;
+  text-decoration: underline;
+}
+
+#categories-dropdown,
+#categories-dropdown .dropdown-menu {
+  width: 100%;
+}
+
+.category-dropdown-btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 35px;
+  background-color: #f7f7f7;
+  margin-bottom: 5px;
+  line-height: 35px;
+  cursor: pointer;
+  cursor: hand;
+}
+.category-dropdown-btn .fa {
+  height: 35px;
+  line-height: 35px;
+  float: right;
+  text-align: center;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.location-form {
+  margin-top: 15px;
+}
+
+#add-vendor {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.btn-custom {
+  float: right;
+  margin-right: 0;
+  margin-bottom: 20px;
+  width: 120px;
 }
