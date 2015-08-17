@@ -8,7 +8,7 @@
           <div class="col-xs-6">
             <div class="form-group">
               <label>Company Name</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.company_name" required>
             </div>
           </div>
           <div class="col-xs-6">
@@ -16,10 +16,10 @@
               <label>Personal name</label>
               <div class='row'>
                 <div class="col-xs-6">
-                  <input ng-model="vendor.first_name" class="form-control input-grey-box" placeholder='First name'>
+                  <input ng-model="vendor.first_name" class="form-control input-grey-box" placeholder='First name' required>
                 </div>
                 <div class="col-xs-6">
-                  <input ng-model="vendor.last_name" class="form-control input-grey-box" placeholder='Last name'>
+                  <input ng-model="vendor.last_name" class="form-control input-grey-box" placeholder='Last name' required>
                 </div>
               </div>
             </div>
@@ -29,13 +29,13 @@
           <div class="col-xs-6">
             <div class="form-group">
               <label>Contact email</label>
-              <input type='email' ng-model='vendor.email' class="form-control input-grey-box">
+              <input type='email' ng-model='vendor.email' class="form-control input-grey-box" required>
             </div>
           </div>
           <div class="col-xs-6">
             <div class="form-group">
               <label>Contact number</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.contact" required>
             </div>
           </div>
         </div>
@@ -43,19 +43,19 @@
           <div class="col-xs-4">
             <div class="form-group">
               <label>Local ID number</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.local_id_number" required>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="form-group">
               <label>License number</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.license_number" required >
             </div>
           </div>
           <div class="col-xs-4">
             <div class="form-group">
               <label>Tax ID number</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.tax_id_number" required >
             </div>
           </div>
         </div>
@@ -63,19 +63,19 @@
           <div class="col-xs-4">
             <div class="form-group">
               <label>Street</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.address_attributes.street_address" required>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="form-group">
               <label>Apartment</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.address_attributes.secondary_address" required>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="form-group">
               <label>Zip</label>
-              <input class="form-control input-grey-box">
+              <input class="form-control input-grey-box" ng-model="vendor.address_attributes.zip" required>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@
         </div>
       </fieldset>
       <div class='form-actions'>
-        <a>I already have an account</a>
+        <a href="/#/">I already have an account</a>
         <button type="submit" class="btn btn-default btn-custom">Register</button>
       </div>
     </form>

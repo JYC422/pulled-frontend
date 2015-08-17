@@ -1,27 +1,29 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', function (Register, $scope, Validation) {
+  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', function (Register, $scope, Validation, $location) {
 
   var resource = {
-      email: 'guillermo@toptierlabs.com',
-      company_name: "ff",
-      contact: "ff",
-      personal_contact: "ff",
+      email: "",
+      company_name: "",
+      contact: "",
+      personal_contact: "",
+      first_name: "",
+      last_name: "",
       address_attributes: {
-        street_address: "ff",
-        secondary_address: "ff",
+        street_address: "",
+        secondary_address: "",
         state: "ff",
         city: "ff",
-        country: "ff",
-        zip: "ff"
+        country: "",
+        zip: 0
       }
     };
 
   $scope.signUp = function(user) {
-    console.log(user);
     Register.signUp({user: user}).then(function(response){
     toastr.success('Welcome ' + response.email, 'Login Success');
+    $location.path('/');
     }, function(reason){
       Validation.validate(reason);
     });
@@ -38,20 +40,20 @@ angular.module('pulledApp')
   var createContractorInstance = function() {
     $scope.contractor = {};
     angular.copy(resource, $scope.contractor);
-    $scope.contractor.type= 'Contractor';
+    $scope.contractor.type= "Contractor";
+    $scope.contractor.location_id_number = "";
   };
 
   var createVendorInstance = function() {
     $scope.vendor = {};
     angular.copy(resource, $scope.vendor);
     $scope.vendor.license_number = "";
-    $scope.vendor.tax_id_number = "dsfsd";
+    $scope.vendor.local_id_number = "";
+    $scope.vendor.tax_id_number = "";
     $scope.vendor.type= 'Vendor';
   };
 
 
   initializeCtrl();
-  console.log($scope.contractor);
-  // $scope.signUp($scope.contractor);
 
 }]);
