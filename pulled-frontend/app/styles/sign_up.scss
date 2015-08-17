@@ -1,29 +1,51 @@
+$blue_label: #083643;
+
 .register-container {
   min-height: 700px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 40px;
+  }
 }
 
-.register-container h1 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #083643;
-}
+.register-form {
+  legend {
+    font-size: 16px;
+    border-bottom: none;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 10px;
+  }
 
-.register-form legend {
-  font-size: 18px;
-  border-bottom: none;
-  font-weight: bold;
-}
+  fieldset {
+    margin-bottom: 20px;
+  }
 
-.register-form fieldset {
-  margin-bottom: 20px;
-}
+  label {
+    color: #8d8d8d;
+  }
 
-.register-form label {
-  color: #8d8d8d;
-}
 
-.register-form fieldset > div, .register-form fieldset > div > .form-group {
-  padding-left: 0;
+  fieldset > div, fieldset > div > .form-group {
+    padding-left: 0;
+  }
+
+  .form-control {
+    border-radius: 0;
+  }
+
+  .form-actions {
+    float: right;
+
+    a {
+      margin-right: 15px;
+      line-height: 5;
+      color: #666666;
+    }
+  }
 }
 
 .vendors-selector,
@@ -152,6 +174,7 @@
 
 .btn-custom {
   float: right;
-  margin-right: 15px;
+  margin-right: 0;
   margin-bottom: 20px;
+  width: 120px;
 }

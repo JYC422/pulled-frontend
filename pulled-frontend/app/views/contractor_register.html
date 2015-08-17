@@ -1,92 +1,98 @@
-  <div class="container-fluid">
-    <div style="margin-top: 4%; margin-bottom: 4%;}" class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-      <h1> Register </h1>
-      <form ng-submit="signUp(contractor)" class="register-form">
-        <fieldset>
-          <legend>General Information</legend>
+<div class="container-fluid">
+  <div style="margin-top: 4%; margin-bottom: 4%;}" class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <h1> Contractor register </h1>
+    <form class="register-form" ng-submit="signUp(vendor)">
+      <fieldset>
+        <legend>General information</legend>
+        <div class='row'>
           <div class="col-xs-6">
             <div class="form-group">
               <label>Company Name</label>
               <input class="form-control input-grey-box">
             </div>
+          </div>
+          <div class="col-xs-6">
             <div class="form-group">
-              <label>Address</label>
-              <input class="form-control input-grey-box">
+              <label>Company email</label>
+              <input type='email' ng-model='vendor.email' class="form-control input-grey-box">
             </div>
+
+          </div>
+        </div>
+        <div class='row'>
+          <div class="col-xs-6">
             <div class="form-group">
-              <label>Email</label>
-              <input ng-model="contractor.email" class="form-control input-grey-box">
+              <label>Company number</label>
+              <input class="form-control input-grey-box">
             </div>
           </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <label>Contact</label>
-              <input class="form-control input-grey-box">
-            </div>
-            <div class="form-group">
-              <label>Point of contact</label>
+              <label>Location ID number</label>
               <input class="form-control input-grey-box">
             </div>
           </div>
-          <div class="col-xs-12">
-            <div class="col-xs-4 form-group">
-              <label>City</label>
-              <select class="form-control input-grey-box">
-                <option>San Francisco</option>
-                <option>Los Angeles</option>
-                <option>San Jose</option>
-                <option>Las Vegas</option>
-              </select>
+        </div>
+        <div class='row'>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Personal name</label>
+              <div class='row'>
+                <div class="col-xs-6">
+                  <input ng-model="vendor.first_name" class="form-control input-grey-box" placeholder='First name'>
+                </div>
+                <div class="col-xs-6">
+                  <input ng-model="vendor.last_name" class="form-control input-grey-box" placeholder='Last name'>
+                </div>
+              </div>
             </div>
-            <div class="col-xs-4 form-group">
-              <label>State</label>
-              <select class="form-control input-grey-box">
-                <option>CA</option>
-                <option>NB</option>
-                <option>FL</option>
-                <option>VI</option>
-                <option>AL</option>
-              </select>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Personal number</label>
+              <input class="form-control input-grey-box">
             </div>
-            <div class="col-xs-4 form-group">
+          </div>
+        </div>
+        <div class='row'>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Street</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Apartment</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
               <label>Zip</label>
               <input class="form-control input-grey-box">
             </div>
           </div>
-        </fieldset>
-        <div class="selection-header clearfix">
-          <div class="vendors-selection">
-            Vendors selection
+        </div>
+        <div class='row'>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>State</label>
+              <select class="form-control input-grey-box"></select>
+            </div>
           </div>
-          <div class="all-vendors">
-            All vendors
-          </div>
-          <div class="selected-vendors">
-            Vendors selected
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>City</label>
+              <select class="form-control input-grey-box"></select>
+            </div>
           </div>
         </div>
-        <select multiple="multiple" id="vendors-select" name="vendors-select[]">
-          <option value='contractor1'>HM's Hoses</option>
-          <option value='contractor2'>HDPE Water Pipe</option>
-          <option value='contractor3'>Riddhi Impex</option>
-          <option value='contractor4'>ASW</option>
-          <option value='contractor5'>Rubber Hoses</option>
-          <option value='contractor6'>DM Hoses</option>
-          <option value='contractor7'>HoseWorld</option>
-          <option value='contractor8'>Faridabad</option>
-          <option value='contractor9'>Boltight Ltd</option>
-          <option value='contractor10'>Mumbai</option>
-        </select>
-
-        <fieldset>
-          <div class="vendors-selector">
-            <button class="btn-vendors-selector active">All vendors in category</button>
-            <button class="btn-vendors-selector">All vendors in your region</button>
-            <button class="btn-vendors-selector">All vendors in your location</button>
-          </div>
-        </fieldset>
-        <button type="submit" class="btn btn-default btn-custom">Sign Up</button>
-      </form>
-    </div>
-  </div><!-- /.container-fluid -->
-
+      </fieldset>
+      <div class='form-actions'>
+        <a>I already have an account</a>
+        <button type="submit" class="btn btn-default btn-custom">Register</button>
+      </div>
+    </form>
+  </div>
+</div><!-- /.container-fluid -->
