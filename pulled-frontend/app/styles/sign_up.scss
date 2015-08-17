@@ -90,7 +90,7 @@
   margin-bottom: 5px;
 }
 
-.selection-container .as-contractor .explanation .as-contractor-button {
+.as-contractor-button {
   font-size: 18px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
@@ -99,21 +99,20 @@
   width: 220px;
   line-height: 52px;
   height: 60px;
-  cursor: hand;
   cursor: pointer;
+  color: black;
   border: 4px solid #65b633;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+
 }
 
-.selection-container .as-vendor .explanation .as-vendor-button {
-  font-size: 18px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  margin: auto;
-  margin-top: 30px;
-  width: 220px;
-  line-height: 52px;
-  height: 60px;
-  cursor: hand;
-  cursor: pointer;
+.as-vendor-button {
+  @extend .as-contractor-button;
   border: 3px solid #4bc69a;
 }

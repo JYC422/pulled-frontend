@@ -16,11 +16,13 @@ angular.module('pulledApp')
           var errorMessage = '';
           if (response.data.error) {
             var errors = JSON.parse(response.data.error);
-            console.log(errors.email);
             if (errors.email) {
-              errorMessage = 'Email: ' + errors.email.join(',') + '\n';
+              errorMessage = 'Email: ' + errors.email.join(', ') + '\n';
             };
-            toastr.error(errorMessage);
+            if (errors.license_number) {
+              errorMessage = errorMessage + 'License Number: ' + errors.license_number.join(', ') + '\n';
+            };
+            toastr.error(errorMessage, 'Some fields are invalid');
           }
           break;
         case 404:

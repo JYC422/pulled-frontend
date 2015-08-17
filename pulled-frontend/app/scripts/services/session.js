@@ -50,13 +50,14 @@ angular.module('pulledApp')
     };
 
     service.getSession = function(){
-      return new User($localStorage.userSession);
+      return new User($localStorage.user);
     };
 
     service.setSession = function(user){
       $localStorage.user = {
         email: user.email,
-        authToken: user.token
+        authToken: user.token,
+        company_name: user.company_name
       };
     };
 
