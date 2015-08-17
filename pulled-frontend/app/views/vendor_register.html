@@ -1,80 +1,103 @@
 <div class="container-fluid">
   <div style="margin-top: 4%; margin-bottom: 4%;}" class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    <h1> Register </h1>
+    <h1> Vendor register </h1>
     <form class="register-form" ng-submit="signUp(vendor)">
       <fieldset>
-        <legend>General Information</legend>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Company Name</label>
-            <input  class="form-control input-grey-box">
+        <legend>General information</legend>
+        <div class='row'>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Personal name</label>
+              <div class='row'>
+                <div class="col-xs-6">
+                  <input ng-model="vendor.first_name" class="form-control input-grey-box" placeholder='First name'>
+                </div>
+                <div class="col-xs-6">
+                  <input ng-model="vendor.last_name" class="form-control input-grey-box" placeholder='Last name'>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Company Email</label>
-            <input ng-model="vendor.email" type="email" class="form-control input-grey-box">
+        <div class='row'>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Contact email</label>
+              <input type='email' ng-model='vendor.email' class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>Contact number</label>
+              <input class="form-control input-grey-box">
+            </div>
           </div>
         </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Company Number</label>
-            <input class="form-control input-grey-box">
+        <div class='row'>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Local ID number</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>License number</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Tax ID number</label>
+              <input class="form-control input-grey-box">
+            </div>
           </div>
         </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Location ID Number</label>
-            <input class="form-control input-grey-box">
+        <div class='row'>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Street</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Apartment</label>
+              <input class="form-control input-grey-box">
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label>Zip</label>
+              <input class="form-control input-grey-box">
+            </div>
           </div>
         </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Personal Name</label>
-            <input class="form-control input-grey-box">
+        <div class='row'>
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>State</label>
+              <select class="form-control input-grey-box"></select>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>Personal Number</label>
-            <input class="form-control input-grey-box">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>City</label>
+              <select class="form-control input-grey-box"></select>
+            </div>
           </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="form-group">
-            <label>Street</label>
-            <input class="form-control input-grey-box">
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="form-group">
-            <label>Number</label>
-            <input class="form-control input-grey-box">
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="form-group">
-            <label>Apartment</label>
-            <input class="form-control input-grey-box">
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>State</label>
-            <input class="form-control input-grey-box">
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label>City</label>
-            <input class="form-control input-grey-box">
-          </div>
-        </div>
-        <div id="add-vendor">
-          + Add New Vendor
         </div>
       </fieldset>
-      <button type="submit" class="btn btn-default btn-custom">Sign Up</button>
+      <div class='form-actions'>
+        <a>I already have an account</a>
+        <button type="submit" class="btn btn-default btn-custom">Register</button>
+      </div>
     </form>
   </div>
 </div><!-- /.container-fluid -->
