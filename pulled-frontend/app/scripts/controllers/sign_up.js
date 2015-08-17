@@ -4,7 +4,7 @@ angular.module('pulledApp')
   .controller('SignUpCtrl', ['Register', '$scope', 'Validation', function (Register, $scope, Validation) {
 
   var resource = {
-      email: 'fdsfdf',
+      email: 'guillermo@toptierlabs.com',
       company_name: "ff",
       contact: "ff",
       personal_contact: "ff",
@@ -44,7 +44,7 @@ angular.module('pulledApp')
   var createVendorInstance = function() {
     $scope.vendor = {};
     angular.copy(resource, $scope.vendor);
-    $scope.vendor.license_number = "fdsf";
+    $scope.vendor.license_number = "";
     $scope.vendor.tax_id_number = "dsfsd";
     $scope.vendor.type= 'Vendor';
   };
