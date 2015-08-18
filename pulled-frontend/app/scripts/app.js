@@ -28,7 +28,7 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'SignUpCtrl',
+        controller: 'MainCtrl',
       })
       .when('/sign_up', {
         templateUrl: 'views/sign_up.html',
@@ -65,11 +65,15 @@ angular
       })
       .when('/vendor', {
         templateUrl: 'views/vendor.html',
-        // controller: 'MainCtrl',
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
         controller: 'SignUpCtrl',
+        resolve: {
+          categories: function(CategoriesService){
+            return CategoriesService.getCategories();
+          }
+        }
       })
       .when('/500', {
         templateUrl: '500.html'
