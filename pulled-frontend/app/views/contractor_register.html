@@ -54,36 +54,49 @@
           </div>
         </div>
         <div class='row'>
+          <div class='col-xs-12'>
+            <div class="form-group">
+              <label>Address</label>
+              <input ng-model="autocomplete" class="form-control input-grey-box" ng-autocomplete options="options" details="details"/>
+            </div>
+          </div>
           <div class="col-xs-6">
             <div class="form-group">
-              <label>Street</label>
-              <input class="form-control input-grey-box" ng-model="contractor.address_attributes.street_address" required>
+              <label>Street address</label>
+              <div class='row'>
+                <div class='col-xs-4'>
+                  <input class="form-control input-grey-box" ng-model="details.street_number" ng-disabled='details == null' required>
+                </div>
+                <div class='col-xs-8'>
+                  <input class="form-control input-grey-box" ng-model="details.route" ng-disabled='details == null' required>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-xs-2">
             <div class="form-group">
               <label>Apartment</label>
-              <input class="form-control input-grey-box" ng-model="contractor.address_attributes.secondary_address" required>
+              <input class="form-control input-grey-box" ng-model="details.secondary_address" ng-disabled='details == null'>
             </div>
           </div>
           <div class="col-xs-4">
             <div class="form-group">
               <label>Zip</label>
-              <input class="form-control input-grey-box" ng-model="contractor.address_attributes.zip" required>
+              <input class="form-control input-grey-box" ng-model="details.postal_code" ng-disabled='details == null' required>
             </div>
           </div>
         </div>
         <div class='row'>
-          <div class="col-xs-6">
+          <div class="col-xs-2">
             <div class="form-group">
               <label>State</label>
-              <select class="form-control input-grey-box" ng-model="contractor.address_attributes.state" required></select>
+              <input class="form-control input-grey-box" ng-model="details.administrative_area_level_1" ng-disabled='details == null' maxlength="2" size="2" required>
             </div>
           </div>
-          <div class="col-xs-6">
+          <div class="col-xs-10">
             <div class="form-group">
               <label>City</label>
-              <select class="form-control input-grey-box" ng-model="contractor.address_attributes.city" required></select>
+              <input class="form-control input-grey-box" ng-model="details.locality" ng-disabled='details == null' required>
             </div>
           </div>
         </div>

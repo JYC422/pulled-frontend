@@ -1,12 +1,16 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'categories', 'CategoriesService', '$rootScope', function (Register, $scope, Validation, $location, categories, CategoriesService, $rootScope) {
+  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'CategoriesService', '$rootScope', function (Register, $scope, Validation, $location, CategoriesService, $rootScope) {
 
-  $scope.categories = categories;
+  $scope.categories = CategoriesService.getCategories();
   $scope.selectedCategory = "";
   $scope.selectedSubCategory = {};
   $scope.subCategories=[];
+
+  $scope.options = {
+    country: 'us'
+  }
 
   var resource = {
       email: "",
@@ -15,19 +19,21 @@ angular.module('pulledApp')
       personal_contact: "",
       first_name: "",
       last_name: "",
-      address_attributes: {
-        street_address: "",
-        secondary_address: "",
-        state: "ff",
-        city: "ff",
-        country: "",
-        zip: 0
-      }
+      address_attributes: {}
     };
 
+  $scope.setAddressAttributes = function(addr) {
+    addr.street_address = $scope.details.street_number + ' ' + $scope.details.route;
+    addr.secondary_address = $scope.details.secondary_address;
+    addr.zip = $scope.details.postal_code;
+    addr.state = $scope.details.administrative_area_level_1;
+    addr.city = $scope.details.locality;
+  }
+
   $scope.signUp = function(user) {
+    $scope.setAddressAttributes(user.address_attributes);
     Register.signUp({user: user}).then(function(response){
-    toastr.success('Welcome ' + response.email, 'Login Success');
+    toastr.success('Welcome ' + response.email, 'Registration Success');
     $location.path('/');
     }, function(reason){
       Validation.validate(reason);

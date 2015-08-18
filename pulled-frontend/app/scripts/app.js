@@ -9,7 +9,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngStorage',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngAutocomplete'
   ])
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')
