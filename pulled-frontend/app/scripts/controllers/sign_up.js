@@ -5,10 +5,8 @@ angular.module('pulledApp')
 
   $scope.categories = categories;
   $scope.selectedCategory = "";
-  $scope.selectedSubCategory = "";
+  $scope.selectedSubCategory = {};
   $scope.subCategories=[];
-
-
 
   var resource = {
       email: "",

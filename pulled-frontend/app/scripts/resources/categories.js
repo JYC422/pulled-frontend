@@ -6,7 +6,7 @@ angular.module('pulledApp')
     {
       subCategories: {
         method: 'GET',
-        url: API_URL + '/categories/:id/subcategories'
+        url: API_URL + '/categories/:id/sub_categories'
       }
     });
 }]);
