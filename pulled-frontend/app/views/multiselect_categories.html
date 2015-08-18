@@ -1,0 +1,18 @@
+<div class='row'>
+  <div class='col-xs-12'>
+    <div class="form-group">
+      <label>Category</label>
+      <select class="form-control input-grey-box" ng-options="category.id as category.name for category in categories" ng-model="selectedCategory" required>
+        <option value="" disabled>Select a category</option>
+      </select>
+    </div>
+  </div>
+</div>
+    <label class="ms-subcategory">Subcategories</label>
+    <label class="ms-selected-subcategory">Selected subcategories</label>
+<div class="row">
+  <div class="col-xs-12">
+    <select class="multi-selection" multiple="multiple" id="my-select" name="my-select[]" ng-options="subCategory.id as subCategory.name for subCategory in subCategories" ng-model="selectedSubCategory">
+    </select>
+  </div>
+</div>

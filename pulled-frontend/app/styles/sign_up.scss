@@ -171,22 +171,15 @@ $gray_pulled: #ebf1f5;
   .multi-selection {
     border-top: 1px solid $gray_pulled;
     padding-top: 15px;
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      max-height: 105px;
-      overflow: auto;
-
-      li {
-        color: #555;
-        cursor: pointer;
-
-        &:hover {opacity: 0.8}
-        &:nth-child(even) {background: $gray_pulled}
-        &:nth-child(odd) {background: #FFF}
-      }
-    }
   }
+
+  .ms-subcategory {
+      width: 54%;
+    }
+
+    .ms-selected-subcategory {
+      width: 45%;
+    }
+
 }
 

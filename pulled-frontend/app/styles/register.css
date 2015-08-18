@@ -92,10 +92,6 @@
   background-color: #f7f7f7;
 }
 
-.ms-container .ms-list {
-  border: none;
-}
-
 #ms-vendors-select .ms-container .ms-selection .ms-list {
   height: 250px;
 }

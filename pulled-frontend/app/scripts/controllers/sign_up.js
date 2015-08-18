@@ -1,20 +1,14 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'categories', 'CategoriesService', function (Register, $scope, Validation, $location, categories, CategoriesService) {
+  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'categories', 'CategoriesService', '$rootScope', function (Register, $scope, Validation, $location, categories, CategoriesService, $rootScope) {
 
   $scope.categories = categories;
   $scope.selectedCategory = "";
-  $scope.subCategories=['dfdsf', 'fdsfd', '0dfsdf'];
+  $scope.selectedSubCategory = "";
+  $scope.subCategories=[];
 
-  $scope.$watch('selectedCategory', function(newValue, oldValue){
-    if(oldValue !== newValue) {
-      CategoriesService.getSubCategories(newValue).then(function(data){
-        $scope.subCategories = data;
-        console.log($scope.subCategories);
-      })
-    }
-  }, true);
+
 
   var resource = {
       email: "",
