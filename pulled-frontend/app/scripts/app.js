@@ -46,6 +46,11 @@ angular
       .when('/contractor_register', {
         templateUrl: 'views/contractor_register.html',
         controller: 'SignUpCtrl',
+        resolve: {
+          categories: function(CategoriesService){
+            return CategoriesService.getCategories();
+          }
+        }
       })
       .when('/credit_application', {
         templateUrl: 'views/credit_application.html',

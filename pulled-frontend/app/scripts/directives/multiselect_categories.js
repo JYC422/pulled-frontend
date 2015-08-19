@@ -14,8 +14,8 @@ directive('multiselectCategories', ['$rootScope', 'Session', 'Validation', '$loc
             scope.subCategories = data;
             $timeout(function(){
               $("#my-select").multiSelect("refresh");
-            })
-          })
+            });
+          });
         }
       }, true);
 

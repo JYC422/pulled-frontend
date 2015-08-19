@@ -1,26 +1,28 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'CategoriesService', '$rootScope', function (Register, $scope, Validation, $location, CategoriesService, $rootScope) {
+  .controller('SignUpCtrl', ['Register', '$scope', 'Validation', '$location', 'CategoriesService', '$rootScope', 'categories', function (Register, $scope, Validation, $location, CategoriesService, $rootScope, categories) {
 
-  $scope.categories = CategoriesService.getCategories();
+  $scope.categories = categories;
   $scope.selectedCategory = "";
   $scope.selectedSubCategory = {};
   $scope.subCategories=[];
 
   $scope.options = {
     country: 'us'
-  }
+  };
 
   var resource = {
-      email: "",
-      company_name: "",
-      contact: "",
-      personal_contact: "",
-      first_name: "",
-      last_name: "",
-      address_attributes: {}
-    };
+    password: '12341234',
+    password_confirmation: '12341234',
+    email: "",
+    company_name: "",
+    contact: "",
+    personal_contact: "",
+    first_name: "",
+    last_name: "",
+    address_attributes: {}
+  };
 
   $scope.setAddressAttributes = function(addr) {
     addr.street_address = $scope.details.street_number + ' ' + $scope.details.route;
@@ -28,10 +30,12 @@ angular.module('pulledApp')
     addr.zip = $scope.details.postal_code;
     addr.state = $scope.details.administrative_area_level_1;
     addr.city = $scope.details.locality;
-  }
+  };
 
   $scope.signUp = function(user) {
+    setSubCategories(user);
     $scope.setAddressAttributes(user.address_attributes);
+    console.log(user);
     Register.signUp({user: user}).then(function(response){
     toastr.success('Welcome ' + response.email, 'Registration Success');
     $location.path('/');
@@ -41,11 +45,24 @@ angular.module('pulledApp')
   };
 
 
-  //Private functions
+  // Private functions
 
   var initializeCtrl = function() {
     createVendorInstance();
     createContractorInstance();
+  };
+
+  var setSubCategories = function(user) {
+    if (angular.equals(user.type, 'Vendor')) {
+        var values = [];
+      Object.keys($scope.selectedSubCategory).forEach(function (key) {
+        var value = $scope.selectedSubCategory[key];
+        values = values.concat(value);
+      });
+      if (values.length > 0) {
+        user.sub_category_ids = values;
+      }
+    }
   };
 
   var createContractorInstance = function() {

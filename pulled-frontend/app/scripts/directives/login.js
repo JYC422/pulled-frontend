@@ -44,12 +44,12 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
 
       scope.userCompanyName = function() {
         return Session.getSession().company_name || '';
-      }
+      };
 
       scope.signOut = function(){
         Session.signOut().then(function(){
           toastr.success('You have Log Out succesfully, see you next time', 'Logout Success');
-          $location.path('/')
+          $location.path('/');
         });
       };
 
