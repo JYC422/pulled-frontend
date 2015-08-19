@@ -1,3 +1,18 @@
 .header-item {
   cursor: pointer;
 };
+
+#header-logout {
+
+  .dropdown-profile {
+    background-color: #ebf1f5;
+  };
+
+  .dropdown-title {
+    &:hover  {
+      background-color: transparent;
+      color: #4bc69a;
+    }
+  }
+}
+

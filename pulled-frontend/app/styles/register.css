@@ -5,6 +5,7 @@
 .register-container h1 {
   font-size: 24px;
   font-weight: bold;
+  color: #083643;
 }
 
 .register-form legend {
@@ -89,10 +90,6 @@
 #ms-manufacturer-select .ms-selectable .ms-list,
 #ms-manufacturer-select .ms-selection {
   background-color: #f7f7f7;
-}
-
-.ms-container .ms-list {
-  border: none;
 }
 
 #ms-vendors-select .ms-container .ms-selection .ms-list {

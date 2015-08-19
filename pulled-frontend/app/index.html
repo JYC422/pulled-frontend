@@ -48,6 +48,8 @@
     <link rel="stylesheet" type="text/css" href="styles/checkout.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   </head>
   <body ng-app="pulledApp" ng-controller="ApplicationCtrl">
     <ng-include src="'views/header.html'"></ng-include>
@@ -72,48 +74,38 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-
-    <script src="scripts/js/contractor_register.js"></script>
-    <script src="https://cdn.rawgit.com/johnpolacek/stacktable.js/master/stacktable.js"></script>
-    <script src="scripts/js/jquery.multi-select.js"></script>
-    <script src="scripts/js/bootstrap-select.js"></script>
-    <script src="scripts/js/contractor.js"></script>
-    <script src="scripts/js/credit_application.js"></script>
-    <script src="scripts/js/order_status.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="scripts/js/index.js"></script>
-    <script src="scripts/js/tipuedrop_content.js"></script>
-    <script src="scripts/js/tipuedrop.js"></script>
-    <script src="scripts/js/search.js"></script>
-    <script src="scripts/js/login.js"></script>
-    <script src="scripts/js/login_modal.js"></script>
-    <script src="scripts/js/common.js"></script>
-    <script src="scripts/js/bootstrap.js"></script>
     <script src="scripts/app.js"></script>
-    <script src="scripts/js/checkout.js"></script>
-    <script src="scripts/js/purchase_bids.js"></script>
-    <script src="scripts/js/tipuedrop_content.js"></script>
-    <script src="scripts/js/vendor.js"></script>
-    <script src="scripts/js/vendor_register.js"></script>
 
     <!-- services  -->
     <script src="scripts/services/session.js"></script>
     <script src="scripts/services/validation.js"></script>
+    <script src="scripts/services/register.js"></script>
+    <script src="scripts/services/categories.js"></script>
+
     <!-- services  -->
+
+
 
     <!-- directives  -->
     <script src="scripts/directives/login.js"></script>
     <script src="scripts/directives/search.js"></script>
+    <script src="scripts/directives/multiselect_categories.js"></script>
+    <script src="scripts/directives/ngAutocomplete.js"></script>
+
     <!-- directives  -->
 
     <!-- controllers  -->
     <script src="scripts/controllers/application.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/sign_up.js"></script>
     <!--  end controllers  -->
+
+    <script src="scripts/js/jquery.multi-select.js"></script>
 
     <!-- resources  -->
     <script src="scripts/resources/user.js"></script>
+    <script src="scripts/resources/categories.js"></script>
     <script src="scripts/resources/interceptor.js"></script>
     <!-- end resources  -->
 

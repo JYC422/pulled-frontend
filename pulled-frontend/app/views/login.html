@@ -1,6 +1,13 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
   <ul class="nav navbar-nav navbar-right">
-    <li id="header-logout" ng-show="userSession()"  class="header-item"><a href="" ng-click="signOut()"><span>LOGOUT</span></a></li>
+    <li id="header-logout" ng-show="userSession()"  class="dropdown header-item">
+      <a class="dropdown-toggle dropdown-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userCompanyName()}}<span class="caret"></span></a>
+      <ul class="dropdown-menu dropdown-profile">
+        <li><a href="">Edit Information</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="" ng-click="signOut()">Log out</a></li>
+      </ul>
+    </li>
     <li id="header-login" ng-show="!userSession()" class="header-item">
       <a id="login-btn" ><span>LOGIN</span></a>
       <form ng-submit = "signIn()" collapse="isCollapsed">

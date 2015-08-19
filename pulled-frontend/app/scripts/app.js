@@ -9,7 +9,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngStorage',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngAutocomplete'
   ])
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')
@@ -44,7 +45,12 @@ angular
       })
       .when('/contractor_register', {
         templateUrl: 'views/contractor_register.html',
-        controller: 'MainCtrl',
+        controller: 'SignUpCtrl',
+        resolve: {
+          categories: function(CategoriesService){
+            return CategoriesService.getCategories();
+          }
+        }
       })
       .when('/credit_application', {
         templateUrl: 'views/credit_application.html',
@@ -54,7 +60,7 @@ angular
         templateUrl: 'views/order_status.html',
         controller: 'MainCtrl',
       })
-      
+
       .when('/purchase_bids', {
         templateUrl: 'views/purchase_bids.html',
         controller: 'MainCtrl',
@@ -65,11 +71,15 @@ angular
       })
       .when('/vendor', {
         templateUrl: 'views/vendor.html',
-        controller: 'MainCtrl',
       })
       .when('/vendor_register', {
         templateUrl: 'views/vendor_register.html',
-        controller: 'MainCtrl',
+        controller: 'SignUpCtrl',
+        resolve: {
+          categories: function(CategoriesService){
+            return CategoriesService.getCategories();
+          }
+        }
       })
       .when('/500', {
         templateUrl: '500.html'

@@ -90,7 +90,7 @@
   margin-bottom: 5px;
 }
 
-.selection-container .as-contractor .explanation .as-contractor-button {
+.as-contractor-button {
   font-size: 18px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
@@ -99,21 +99,87 @@
   width: 220px;
   line-height: 52px;
   height: 60px;
-  cursor: hand;
   cursor: pointer;
+  color: black;
   border: 4px solid #65b633;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+
 }
 
-.selection-container .as-vendor .explanation .as-vendor-button {
-  font-size: 18px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  margin: auto;
-  margin-top: 30px;
-  width: 220px;
-  line-height: 52px;
-  height: 60px;
-  cursor: hand;
-  cursor: pointer;
+.as-vendor-button {
+  @extend .as-contractor-button;
   border: 3px solid #4bc69a;
 }
+
+$blue_label: #083643;
+$gray_pulled: #ebf1f5;
+
+.register-container {
+  min-height: 700px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 40px;
+  }
+}
+
+.register-form {
+  legend {
+    font-size: 16px;
+    border-bottom: none;
+    font-weight: normal;
+    color: $blue_label;
+    margin-bottom: 10px;
+  }
+
+  fieldset {
+    margin-bottom: 20px;
+  }
+
+  label {
+    color: #8d8d8d;
+  }
+
+
+  fieldset > div, fieldset > div > .form-group {
+    padding-left: 0;
+  }
+
+  .form-control {
+    border-radius: 0;
+  }
+
+  .form-actions {
+    float: right;
+
+    a {
+      margin-right: 15px;
+      line-height: 5;
+      color: #666666;
+      cursor: pointer;
+    }
+  }
+
+  .multi-selection {
+    border-top: 1px solid $gray_pulled;
+    padding-top: 15px;
+  }
+
+  .ms-subcategory {
+      width: 54%;
+    }
+
+    .ms-selected-subcategory {
+      width: 45%;
+    }
+
+}
+
