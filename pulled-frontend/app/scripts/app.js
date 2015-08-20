@@ -70,10 +70,22 @@ angular
         controller: 'MainCtrl',
       })
       .when('/vendor', {
-        templateUrl: 'views/vendor.html',
+        templateUrl: 'views/vendor/inventory_managment.html',
+      })
+      .when('/contractor_profile', {
+        templateUrl: 'views/vendor/contractor_profile.html',
+      })
+      .when('/orders_managment', {
+        templateUrl: 'views/vendor/orders_managment.html',
+      })
+      .when('/contractor_managment', {
+        templateUrl: 'views/vendor/contractor_managment.html',
+      })
+      .when('/price_managment', {
+        templateUrl: 'views/vendor/price_managment.html',
       })
       .when('/vendor_register', {
-        templateUrl: 'views/vendor_register.html',
+        templateUrl: 'views/vendor/vendor_register.html',
         controller: 'SignUpCtrl',
         resolve: {
           categories: function(CategoriesService){

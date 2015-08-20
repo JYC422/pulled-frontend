@@ -53,11 +53,20 @@ angular.module('pulledApp')
       return new User($localStorage.user);
     };
 
+    service.isContractor = function() {
+      return ($localStorage.user) ?  $localStorage.user.user_type === 'Contractor': false;
+    };
+
+    service.isVendor = function() {
+      return ($localStorage.user) ?  $localStorage.user.user_type === 'Vendor': false;
+    }
+
     service.setSession = function(user){
       $localStorage.user = {
         email: user.email,
         authToken: user.token,
-        company_name: user.company_name
+        company_name: user.company_name,
+        user_type: user.user_type
       };
     };
 

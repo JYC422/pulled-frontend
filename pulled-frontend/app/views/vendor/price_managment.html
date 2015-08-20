@@ -1,0 +1,578 @@
+<div class="vendor-container" id="price-management">
+  <div class="container-fluid">
+    <div role="tabpanel" class="tier-tabs">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation"><a href="#plants" aria-controls="plants" role="tab" data-toggle="tab">PLANTS</a></li>
+        <li role="presentation" class="active"><a href="#irrigation" aria-controls="irrigation" role="tab" data-toggle="tab">IRRIGATION</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="plants">
+          <div class="categories-collapse panel-group" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#plants" href="#plants-tier-category-collapse-1" aria-expanded="true" aria-controls="plants-tier-category-collapse-1">
+                    Trees
+                  </a>
+                </h4>
+              </div>
+              <div id="plants-tier-category-collapse-1" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
+                  <div class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#plants-tier-subcategory-collapse-1" aria-expanded="true" aria-controls="plants-tier-subcategory-collapse-1">
+                            15-Gallon
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="plants-tier-subcategory-collapse-1" class="panel-collapse collapse in" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                          <div class="tiers-subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#plants-plants-tier-collapse-1" aria-expanded="true" aria-controls="plants-tier-collapse-1">
+                                    Tier 1
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>10,000 to 20,000 units - 20% discount</span>
+                                    <a class="contractors-modal">20 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="plants-plants-tier-collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#plants-tier-collapse-2" aria-expanded="false" aria-controls="plants-tier-collapse-2">
+                                    Tier 2
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>20,000 to 30,000 units - 23% discount</span>
+                                    <a class="contractors-modal">0 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="plants-tier-collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#plants-tier-collapse-3" aria-expanded="false" aria-controls="plants-tier-collapse-3">
+                                    Tier 3
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>30,000 to 50,000 units - 20% discount</span>
+                                    <a class="contractors-modal">5 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="plants-tier-collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> <!-- .tiers-subcategories-collapse -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#plants-tier-subcategory-collapse-2" aria-expanded="false" aria-controls="plants-tier-subcategory-collapse-2">
+                            24" Box
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="plants-tier-subcategory-collapse-2" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#plants-tier-subcategory-collapse-3" aria-expanded="false" aria-controls="plants-tier-subcategory-collapse-3">
+                            36" Box
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="plants-tier-subcategory-collapse-3" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#plants-tier-subcategory-collapse-4" aria-expanded="false" aria-controls="plants-tier-subcategory-collapse-4">
+                            48" Box
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="plants-tier-subcategory-collapse-4" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- .subcategories-collapse -->
+                </div>
+              </div>
+            </div>
+          </div> <!-- .categories-collapse -->
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="irrigation">
+          <div class="categories-collapse panel-group" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#plants" href="#tier-category-collapse-1" aria-expanded="true" aria-controls="tier-category-collapse-1">
+                    PVC Pipe
+                  </a>
+                </h4>
+              </div>
+              <div id="tier-category-collapse-1" class="panel-collapse collapse in" role="tabpanel">
+                <div class="panel-body">
+                  <div class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#tier-subcategory-collapse-1" aria-expanded="true" aria-controls="tier-subcategory-collapse-1">
+                            CLASS 200
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="tier-subcategory-collapse-1" class="panel-collapse collapse in" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                          <div class="tiers-subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#tier-collapse-1" aria-expanded="true" aria-controls="tier-collapse-1">
+                                    Tier 1
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>10,000 to 20,000 units - 20% discount</span>
+                                    <a class="contractors-modal">20 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="tier-collapse-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-collapse-2" aria-expanded="false" aria-controls="tier-collapse-2">
+                                    Tier 2
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>20,000 to 30,000 units - 23% discount</span>
+                                    <a class="contractors-modal">0 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="tier-collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel panel-default">
+                              <div class="panel-heading" role="tab">
+                                <h4 class="panel-title">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-collapse-3" aria-expanded="false" aria-controls="tier-collapse-3">
+                                    Tier 3
+                                    <i class="fa fa-angle-down"></i>
+                                  </a>
+                                  <div class="tier-details pull-right">
+                                    <span>30,000 to 50,000 units - 20% discount</span>
+                                    <a class="contractors-modal">5 contractors</a>
+                                  </div>
+                                </h4>
+                              </div>
+                              <div id="tier-collapse-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                  <div class="row tier-range">
+                                    <div class="col-xs-12 col-sm-2">
+                                      Define Tier
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10">
+                                      <div class="form-inline">
+                                        <select class="form-control input-grey-box">
+                                          <option>units</option>
+                                          <option>price</option>
+                                        </select>
+                                        <input type="number" name="from">
+                                        <span>to</span>
+                                        <input type="number" name="to">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Discount
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <input type="number" name="discount">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-margin">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Margin
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <div class="form-inline">
+                                        <span>%</span>
+                                        <input type="number" name="margin">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row tier-markup">
+                                    <div class="col-xs-6 col-sm-2">
+                                      Define Markup
+                                    </div>
+                                    <div class="col-xs-6 col-sm-4">
+                                      <input type="text" name="markup" placeholder="example: margin*0.2 - price"  data-toggle="tooltip" data-placement="top" title="Input the exprexion to caculate de mark up of your products">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div> <!-- .tiers-subcategories-collapse -->
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-subcategory-collapse-2" aria-expanded="false" aria-controls="tier-subcategory-collapse-2">
+                            UVR
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="tier-subcategory-collapse-2" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-subcategory-collapse-3" aria-expanded="false" aria-controls="tier-subcategory-collapse-3">
+                            SCH.40
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="tier-subcategory-collapse-3" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-subcategory-collapse-4" aria-expanded="false" aria-controls="tier-subcategory-collapse-4">
+                            PURPLE
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="tier-subcategory-collapse-4" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body panel-without-padding">
+                        </div>
+                      </div>
+                    </div>
+                  </div> <!-- .subcategories-collapse -->
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="tier-headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-category-collapse-2" aria-expanded="false" aria-controls="tier-headingFour">
+                    Fittings
+                  </a>
+                </h4>
+              </div>
+              <div id="tier-category-collapse-2" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="tier-headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-category-collapse-3" aria-expanded="false" aria-controls="tier-headingFour">
+                    Trees
+                  </a>
+                </h4>
+              </div>
+              <div id="tier-category-collapse-3" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="tier-headingFour">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#tier-category-collapse-4" aria-expanded="false" aria-controls="tier-headingFour">
+                    Shrubs
+                  </a>
+                </h4>
+              </div>
+              <div id="tier-category-collapse-4" class="panel-collapse collapse" role="tabpanel">
+                <div class="panel-body">
+                </div>
+              </div>
+            </div>
+          </div> <!-- .categories-collapse -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

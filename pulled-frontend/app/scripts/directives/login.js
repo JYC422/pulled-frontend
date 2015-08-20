@@ -27,6 +27,8 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
       });
 
       $rootScope.userSession = Session.hasCurrentUser;
+      $rootScope.contractorSession = Session.isContractor;
+      $rootScope.vendorSession = Session.isVendor;
 
       scope.user = {
         email: '',
@@ -35,8 +37,17 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
 
       scope.signIn = function(){
         Session.signIn({user: scope.user}).then(function(response){
+          console.log(response);
         toastr.success('Welcome ' + response.email, 'Login Success');
         scope.isCollapsed = !scope.isCollapsed;
+        switch(response.user_type){
+          case 'Vendor':
+            $location.path('/vendor');
+            break;
+          case 'Contractor':
+            $location.path('/contactor');
+            break;
+        }
         }, function(reason){
           Validation.validate(reason);
         });

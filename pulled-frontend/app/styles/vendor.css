@@ -1,6 +1,7 @@
 .vendor-container {
-  display: none;
+  display: block;
   min-height: 700px;
+  margin-top: 7%;
 }
 
 .vendor-header {
@@ -21,7 +22,7 @@
   margin-bottom: 5px;
   float: left;
   cursor: pointer;
-  cursor: hand;
+  color: #52727b;
 }
 
 .vendor-header-item.active span {
