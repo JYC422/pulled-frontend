@@ -1,3 +1,58 @@
+$dark-grey: #717171;
+
+  #inventoryModal {
+
+    .modal-body {
+      margin: 0 3.5%;
+    }
+
+    .input-half-width {
+      width: 49%;
+    }
+
+    .variant-img {
+      float: left;
+      height: 113px;
+      width: auto;
+      margin-right: 5%;
+      border: 1px solid #ccc;
+      padding: 1%;
+    }
+
+    .variant-field {
+      margin-bottom: 3%;
+
+       label {
+        color: $dark-grey;
+      }
+    }
+
+    .variant-info {
+      color: $dark-grey;
+      padding-bottom: 10%;
+      margin-bottom: 7%;
+      border-bottom: 1px solid #ccc;
+
+      p {
+       text-align: left;
+      }
+
+    }
+
+    .form-group {
+
+      label {
+        color: $dark-grey;
+        width: 10%;
+      }
+
+      input {
+        border-radius: 0px;
+      }
+    }
+  }
+
+
 
 .modal-content {
   color: #000000;
@@ -6,8 +61,7 @@
 .modal-header {
   position: relative;
   border-bottom: none;
-  margin-left: 35px;
-  margin-right: 25px;
+  margin: 0 6%;
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -17,7 +71,7 @@
   position: absolute;
   bottom: 0;
   height  : 1px;
-  width   : 90%;
+  width   : 100%;
   border-bottom: 1px solid #4ac59a;
 }
 
@@ -30,6 +84,7 @@
 .modal-header .close {
   height: 28px;
   opacity: 0.5;
+  margin: 0 0 0 15px;
 }
 
 .modal-header button.close span {
@@ -44,10 +99,7 @@
   opacity: 1.0;
 }
 
-.modal-body {
-  margin: 10px;
-  margin-left: 20px;
-}
+
 
 .modal-divider {
   margin-top: 10px;

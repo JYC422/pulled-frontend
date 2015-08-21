@@ -56,10 +56,6 @@ $(document).ready(function() {
     $('#contractor-edit').modal('show');
   });
 
-  $(".add-item-to-inventory").click(function(){
-    $('#inventoryModal').modal('show');
-  });
-
   $(".order-management").click(function(){
     $('#order-management-modal').modal('show');
   });

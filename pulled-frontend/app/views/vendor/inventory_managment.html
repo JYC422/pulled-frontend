@@ -1,29 +1,29 @@
 <div class="vendor-container" id="inventory-summary">
   <div class="container-fluid">
     <div class="vendor-container-header clearfix">
-      <button class="btn btn-default btn-custom add-item-to-inventory">
+      <button data-target="#inventoryModal" data-toggle="modal" class="btn btn-default btn-custom add-item-to-inventory">
         <i class="fa fa-plus"></i>&nbsp;Add item to Inventory
       </button>
     </div>
-    <div class="categories-collapse panel-group" aria-multiselectable="true">
+    <div ng-repeat="inventory_item in inventory" class="categories-collapse panel-group" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#category-collapse-1" aria-expanded="true">
+            <a data-toggle="collapse" data-target="#category-collapse-1" aria-expanded="true">
               <span class="collapse-arrow"></span>
-              Plants
+                {{inventory_item.inventory.category.name}}
             </a>
           </h4>
         </div>
         <div id="category-collapse-1" class="panel-collapse collapse in">
           <div class="panel-body">
-            <div class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+            <div ng-repeat="sub_category in inventory_item.inventory.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#subcategories-collapse-1" aria-expanded="true" aria-controls="subcategories-collapse-1">
+                    <a data-toggle="collapse" data-parent="#accordion" data-target="#subcategories-collapse-1" aria-expanded="true" aria-controls="subcategories-collapse-1">
                       <span class="collapse-arrow"></span>
-                      Trees
+                      {{sub_category.name}}
                     </a>
                   </h4>
                 </div>
@@ -34,276 +34,41 @@
                         <tr>
                           <th>Status</th>
                           <th>SKU <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Product Descriprion <i class="fa fa-angle-down hidden-xs"></i></th>
+                          <th>Product Descripion <i class="fa fa-angle-down hidden-xs"></i></th>
                           <th>Date Created <i class="fa fa-angle-down hidden-xs"></i></th>
+                          <th>Last Modified <i class="fa fa-angle-down hidden-xs"></i></th>
                           <th>Available <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th></th>
+                          <th>SubCategories <i class="fa fa-angle-down hidden-xs"></i></th>
+                          <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438A</td>
+                        <tr ng-repeat="vendor_variant in subcategory">
+                          <td>{{vendor_variant.status}}</td>
+                          <td>{{vendor_variant.sku}}</td>
                           <td>
                             <div class="row">
                               <div class="product-image col-xs-4">
                                 <img src="img/tree_1.png"/>
                               </div>
                               <div class="product-desc col-xs-8">
-                                ID: 171-486-459<br>Crepe Myrtle<br>15 Gallon $28.50
+                                ID: {{vendor_variant.id}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price}}
                               </div>
                             </div>
                           </td>
                           <td>20 JAN 2015 at 12:30 p.m.</td>
-                          <td>1,000 Ea.</td>
+                          <td>20 FEB 2015 at 12:30 p.m.</td>
+                          <td>{{vendor_variant.stock}}</td>
                           <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
+                            <span class="label label-default">SubCategory 1</span>
+                            <span class="label label-default">SubCategory 2</span>
+                          </td>
+                          <td>
+                            <button class="btn btn-primary add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/tree_2.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 121-056-790<br>Cottonwood<br>24'' Box $118.50
-                              </div>
-                            </div>
-                          </td>
-                          <td>20 JAN 2015 at 10:30 a.m.</td>
-                          <td>800 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/tree_3.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 121-066-790<br>Valley Oak<br>24'' Box $128,50
-                              </div>
-                            </div>
-                          </td>
-                          <td>05 JAN 2015 at 09:30 a.m.</td>
-                          <td>1,450 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/tree_4.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 172-486-889<br>Torrey Pine<br>24'' Box $220.00
-                              </div>
-                            </div>
-                          </td>
-                          <td>20 FEB 2015 at 01:15 p.m.</td>
-                          <td>500 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/tree_5.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 243-216-907<br>California Pepper<br>36'' Box $325.00
-                              </div>
-                            </div>
-                          </td>
-                          <td>10 JAN 2015 at 08:00 a.m.</td>
-                          <td>120 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/tree_6.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 203-565-896<br>California Sycamore<br>48'' Box $425.00
-                              </div>
-                            </div>
-                          </td>
-                          <td>20 MAR 2015 at 02:10 p.m.</td>
-                          <td>90 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#subcategories-collapse-3" aria-expanded="false" aria-controls="subcategories-collapse-3">
-                      <span class="collapse-arrow"></span>
-                      Shrubs
-                    </a>
-                  </h4>
-                </div>
-                <div id="subcategories-collapse-3" class="panel-collapse collapse" role="tabpanel">
-                  <div class="panel-body panel-without-padding">
-                    <table class="green-table green-border mobile-card-table">
-                      <thead>
-                        <tr>
-                          <th>Status</th>
-                          <th>SKU <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Product Descriprion <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Date Created <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Available <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/shrubs_1.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 323-497-2901<br>Boxwood<br>1 Gallon $3.50
-                              </div>
-                            </div>
-                          </td>
-                          <td>02 MAR  at 01:30 p.m.</td>
-                          <td>1,100 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/shrubs_2.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 343-427-2801<br>Boxwood<br>5 Gallon $7.50
-                              </div>
-                            </div>
-                          </td>
-                          <td>22 MAR  at 07:30 a.m.</td>
-                          <td>2,000 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                  <h4 class="panel-title">
-                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#subcategories-collapse-2" aria-expanded="false" aria-controls="subcategories-collapse-2">
-                      <span class="collapse-arrow"></span>
-                      Ground Cover
-                    </a>
-                  </h4>
-                </div>
-                <div id="subcategories-collapse-2" class="panel-collapse collapse" role="tabpanel">
-                  <div class="panel-body panel-without-padding">
-                    <table class="green-table green-border mobile-card-table">
-                      <thead>
-                        <tr>
-                          <th>Status</th>
-                          <th>SKU <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Product Descriprion <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Date Created <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Available <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/ground_cover_1.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 413-427-2201<br>Myoporum<br>1 Gallon $3.50
-                              </div>
-                            </div>
-                          </td>
-                          <td>10 FEB  at 08:30 a.m.</td>
-                          <td>750 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Active</td>
-                          <td>T-4-5438B</td>
-                          <td>
-                            <div class="row">
-                              <div class="product-image col-xs-4">
-                                <img src="img/ground_cover_2.png"/>
-                              </div>
-                              <div class="product-desc col-xs-8">
-                                ID: 473-517-1921<br>Rosemary<br>1 Gallon $2.95
-                              </div>
-                            </div>
-                          </td>
-                          <td>01 FEB  at 09:30 a.m.</td>
-                          <td>1,625 Ea.</td>
-                          <td>
-                            <button class="btn btn-default btn-custom add-item-to-inventory">
-                              <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
+                            <button class="btn btn-warning add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
+                              <span>Delete&nbsp;</span><i class="fa fa-times"></i>
                             </button>
                           </td>
                         </tr>
@@ -316,37 +81,81 @@
           </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" href="#category-collapse-2" aria-expanded="false">
-              <span class="collapse-arrow"></span>
-              Irrigation
-            </a>
-          </h4>
-        </div>
-        <div id="category-collapse-2" class="panel-collapse collapse">
-          <div class="panel-body">
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" href="#category-collapse-3" aria-expanded="false">
-              <span class="collapse-arrow"></span>
-              Tools
-            </a>
-          </h4>
-        </div>
-        <div id="category-collapse-3" class="panel-collapse collapse">
-          <div class="panel-body">
-          </div>
-        </div>
-      </div>
     </div> <!-- .categories-collapse -->
   </div>
 </div>
+
+<!-- Add Item to Inventory Modal -->
+    <div class="modal fade" id="inventoryModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <img type="button" class="close" data-dismiss="modal" aria-label="Close" src="img/modal_close.png"></img>
+            <h4 class="modal-title">NEW ITEM</h4>
+          </div>
+
+          <form>
+            <div class="modal-body">
+              <div class="form-group">
+                <label class="foo" for="name">Search Product:</label>
+                <input class="form-control" name="name">
+              </div>
+              <div class="form-group variant-info">
+                <img class="variant-img" src="img/invoice_details_1.png">
+                <p>Category</p>
+                <p>Irrigation</p>
+                <p>SubCategories</p>
+                <p>Pipes,Gardering,Outside</p>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>Manofacturer:</label>
+                </div>
+                <div class="co-xs-9">
+                  <input class="form-control input-half-width">
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>ID:</label>
+                </div>
+                <div class="co-xs-9">
+                  <input class="form-control input-half-width">
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>SKU:</label>
+                </div>
+                <div class="co-xs-9">
+                  <input class="form-control input-half-width">
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>Main Category:</label>
+                </div>
+                <div class="co-xs-9">
+                  <select class="form-control input-half-width"></select>
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>Price:</label>
+                </div>
+                <div class="co-xs-6">
+                  <input class="form-control input-half-width">
+                </div>
+                <div class="co-xs-3">
+                  <select class="form-control input-half-width"></select>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 

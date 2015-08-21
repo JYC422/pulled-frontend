@@ -71,6 +71,7 @@ angular
       })
       .when('/vendor', {
         templateUrl: 'views/vendor/inventory_managment.html',
+        controller: 'InventoryCtrl',
       })
       .when('/contractor_profile', {
         templateUrl: 'views/vendor/contractor_profile.html',
