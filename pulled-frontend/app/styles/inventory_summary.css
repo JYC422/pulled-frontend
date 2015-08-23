@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.panel-title {
+  cursor: pointer;
+}
+
 .inventory-sorter p {
   font-size: 17px;
   text-align: left;

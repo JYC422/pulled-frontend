@@ -4,7 +4,7 @@ angular.module('pulledApp')
   .controller('InventoryCtrl', ['$scope', function ($scope) {
 
 $scope.inventory = [{
-  inventory: {
+  inventory: {  //not necessary
     category: {
       id: 1,
       name: 'Beauty',
@@ -22,7 +22,11 @@ $scope.inventory = [{
             vvid: "7285047871",
             sku: "8898434993",
             status: "inactive",
-            unit: "dignissimos"
+            unit: "dignissimos",
+            img: "img/no-thumb.png",  //needed
+            created_at: "20 JAN 2015 at 12:30 p.m.",  //needed
+            last_modified: "20 FEB 2015 at 12:30 p.m."  //needed
+
           },
           {
             id: 2,
@@ -32,7 +36,10 @@ $scope.inventory = [{
             vvid: "7285047871",
             sku: "8898434993",
             status: "inactive",
-            unit: "dignissimos"
+            unit: "dignissimos",
+            img: "img/no-thumb.png",
+            created_at: "20 JAN 2015 at 12:30 p.m.",
+            last_modified: "20 FEB 2015 at 12:30 p.m."
           }]
 
       }]

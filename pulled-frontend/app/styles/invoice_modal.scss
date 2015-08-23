@@ -6,8 +6,22 @@ $dark-grey: #717171;
       margin: 0 3.5%;
     }
 
+    .inactive_status {
+      color: red;
+      font-weight: bolder;
+    }
+
+    .active_status {
+      color: lightgreen;
+      font-weight: bolder;
+    }
+
     .input-half-width {
       width: 49%;
+    }
+
+    .search-wrapper {
+      margin-bottom: 8%;
     }
 
     .variant-img {
@@ -33,21 +47,25 @@ $dark-grey: #717171;
       margin-bottom: 7%;
       border-bottom: 1px solid #ccc;
 
+      .variant-info-title {
+        margin-bottom: 2px;
+      }
+
+      .variant-info-result {
+        font-weight: bolder;
+      }
+
       p {
        text-align: left;
       }
 
     }
 
-    .form-group {
+    .modal-body {
 
       label {
         color: $dark-grey;
-        width: 10%;
-      }
-
-      input {
-        border-radius: 0px;
+        padding: 5%;
       }
     }
   }

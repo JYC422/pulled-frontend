@@ -40,7 +40,7 @@ angular.module('pulledApp')
     toastr.success('Welcome ' + response.email, 'Registration Success');
     $location.path('/');
     }, function(reason){
-      Validation.validate(reason);
+      // Validation.validate(reason);
     });
   };
 

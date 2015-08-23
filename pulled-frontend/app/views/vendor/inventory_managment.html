@@ -7,6 +7,7 @@
     </div>
     <div ng-repeat="inventory_item in inventory" class="categories-collapse panel-group" aria-multiselectable="true">
       <div class="panel panel-default">
+
         <div class="panel-heading" role="tab">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-target="#category-collapse-1" aria-expanded="true">
@@ -15,8 +16,10 @@
             </a>
           </h4>
         </div>
+
         <div id="category-collapse-1" class="panel-collapse collapse in">
           <div class="panel-body">
+            
             <div ng-repeat="sub_category in inventory_item.inventory.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
@@ -43,31 +46,31 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr ng-repeat="vendor_variant in subcategory">
+                        <tr ng-repeat="vendor_variant in sub_category.vendor_variants">
                           <td>{{vendor_variant.status}}</td>
                           <td>{{vendor_variant.sku}}</td>
                           <td>
                             <div class="row">
                               <div class="product-image col-xs-4">
-                                <img src="img/tree_1.png"/>
+                                <img ng-src="{{vendor_variant.img}}"/>
                               </div>
                               <div class="product-desc col-xs-8">
                                 ID: {{vendor_variant.id}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price}}
                               </div>
                             </div>
                           </td>
-                          <td>20 JAN 2015 at 12:30 p.m.</td>
-                          <td>20 FEB 2015 at 12:30 p.m.</td>
+                          <td>{{vendor_variant.created_at}}</td>
+                          <td>{{vendor_variant.last_modified}}</td>
                           <td>{{vendor_variant.stock}}</td>
                           <td>
                             <span class="label label-default">SubCategory 1</span>
                             <span class="label label-default">SubCategory 2</span>
                           </td>
                           <td>
-                            <button class="btn btn-primary add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
+                            <button class="btn btn-primary add-item-to-inventory">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
-                            <button class="btn btn-warning add-item-to-inventory"><!-- Change css for correct event on server add-item-to-inventory -->
+                            <button class="btn btn-warning add-item-to-inventory">
                               <span>Delete&nbsp;</span><i class="fa fa-times"></i>
                             </button>
                           </td>
@@ -97,58 +100,89 @@
 
           <form>
             <div class="modal-body">
-              <div class="form-group">
-                <label class="foo" for="name">Search Product:</label>
-                <input class="form-control" name="name">
+              <div class="row search-wrapper">
+                <div class="col-xs-4">
+                  <label>Search Product:</label>
+                </div>
+                <div class="col-xs-8">
+                 <input class="form-control" name="name">
+                </div>
               </div>
               <div class="form-group variant-info">
                 <img class="variant-img" src="img/invoice_details_1.png">
-                <p>Category</p>
-                <p>Irrigation</p>
-                <p>SubCategories</p>
-                <p>Pipes,Gardering,Outside</p>
+                <p class="variant-info-title">Category</p>
+                <p class="variant-info-result">Irrigation</p>
+                <p class="variant-info-title">SubCategories</p>
+                <p class="variant-info-result">Pipes,Gardering,Outside</p>
               </div>
               <div class="row variant-field">
                 <div class="col-xs-3">
                   <label>Manofacturer:</label>
                 </div>
-                <div class="co-xs-9">
-                  <input class="form-control input-half-width">
+                <div class="col-xs-5">
+                 <input class="form-control">
                 </div>
               </div>
               <div class="row variant-field">
                 <div class="col-xs-3">
                   <label>ID:</label>
                 </div>
-                <div class="co-xs-9">
-                  <input class="form-control input-half-width">
+                <div class="col-xs-5">
+                 <input class="form-control">
                 </div>
               </div>
               <div class="row variant-field">
                 <div class="col-xs-3">
                   <label>SKU:</label>
                 </div>
-                <div class="co-xs-9">
-                  <input class="form-control input-half-width">
+                <div class="col-xs-5">
+                 <input class="form-control">
                 </div>
               </div>
               <div class="row variant-field">
                 <div class="col-xs-3">
                   <label>Main Category:</label>
                 </div>
-                <div class="co-xs-9">
-                  <select class="form-control input-half-width"></select>
+                <div class="col-xs-5">
+                 <select class="form-control"></select>
                 </div>
               </div>
               <div class="row variant-field">
                 <div class="col-xs-3">
                   <label>Price:</label>
                 </div>
-                <div class="co-xs-6">
-                  <input class="form-control input-half-width">
+                <div class="col-xs-5">
+                  <input class="form-control">
                 </div>
-                <div class="co-xs-3">
-                  <select class="form-control input-half-width"></select>
+                <div class="col-xs-3">
+                  <select class="form-control"></select>
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>Stock:</label>
+                </div>
+                <div class="col-xs-5">
+                  <input class="form-control">
+                </div>
+                <div class="col-xs-3">
+                  {{Each}}
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3">
+                  <label>Status:</label>
+                </div>
+                <div class="col-xs-5">
+                 <select class="form-control" ng-class="{active_status: (newItem.status == 'Active'), inactive_status: (newItem.status == 'Inactive')}" ng-model="newItem.status">
+                   <option class="active_status">Active</option>
+                   <option class="inactive_status">Inactive</option>
+                 </select>
+                </div>
+              </div>
+              <div class="row variant-field">
+                <div class="col-xs-3 col-xs-offset-9">
+                  <button class="btn btn-default btn-custom">Add Item</button>
                 </div>
               </div>
             </div>
