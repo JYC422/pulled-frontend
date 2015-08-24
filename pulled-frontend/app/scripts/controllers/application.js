@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('ApplicationCtrl', function () {
+  .controller('ApplicationCtrl', ['$rootScope', function ($rootScope) {
 
   	toastr.options = {
   		positionClass: "toast-top-center",
       escapeHtml: true
   	};
 
-  });
+    $rootScope._ = _;
+
+  }]);

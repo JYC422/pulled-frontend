@@ -1,7 +1,7 @@
 <div class="vendor-container" id="inventory-summary">
   <div class="container-fluid">
     <div class="vendor-container-header clearfix">
-      <button data-target="#inventoryModal" data-toggle="modal" class="btn btn-default btn-custom add-item-to-inventory">
+      <button data-target="#inventoryModal" ng-click="newProduct()" data-toggle="modal" class="btn btn-default btn-custom add-item-to-inventory">
         <i class="fa fa-plus"></i>&nbsp;Add item to Inventory
       </button>
     </div>
@@ -19,7 +19,7 @@
 
         <div id="category-collapse-1" class="panel-collapse collapse in">
           <div class="panel-body">
-            
+
             <div ng-repeat="sub_category in inventory_item.inventory.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
@@ -60,14 +60,13 @@
                             </div>
                           </td>
                           <td>{{vendor_variant.created_at}}</td>
-                          <td>{{vendor_variant.last_modified}}</td>
+                          <td>{{vendor_variant.updated_at}}</td>
                           <td>{{vendor_variant.stock}}</td>
                           <td>
-                            <span class="label label-default">SubCategory 1</span>
-                            <span class="label label-default">SubCategory 2</span>
+                            <span ng-repeat="secondarySubcategory in vendor_variant.sub_categories" class="label label-default secondary-subcategory">{{secondarySubcategory.name}}</span>
                           </td>
                           <td>
-                            <button class="btn btn-primary add-item-to-inventory">
+                            <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#inventoryModal" data-toggle="modal">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
                             <button class="btn btn-warning add-item-to-inventory">
@@ -88,112 +87,110 @@
   </div>
 </div>
 
-<!-- Add Item to Inventory Modal -->
-    <div class="modal fade" id="inventoryModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
+<!-- Add Item to Inventory  -->
+  <div class="modal fade" id="inventoryModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-          <div class="modal-header">
-            <img type="button" class="close" data-dismiss="modal" aria-label="Close" src="img/modal_close.png"></img>
-            <h4 class="modal-title">NEW ITEM</h4>
-          </div>
+        <div class="modal-header">
+          <img type="button" class="close" data-dismiss="modal" aria-label="Close" src="img/modal_close.png"></img>
+          <h4 class="modal-title">{{modalTitle}}</h4>
+        </div>
 
-          <form>
-            <div class="modal-body">
-              <div class="row search-wrapper">
-                <div class="col-xs-4">
-                  <label>Search Product:</label>
-                </div>
-                <div class="col-xs-8">
-                 <input class="form-control" name="name">
-                </div>
+        <form>
+          <div class="modal-body">
+            <div class="row search-wrapper" ng-hide="disableSearch">
+              <div class="col-xs-4">
+                <label>Search Product:</label>
               </div>
-              <div class="form-group variant-info">
-                <img class="variant-img" src="img/invoice_details_1.png">
-                <p class="variant-info-title">Category</p>
-                <p class="variant-info-result">Irrigation</p>
-                <p class="variant-info-title">SubCategories</p>
-                <p class="variant-info-result">Pipes,Gardering,Outside</p>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>Manofacturer:</label>
-                </div>
-                <div class="col-xs-5">
-                 <input class="form-control">
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>ID:</label>
-                </div>
-                <div class="col-xs-5">
-                 <input class="form-control">
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>SKU:</label>
-                </div>
-                <div class="col-xs-5">
-                 <input class="form-control">
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>Main Category:</label>
-                </div>
-                <div class="col-xs-5">
-                 <select class="form-control"></select>
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>Price:</label>
-                </div>
-                <div class="col-xs-5">
-                  <input class="form-control">
-                </div>
-                <div class="col-xs-3">
-                  <select class="form-control"></select>
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>Stock:</label>
-                </div>
-                <div class="col-xs-5">
-                  <input class="form-control">
-                </div>
-                <div class="col-xs-3">
-                  {{Each}}
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3">
-                  <label>Status:</label>
-                </div>
-                <div class="col-xs-5">
-                 <select class="form-control" ng-class="{active_status: (newItem.status == 'Active'), inactive_status: (newItem.status == 'Inactive')}" ng-model="newItem.status">
-                   <option class="active_status">Active</option>
-                   <option class="inactive_status">Inactive</option>
-                 </select>
-                </div>
-              </div>
-              <div class="row variant-field">
-                <div class="col-xs-3 col-xs-offset-9">
-                  <button class="btn btn-default btn-custom">Add Item</button>
-                </div>
+              <div class="col-xs-8">
+               <input class="form-control" >
               </div>
             </div>
-          </form>
-        </div>
+            <div class="form-group variant-info">
+              <img class="variant-img" ng-src="{{item.img}}">
+              <p class="variant-info-title">Category</p>
+              <p class="variant-info-result">{{item.category}}</p>
+              <p class="variant-info-title">SubCategories</p>
+              <p class="variant-info-result">{{getSubCategories(item)}}</p>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Manofacturer:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" ng-model="item.manufacturer" >
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>ID:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" ng-model="item.id">
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>SKU:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" ng-model="item.sku">
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Main Sub category:</label>
+              </div>
+              <div class="col-xs-5">
+               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories"  ng-model="item.main_subcategory.id">
+                 <option value ="" disabled>Select main subcategory</option>
+               </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Price:</label>
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" ng-model="item.price">
+              </div>
+              <div class="col-xs-3">
+                <select class="form-control" ng-options="unit for unit in item.possible_units" ng-model="item.unit">
+                  <option value ="" disabled> Unit</option>
+                </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Stock:</label>
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" ng-model="item.stock">
+              </div>
+              <div class="col-xs-3 unit">
+                {{item.unit}}
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Status:</label>
+              </div>
+              <div class="col-xs-5">
+               <select class="form-control"  ng-model="item.status" ng-class="{active_status: (item.status == 'Active'), inactive_status: (item.status == 'Inactive')}">
+                 <option value ="" disabled>Select status</option>
+                 <option class="active_status">Active</option>
+                 <option class="inactive_status">Inactive</option>
+               </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3 col-xs-offset-9">
+                <button class="btn btn-default btn-custom">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-
-
-
-
-
-
-
+  </div>

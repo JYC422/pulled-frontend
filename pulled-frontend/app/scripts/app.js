@@ -17,6 +17,8 @@ angular
 
   //For testing purposes
   .constant('toastr', toastr)
+  // lodash support
+  .constant('_', window._)
 
   .config(function ($routeProvider, $httpProvider) {
 

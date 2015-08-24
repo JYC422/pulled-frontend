@@ -3,6 +3,10 @@
   font-size: 18px;
 }
 
+.secondary-subcategory {
+  margin: 0 2px;
+}
+
 .inventory-sorter .bootstrap-select button {
   width: 100%;
 }
