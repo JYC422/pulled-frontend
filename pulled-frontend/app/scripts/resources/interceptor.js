@@ -14,8 +14,8 @@ angular.module('pulledApp')
       },
 
       'request': function(config) {
-        config.headers["X-USER-TOKEN"] = authentication_token();
-        config.headers["X-USER-EMAIL"] = authentication_email();
+        // config.headers["X-USER-TOKEN"] = authentication_token();
+        // config.headers["X-USER-EMAIL"] = authentication_email();
         return config;
       }
     };

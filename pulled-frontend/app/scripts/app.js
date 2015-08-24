@@ -10,7 +10,8 @@ angular
     'ngTouch',
     'ngStorage',
     'ui.bootstrap',
-    'ngAutocomplete'
+    'ngAutocomplete',
+    'angucomplete-alt'
   ])
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')

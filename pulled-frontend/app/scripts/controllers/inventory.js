@@ -150,6 +150,10 @@ angular.module('pulledApp')
  ]
 }*/
 
+  $scope.$watch('selectedProduct', function(){
+    console.log($scope.selectedProduct);
+  }, true);
+
   $scope.editProduct = function(product) {
     $scope.item = product;
     $scope.disableSearch = true;
