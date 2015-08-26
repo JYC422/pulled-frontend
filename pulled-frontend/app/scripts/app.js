@@ -75,6 +75,11 @@ angular
       .when('/vendor', {
         templateUrl: 'views/vendor/inventory_managment.html',
         controller: 'InventoryCtrl',
+        resolve: {
+          inventory: function(InventoryService){
+            return InventoryService.getInventory();
+          }
+        }
       })
       .when('/contractor_profile', {
         templateUrl: 'views/vendor/contractor_profile.html',
@@ -104,7 +109,7 @@ angular
         templateUrl: '404.html'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404.html'
       });
   })
 

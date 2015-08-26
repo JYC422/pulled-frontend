@@ -62,11 +62,13 @@ angular.module('pulledApp')
     }
 
     service.setSession = function(user){
+      console.log(user);
       $localStorage.user = {
         email: user.email,
         authToken: user.token,
         company_name: user.company_name,
-        user_type: user.user_type
+        user_type: user.user_type,
+        id: user.id
       };
     };
 

@@ -12,7 +12,7 @@
           <h4 class="panel-title">
             <a data-toggle="collapse" data-target="#category-collapse-1" aria-expanded="true">
               <span class="collapse-arrow"></span>
-                {{inventory_item.inventory.category.name}}
+                {{inventory_item.category.name}}
             </a>
           </h4>
         </div>
@@ -20,13 +20,13 @@
         <div id="category-collapse-1" class="panel-collapse collapse in">
           <div class="panel-body">
 
-            <div ng-repeat="sub_category in inventory_item.inventory.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
+            <div ng-repeat="sub_category in inventory_item.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" data-target="#subcategories-collapse-1" aria-expanded="true" aria-controls="subcategories-collapse-1">
                       <span class="collapse-arrow"></span>
-                      {{sub_category.name}}
+                      {{sub_category.sub_category.name}}
                     </a>
                   </h4>
                 </div>
@@ -97,22 +97,29 @@
           <h4 class="modal-title">{{modalTitle}}</h4>
         </div>
 
-        <form>
+        <form ng-submit="updateProduct(item)">
           <div class="modal-body">
             <div class="row search-wrapper" ng-hide="disableSearch">
-              <div class="col-xs-4">
+              <div class="col-xs-12">
                 <label>Search Product:</label>
               </div>
-              <div class="col-xs-8">
+              <!-- <div class="col-xs-8">
                <div angucomplete-alt id="ex5" placeholder="Search products" pause="500" selected-object="selectedProduct" remote-url="https://api.github.com/search/repositories?q=" remote-url-data-field="items" search-fields="name" title-field="name" minlength="2" input-class="form-control form-control-small" match-class="highlight"></div>
+              </div> -->
+              <div class="col-xs-12">
+                <input class="form-control" >
               </div>
             </div>
-            <div class="form-group variant-info">
-              <img class="variant-img" ng-src="{{item.img}}">
+            <div class="row variant-info">
+              <div class="col-xs-3">
+                <img class="variant-img" src="img/no-thumb.png">
+              </div>
+              <div class="col-xs-9">
               <p class="variant-info-title">Category</p>
-              <p class="variant-info-result">{{item.category}}</p>
+              <p class="variant-info-result">{{item.category.name}}</p>
               <p class="variant-info-title">SubCategories</p>
               <p class="variant-info-result">{{getSubCategories(item)}}</p>
+              </div>
             </div>
             <div class="row variant-field">
               <div class="col-xs-3">
@@ -127,7 +134,7 @@
                 <label>ID:</label>
               </div>
               <div class="col-xs-5">
-               <input class="form-control" ng-model="item.id">
+               <input class="form-control" ng-model="item.vvid">
               </div>
             </div>
             <div class="row variant-field">
@@ -143,7 +150,7 @@
                 <label>Main Sub category:</label>
               </div>
               <div class="col-xs-5">
-               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories"  ng-model="item.main_subcategory.id">
+               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories"  ng-model="item.main_sub_category.id">
                  <option value ="" disabled>Select main subcategory</option>
                </select>
               </div>
@@ -156,8 +163,8 @@
                 <input class="form-control" ng-model="item.price">
               </div>
               <div class="col-xs-3">
-                <select class="form-control" ng-options="unit for unit in item.possible_units" ng-model="item.unit">
-                  <option value ="" disabled> Unit</option>
+                <select class="form-control" ng-options="unit for unit in item.units" ng-model="item.unit">
+                  <option value ="" disabled> Unit</option>l
                 </select>
               </div>
             </div>
@@ -177,16 +184,16 @@
                 <label>Status:</label>
               </div>
               <div class="col-xs-5">
-               <select class="form-control"  ng-model="item.status" ng-class="{active_status: (item.status == 'Active'), inactive_status: (item.status == 'Inactive')}">
+               <select class="form-control"  ng-model="item.status" ng-class="{active_status: (item.status == 'active'), inactive_status: (item.status == 'inactive')}">
                  <option value ="" disabled>Select status</option>
-                 <option class="active_status">Active</option>
-                 <option class="inactive_status">Inactive</option>
+                 <option class="active_status">active</option>
+                 <option class="inactive_status">inactive</option>
                </select>
               </div>
             </div>
             <div class="row variant-field">
               <div class="col-xs-3 col-xs-offset-9">
-                <button class="btn btn-default btn-custom">Add Item</button>
+                <button type="submit" class="btn btn-default btn-custom">Add Item</button>
               </div>
             </div>
           </div>
