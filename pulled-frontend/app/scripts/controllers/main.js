@@ -1,12 +1,6 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('MainCtrl', [ 'InventoryService', function (InventoryService) {
+  .controller('MainCtrl', function () {
 
-  InventoryService.getInventory().then(function(data){
-    console.log(data);
-  }, function(responseHeaders){
-    console.log(responseHeaders);
-  })
-
-}]);
+});

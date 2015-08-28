@@ -1,7 +1,7 @@
 <div class="vendor-container" id="inventory-summary">
   <div class="container-fluid">
     <div class="vendor-container-header clearfix">
-      <button data-target="#inventoryModal" ng-click="newProduct()" data-toggle="modal" class="btn btn-default btn-custom add-item-to-inventory">
+      <button data-target="#NewInventoryModal" ng-click="newProduct()" data-toggle="modal" class="btn btn-default btn-custom add-item-to-inventory">
         <i class="fa fa-plus"></i>&nbsp;Add item to Inventory
       </button>
     </div>
@@ -10,43 +10,43 @@
 
         <div class="panel-heading" role="tab">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-target="#category-collapse-1" aria-expanded="true">
+            <a data-toggle="collapse" data-target="#category-collapse-{{$index}}" aria-expanded="true">
               <span class="collapse-arrow"></span>
                 {{inventory_item.category.name}}
             </a>
           </h4>
         </div>
 
-        <div id="category-collapse-1" class="panel-collapse collapse in">
+        <div id="category-collapse-{{$index}}" class="panel-collapse collapse in">
           <div class="panel-body">
 
             <div ng-repeat="sub_category in inventory_item.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
                   <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#accordion" data-target="#subcategories-collapse-1" aria-expanded="true" aria-controls="subcategories-collapse-1">
+                    <a data-toggle="collapse" data-parent="#accordion" data-target="#subcategories-collapse-{{$parent.$index}}{{$index}}" aria-expanded="true" aria-controls="subcategories-collapse-{{$parent.$index}}{{$index}}">
                       <span class="collapse-arrow"></span>
                       {{sub_category.sub_category.name}}
                     </a>
                   </h4>
                 </div>
-                <div id="subcategories-collapse-1" class="panel-collapse collapse in" role="tabpanel">
+                <div id="subcategories-collapse-{{$parent.$index}}{{$index}}" class="panel-collapse collapse in" role="tabpanel">
                   <div class="panel-body panel-without-padding">
-                    <table class="green-table green-border mobile-card-table">
+                    <table id="subCategoryTable" class="green-table green-border mobile-card-table">
                       <thead>
                         <tr>
-                          <th>Status</th>
-                          <th>SKU <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Product Descripion <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Date Created <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Last Modified <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>Available <i class="fa fa-angle-down hidden-xs"></i></th>
-                          <th>SubCategories <i class="fa fa-angle-down hidden-xs"></i></th>
+                          <th><a ng-click="orderByField='status'; reverseSort = !reverseSort" href="">Status <i class="fa fa-angle-down hidden-xs"></i></a></th>
+                          <th><a ng-click="orderByField='sku'; reverseSort = !reverseSort" href="">SKU <i class="fa fa-angle-down hidden-xs"></i></a></th>
+                          <th>Product Descripion</th>
+                          <th><a ng-click="orderByField='created_at'; reverseSort = !reverseSort" href="">Date Created <i class="fa fa-angle-down hidden-xs"></i></a></th>
+                          <th><a ng-click="orderByField='updated_at'; reverseSort = !reverseSort" href="">Last Modified <i class="fa fa-angle-down hidden-xs"></i></a></th>
+                          <th><a ng-click="orderByField='stock'; reverseSort = !reverseSort" href="">Available <i class="fa fa-angle-down hidden-xs"></i></a></th>
+                          <th>Sub Categories</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr ng-repeat="vendor_variant in sub_category.vendor_variants">
+                        <tr ng-repeat="vendor_variant in sub_category.vendor_variants|orderBy:orderByField:reverseSort">
                           <td>{{vendor_variant.status}}</td>
                           <td>{{vendor_variant.sku}}</td>
                           <td>
@@ -55,18 +55,18 @@
                                 <img ng-src="{{vendor_variant.img}}"/>
                               </div>
                               <div class="product-desc col-xs-8">
-                                ID: {{vendor_variant.id}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price}}
+                                ID: {{vendor_variant.vvid}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price}}
                               </div>
                             </div>
                           </td>
-                          <td>{{vendor_variant.created_at}}</td>
-                          <td>{{vendor_variant.updated_at}}</td>
+                          <td>{{vendor_variant.created_at | date : 'short'}}</td>
+                          <td>{{vendor_variant.updated_at | date : 'short'}}</td>
                           <td>{{vendor_variant.stock}}</td>
                           <td>
                             <span ng-repeat="secondarySubcategory in vendor_variant.sub_categories" class="label label-default secondary-subcategory">{{secondarySubcategory.name}}</span>
                           </td>
                           <td>
-                            <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#inventoryModal" data-toggle="modal">
+                            <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#EditInventoryModal" data-toggle="modal">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
                             <button class="btn btn-warning add-item-to-inventory">
@@ -87,117 +87,5 @@
   </div>
 </div>
 
-<!-- Add Item to Inventory  -->
-  <div class="modal fade" id="inventoryModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <img type="button" class="close" data-dismiss="modal" aria-label="Close" src="img/modal_close.png"></img>
-          <h4 class="modal-title">{{modalTitle}}</h4>
-        </div>
-
-        <form ng-submit="updateProduct(item)">
-          <div class="modal-body">
-            <div class="row search-wrapper" ng-hide="disableSearch">
-              <div class="col-xs-12">
-                <label>Search Product:</label>
-              </div>
-              <!-- <div class="col-xs-8">
-               <div angucomplete-alt id="ex5" placeholder="Search products" pause="500" selected-object="selectedProduct" remote-url="https://api.github.com/search/repositories?q=" remote-url-data-field="items" search-fields="name" title-field="name" minlength="2" input-class="form-control form-control-small" match-class="highlight"></div>
-              </div> -->
-              <div class="col-xs-12">
-                <input class="form-control" >
-              </div>
-            </div>
-            <div class="row variant-info">
-              <div class="col-xs-3">
-                <img class="variant-img" src="img/no-thumb.png">
-              </div>
-              <div class="col-xs-9">
-              <p class="variant-info-title">Category</p>
-              <p class="variant-info-result">{{item.category.name}}</p>
-              <p class="variant-info-title">SubCategories</p>
-              <p class="variant-info-result">{{getSubCategories(item)}}</p>
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>Manofacturer:</label>
-              </div>
-              <div class="col-xs-5">
-               <input class="form-control" ng-model="item.manufacturer" >
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>ID:</label>
-              </div>
-              <div class="col-xs-5">
-               <input class="form-control" ng-model="item.vvid">
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>SKU:</label>
-              </div>
-              <div class="col-xs-5">
-               <input class="form-control" ng-model="item.sku">
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>Main Sub category:</label>
-              </div>
-              <div class="col-xs-5">
-               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories"  ng-model="item.main_sub_category.id">
-                 <option value ="" disabled>Select main subcategory</option>
-               </select>
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>Price:</label>
-              </div>
-              <div class="col-xs-5">
-                <input class="form-control" ng-model="item.price">
-              </div>
-              <div class="col-xs-3">
-                <select class="form-control" ng-options="unit for unit in item.units" ng-model="item.unit">
-                  <option value ="" disabled> Unit</option>l
-                </select>
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>Stock:</label>
-              </div>
-              <div class="col-xs-5">
-                <input class="form-control" ng-model="item.stock">
-              </div>
-              <div class="col-xs-3 unit">
-                {{item.unit}}
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3">
-                <label>Status:</label>
-              </div>
-              <div class="col-xs-5">
-               <select class="form-control"  ng-model="item.status" ng-class="{active_status: (item.status == 'active'), inactive_status: (item.status == 'inactive')}">
-                 <option value ="" disabled>Select status</option>
-                 <option class="active_status">active</option>
-                 <option class="inactive_status">inactive</option>
-               </select>
-              </div>
-            </div>
-            <div class="row variant-field">
-              <div class="col-xs-3 col-xs-offset-9">
-                <button type="submit" class="btn btn-default btn-custom">Add Item</button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+<inventory-modal type="edit"></inventory-modal>
+<inventory-modal type="new"></inventory-modal>

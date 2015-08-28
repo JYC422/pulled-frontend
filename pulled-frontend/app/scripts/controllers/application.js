@@ -13,9 +13,15 @@ angular.module('pulledApp')
      var restrictedLoggedPaths = [
       '/vendor_register',
       '/contractor_register',
-      '/'
+      '/',
+      '/sign_up'
 
     ];
+
+    var errorPages = [
+      '/404',
+      '/500'
+    ]
 
     var unrestrictedVendorPaths = [
       '/vendor',
@@ -23,22 +29,27 @@ angular.module('pulledApp')
       '/contractor_managment',
       '/orders_managment',
       '/price_managment',
-      '/404',
-      '/500'
     ];
+
+    angular.extend(unrestrictedVendorPaths, errorPages)
 
     $rootScope.$on('$routeChangeStart', function (event, next) {
       var nextPath = next.$$route.originalPath;
+      if (errorPages.indexOf(nextPath) !== -1) {
+        $rootScope.showingError = true;
+      } else{
+        $rootScope.showingError = false;
+      }
+
       if (Session.hasCurrentUser()) {
         if (Session.isVendor()) {
           if (unrestrictedVendorPaths.indexOf(nextPath) === -1) {
-            console.log('DENIED');
             $location.path('/vendor');
           };
         };
       } else {
         if (restrictedLoggedPaths.indexOf(nextPath) === -1) {
-          console.log('DENIED');
+          console.log(nextPath);
           $location.path('/');
         };
       }

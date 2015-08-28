@@ -14,12 +14,16 @@ angular.module('pulledApp')
           break;
         case 400:
           if (response.data.error) {
-            var errors = JSON.parse(response.data.error);
-            if (errors.email) {
-              errorMessage = 'Email: ' + errors.email.join(', ') + '\n';
-            }
-            if (errors.license_number) {
-              errorMessage = errorMessage + 'License Number: ' + errors.license_number.join(', ') + '\n';
+            if (typeof response.data.error === 'string') {
+              errorMessage= response.data.error;
+            } else {
+              var errors = JSON.parse(response.data.error);
+              if (errors.email) {
+                errorMessage = 'Email: ' + errors.email.join(', ') + '\n';
+              }
+              if (errors.license_number) {
+                errorMessage = errorMessage + 'License Number: ' + errors.license_number.join(', ') + '\n';
+              }
             }
             toastr.error(errorMessage, 'Some fields are invalid');
           }

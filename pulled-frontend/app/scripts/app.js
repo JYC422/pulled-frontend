@@ -13,8 +13,10 @@ angular
     'ngAutocomplete',
     'angucomplete-alt'
   ])
-  .constant('API_URL', 'http://localhost:3000/api/v1')
-  .constant('HOST_URL', 'http://localhost:3000')
+  // .constant('API_URL', 'http://localhost:3000/api/v1')
+  // .constant('HOST_URL', 'http://localhost:3000')
+  .constant('API_URL', '//pulled-frontend.herokuapp.com/api/v1')
+  .constant('HOST_URL', '//pulled-frontend.herokuapp.com')
 
   //For testing purposes
   .constant('toastr', toastr)
@@ -109,7 +111,7 @@ angular
         templateUrl: '404.html'
       })
       .otherwise({
-        redirectTo: '/404.html'
+        redirectTo: '/404'
       });
   })
 

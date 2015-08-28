@@ -1,0 +1,114 @@
+ <!-- Add Item to Inventory  -->
+  <div class="modal fade" id="{{modalId}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <img type="button" class="close" data-dismiss="modal" aria-label="Close" src="img/modal_close.png"></img>
+          <h4 class="modal-title">{{modalTitle}}</h4>
+        </div>
+
+        <form name="modalForm" ng-submit="submitFunction(item)" novalidate>
+          <div class="modal-body">
+            <div class="row search-wrapper" ng-hide="disableSearch">
+              <div class="col-xs-12">
+                <label>Search Product:</label>
+              </div>
+              <div class="col-xs-8">
+               <div angucomplete-alt id="ex5" placeholder="Search products" pause="500" selected-object="searchedProduct" remote-url="{{autocompleteUrl}}" remote-url-data-field="variants" title-field="name" minlength="2" input-class="form-control form-control-small" match-class="highlight"></div>
+              </div>
+              <!-- <div class="col-xs-12">
+                <input class="form-control" ng-model="searchedProduct" >
+              </div> -->
+            </div>
+            <div class="row variant-info">
+              <div class="col-xs-3">
+                <img class="variant-img" src="img/no-thumb.png">
+              </div>
+              <div class="col-xs-9">
+              <p class="variant-info-title">Category</p>
+              <p class="variant-info-result">{{item.category.name}}</p>
+              <p class="variant-info-title">SubCategories</p>
+              <p class="variant-info-result">{{getSubCategories(item)}}</p>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Manofacturer:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" ng-model="item.manufacturer" ng-disabled="disableField" required >
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>ID:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" type="number" min="0" max="9223372036854775807" ng-model="item.vvid" ng-disabled="disableField" required>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>SKU:</label>
+              </div>
+              <div class="col-xs-5">
+               <input class="form-control" ng-model="item.sku" ng-disabled="disableField" required>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Main Sub category:</label>
+              </div>
+              <div class="col-xs-5">
+               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories" ng-model="item.main_sub_category_id" ng-disabled="disableField" required>
+                 <option value ="" disabled>Select main subcategory</option>
+               </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Price:</label>
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" ng-model="item.price" ng-disabled="disableField" required>
+              </div>
+              <div class="col-xs-3">
+                <select class="form-control" ng-options="unit for unit in item.units" ng-model="item.unit" ng-disabled="disableField" required>
+                  <option value ="" disabled> Unit</option>
+                </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Stock:</label>
+              </div>
+              <div class="col-xs-5">
+                <input class="form-control" type="number" min="0" ng-model="item.stock" ng-disabled="disableField" required>
+              </div>
+              <div class="col-xs-3 unit">
+                {{item.unit}}
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3">
+                <label>Status:</label>
+              </div>
+              <div class="col-xs-5">
+               <select class="form-control"  ng-model="item.status" ng-class="{active_status: (item.status == 'active'), inactive_status: (item.status == 'inactive')}" ng-disabled="disableField" required>
+                 <option value ="" disabled>Select status</option>
+                 <option class="active_status" value="active">Active</option>
+                 <option class="inactive_status" value="inactive">Inactive</option>
+               </select>
+              </div>
+            </div>
+            <div class="row variant-field">
+              <div class="col-xs-3 col-xs-offset-9">
+                <button type="submit" class="btn btn-default btn-custom" ng-disabled ="modalForm.$invalid">Add Item</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

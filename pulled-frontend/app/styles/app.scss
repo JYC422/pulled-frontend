@@ -1,3 +1,5 @@
+$greyColor: #ccc;
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.ttf');
@@ -26,7 +28,7 @@ body  {
 }
 
 .error-wrapper {
-  margin: 10% 0;
+  width: 100%;
 }
 
 input[type="text"] {
@@ -104,6 +106,12 @@ textarea {
   color: #ffffff;
   border-color: #4bc69a;
   border-radius: 0;
+
+  &:disabled {
+    background: $greyColor;
+    border-color: $greyColor;
+    border-radius: 0;
+  }
 }
 
 .btn-custom:hover {

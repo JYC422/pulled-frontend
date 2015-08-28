@@ -32,6 +32,19 @@ angular.module('pulledApp')
       return promise;
     };
 
+    service.createProduct = function(product) {
+      var defered= $q.defer();
+      var promise= defered.promise;
+       Vendor.createVendorVariant({vendor_variant: product}, function(data){
+        defered.resolve(data);
+      }, function(responseHeaders){
+        console.log(responseHeaders);
+        defered.reject(responseHeaders);
+      });
+
+      return promise;
+    };
+
     return service;
 
   }]);
