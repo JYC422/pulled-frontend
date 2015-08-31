@@ -1,5 +1,8 @@
 $greyColor: #ccc;
 
+$fa-font-path: "/bower_components/font-awesome/fonts";
+@import "font-awesome/scss/font-awesome";
+
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.ttf');

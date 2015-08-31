@@ -40,7 +40,7 @@ angular.module('pulledApp')
     toastr.success('Welcome ' + response.email, 'Registration Success');
     $location.path('/');
     }, function(reason){
-      // Validation.validate(reason);
+      Validation.validate(reason);
     });
   };
 
@@ -53,7 +53,7 @@ angular.module('pulledApp')
   };
 
   var setSubCategories = function(user) {
-    if (angular.equals(user.type, 'Vendor')) {
+    if (angular.equals(user.type, 'Contractor')) {
         var values = [];
       Object.keys($scope.selectedSubCategory).forEach(function (key) {
         var value = $scope.selectedSubCategory[key];

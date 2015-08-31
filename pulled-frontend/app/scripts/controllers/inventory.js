@@ -25,10 +25,6 @@ angular.module('pulledApp')
     $scope.item = newItem();
   };
 
-  $scope.$watch('item', function(newValue, oldValue){
-   console.log($scope.item);
-  }, true);
-
   $scope.updateProduct = function(product) {
     InventoryService.updateProduct(product).then(function(data){
       InventoryService.getInventory().then(function(inventory){

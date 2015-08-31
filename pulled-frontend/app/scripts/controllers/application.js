@@ -13,7 +13,7 @@ angular.module('pulledApp')
      var restrictedLoggedPaths = [
       '/vendor_register',
       '/contractor_register',
-      '/',
+      '/contractor_profile',
       '/sign_up'
 
     ];
@@ -31,7 +31,7 @@ angular.module('pulledApp')
       '/price_managment',
     ];
 
-    angular.extend(unrestrictedVendorPaths, errorPages)
+   unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages)
 
     $rootScope.$on('$routeChangeStart', function (event, next) {
       var nextPath = next.$$route.originalPath;

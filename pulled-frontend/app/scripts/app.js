@@ -10,13 +10,14 @@ angular
     'ngTouch',
     'ngStorage',
     'ui.bootstrap',
+    'ui.bootstrap.fontawesome',
     'ngAutocomplete',
     'angucomplete-alt'
   ])
   // .constant('API_URL', 'http://localhost:3000/api/v1')
   // .constant('HOST_URL', 'http://localhost:3000')
-  .constant('API_URL', '//pulled-frontend.herokuapp.com/api/v1')
-  .constant('HOST_URL', '//pulled-frontend.herokuapp.com')
+  .constant('API_URL', '//pulled-backend.herokuapp.com/api/v1')
+  .constant('HOST_URL', '//pulled-backend.herokuapp.com')
 
   //For testing purposes
   .constant('toastr', toastr)
