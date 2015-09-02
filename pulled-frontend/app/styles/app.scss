@@ -13,6 +13,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   src: url('../fonts/Montserrat-Bold.ttf');
 }
 
+.modal-backdrop.in {
+  z-index: 50;
+}
+
 .clear-div {
   clear: both;
 }

@@ -1,18 +1,20 @@
 'use strict';
 
 angular.module('pulledApp').
-directive("search", ['Session', '$location', 'Validation', function(Session, $location, Validation){
+directive("search", ['Session', '$location', 'Validation', 'API_URL', function(Session, $location, Validation, API_URL){
   return {
     restrict: "EA",
     templateUrl: "views/search.html",
     scope: true,
     link: function(scope) {
 
+      scope.autocompleteUrl = API_URL + '/variants/autocomplete_search?page=' + 1 + '&q=';
+
       scope.search = function() {
   	    if (!Session.hasCurrentUser()){
   	      $('#loginModal').modal('show');
   	    } else {
-  	      scope.getSearchResults();
+  	      scope.saveSearchData();
   	    }
   	  };
 
@@ -35,7 +37,6 @@ directive("search", ['Session', '$location', 'Validation', function(Session, $lo
   	        $location.path('/contractor');
   	      break;
   	      case 'vendor':
-  	        getVendorProducts();
   	        $location.path('/vendor');
   	      break;
   	    }
@@ -43,13 +44,12 @@ directive("search", ['Session', '$location', 'Validation', function(Session, $lo
 
       //Private Functions
 
-  	  var getVendorProducts = function() {
-  	    // TODO, make request to obtain products
-  	  };
+  	  var saveSearchData = function() {
+        $localStorage = {
+          type: 'single',
 
-  	  var getContractorProducts = function() {
-  	    // TODO, make request to obtain products
-  	  };
+        }
+      }
 		}
   };
 }]);

@@ -45,6 +45,19 @@ angular.module('pulledApp')
       return promise;
     };
 
+    service.deleteProduct = function(product) {
+      var defered= $q.defer();
+      var promise= defered.promise;
+       Vendor.deleteVendorVariant({vvid: product.id, vendor_variant: product}, function(data){
+        defered.resolve(data);
+      }, function(responseHeaders){
+        console.log(responseHeaders);
+        defered.reject(responseHeaders);
+      });
+
+      return promise;
+    };
+
     return service;
 
   }]);

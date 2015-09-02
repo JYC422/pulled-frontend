@@ -9,16 +9,10 @@ angular.module('pulledApp')
   $scope.orderByField = 'status';
   $scope.reverseSort = false;
 
-  $scope.variants = {
-    'Red Maple': 2,
-    'Norway Maple': 8
-  }
-
   $scope.editProduct = function(product) {
     $scope.item = angular.copy(product);
     $scope.item.main_sub_category_id = $scope.item.main_sub_category.id;
     $scope.disableField = false;
-    console.log($scope.disableField);
   };
 
   $scope.newProduct = function() {
@@ -33,7 +27,6 @@ angular.module('pulledApp')
         toastr.success('Your product was succesfully updated', 'Update Success');
       })
     }, function(reason) {
-      console.log(reason);
       Validation.validate(reason);
     })
   }
@@ -46,6 +39,19 @@ angular.module('pulledApp')
         $('#NewInventoryModal').modal('hide');
         toastr.success('Your product was succesfully created', 'Creation Success');
       })
+    }, function(reason) {
+      Validation.validate(reason);
+    })
+  }
+
+  $scope.deleteProduct = function(product) {
+    InventoryService.deleteProduct(product).then(function(data){
+      InventoryService.getInventory().then(function(inventory){
+        $scope.inventory = inventory;
+        toastr.success('Your product  was succesfully removed from your inventory', 'Success');
+      })
+    }, function(reason) {
+      Validation.validate(reason);
     })
   }
 

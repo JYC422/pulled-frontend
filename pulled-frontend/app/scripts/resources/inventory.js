@@ -16,6 +16,10 @@ angular.module('pulledApp')
       method: 'POST',
       url: API_URL + '/vendor_variants/'
     },
+    deleteVendorVariant: {
+      method: 'DELETE',
+      url: API_URL + '/vendor_variants/:vvid'
+    },
 
    });
 }]);

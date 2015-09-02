@@ -53,7 +53,7 @@
   </head>
   <body ng-app="pulledApp" ng-controller="ApplicationCtrl">
     <ng-include src="'views/header.html'" ng-show="!showingError"></ng-include>
-    <div ng-view=""></div>
+    <div autoscroll="true" ng-view=""></div>
     <ng-include src="'views/footer.html'"></ng-include>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -93,6 +93,9 @@
 
     <!-- directives  -->
     <script src="scripts/directives/login.js"></script>
+    <script src="scripts/directives/empty_list.js"></script>
+    <script src="scripts/directives/scroll_header.js"></script>
+    <script src="scripts/directives/err-src.js"></script>
     <script src="scripts/directives/search.js"></script>
     <script src="scripts/directives/vendor_header.js"></script>
     <script src="scripts/directives/multiselect_categories.js"></script>

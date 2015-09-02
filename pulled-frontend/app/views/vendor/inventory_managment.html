@@ -5,7 +5,8 @@
         <i class="fa fa-plus"></i>&nbsp;Add item to Inventory
       </button>
     </div>
-    <div ng-repeat="inventory_item in inventory" class="categories-collapse panel-group" aria-multiselectable="true">
+    <empty-list></empty-list>
+    <div ng-hide="emptyInventory" ng-repeat="inventory_item in inventory" class="categories-collapse panel-group" aria-multiselectable="true">
       <div class="panel panel-default">
 
         <div class="panel-heading" role="tab">
@@ -52,10 +53,10 @@
                           <td>
                             <div class="row">
                               <div class="product-image col-xs-4">
-                                <img ng-src="{{vendor_variant.img}}"/>
+                                <img ng-src="{{vendor_variant.avatar}}" err-src="img/no-thumb.png"/>
                               </div>
                               <div class="product-desc col-xs-8">
-                                ID: {{vendor_variant.vvid}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price}}
+                                ID: {{vendor_variant.vvid}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price | currency}}
                               </div>
                             </div>
                           </td>
@@ -69,7 +70,7 @@
                             <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#EditInventoryModal" data-toggle="modal">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
-                            <button class="btn btn-warning add-item-to-inventory">
+                            <button ng-click="deleteProduct(vendor_variant)" class="btn btn-warning add-item-to-inventory">
                               <span>Delete&nbsp;</span><i class="fa fa-times"></i>
                             </button>
                           </td>

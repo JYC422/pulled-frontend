@@ -2,6 +2,35 @@
   padding-top: 10px;
   min-height: 360px;
   margin-bottom: 40px;
+
+  .quad-input .form-control {
+    width: 25%;
+    border-right-width: 0px;
+    background-color: white;
+    border: 1px solid;
+    border-color: #eee;
+
+    &.first {
+      width: 50%;
+      display: inline;
+    }
+
+    &.second {
+      width: 16%;
+    }
+
+    &.third {
+      width: 10%;
+    }
+
+    &.fourth {
+      width: 24%;
+    }
+  }
+
+  .triple-input .form-control:focus {
+    border-right-width: 1px;
+  }
 }
 
 #search .search-form, #search .contractor-search-form {

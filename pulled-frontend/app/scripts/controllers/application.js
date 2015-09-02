@@ -31,9 +31,15 @@ angular.module('pulledApp')
       '/price_managment',
     ];
 
-   unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages)
+    var unrestrictedContractorPaths = [
+      '/contractor',
+    ];
+
+   unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages);
+   unrestrictedContractorPaths = unrestrictedVendorPaths.concat(errorPages)
 
     $rootScope.$on('$routeChangeStart', function (event, next) {
+      console.log(next);
       var nextPath = next.$$route.originalPath;
       if (errorPages.indexOf(nextPath) !== -1) {
         $rootScope.showingError = true;
@@ -46,7 +52,12 @@ angular.module('pulledApp')
           if (unrestrictedVendorPaths.indexOf(nextPath) === -1) {
             $location.path('/vendor');
           };
-        };
+        } else {
+          console.log('obj');
+          if (unrestrictedContractorPaths.indexOf(nextPath) === -1) {
+            $location.path('/contractor');
+          };
+        }
       } else {
         if (restrictedLoggedPaths.indexOf(nextPath) === -1) {
           console.log(nextPath);

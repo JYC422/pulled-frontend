@@ -9,21 +9,9 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
 
       scope.isCollapsed = true;
       $('#login-btn').click(function(){
+        window.scrollTo(0,0);
         scope.isCollapsed = !scope.isCollapsed;
         scope.$apply();
-      });
-
-      $(window).on("scroll", function () {
-        var header = $("#landing-header");
-        if ($(this).scrollTop() > 20 && !header.hasClass("not-transparent")) {
-          header.addClass("not-transparent");
-          $(".navbar-brand").attr("src","images/pulled-logo.png");
-          $(".navbar-nav").addClass("black");
-        } else if ($(this).scrollTop() <= 20 && header.hasClass("not-transparent")) {
-          header.removeClass("not-transparent");
-          $(".navbar-brand").attr("src","images/pulled-logo-white.png");
-          $(".navbar-nav").removeClass("black");
-        }
       });
 
       $rootScope.userSession = Session.hasCurrentUser;
@@ -38,16 +26,16 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
       scope.signIn = function(){
         Session.signIn({user: scope.user}).then(function(response){
           console.log(response);
-        toastr.success('Welcome ' + response.email, 'Login Success');
-        scope.isCollapsed = !scope.isCollapsed;
-        switch(response.user_type){
-          case 'Vendor':
-            $location.path('/vendor');
-            break;
-          case 'Contractor':
-            $location.path('/contactor');
-            break;
-        }
+          toastr.success('Welcome ' + response.email, 'Login Success');
+          scope.isCollapsed = !scope.isCollapsed;
+          switch(response.user_type){
+            case 'Vendor':
+              $location.path('/vendor');
+              break;
+            case 'Contractor':
+              $location.path('/contractor');
+              break;
+          }
         }, function(reason){
           Validation.validate(reason);
         });
