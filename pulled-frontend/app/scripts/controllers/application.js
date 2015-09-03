@@ -33,10 +33,11 @@ angular.module('pulledApp')
 
     var unrestrictedContractorPaths = [
       '/contractor',
+      '/search_results',
     ];
 
    unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages);
-   unrestrictedContractorPaths = unrestrictedVendorPaths.concat(errorPages)
+   unrestrictedContractorPaths = unrestrictedContractorPaths.concat(errorPages)
 
     $rootScope.$on('$routeChangeStart', function (event, next) {
       console.log(next);
@@ -53,7 +54,8 @@ angular.module('pulledApp')
             $location.path('/vendor');
           };
         } else {
-          console.log('obj');
+          console.log(unrestrictedContractorPaths);
+          console.log(nextPath);
           if (unrestrictedContractorPaths.indexOf(nextPath) === -1) {
             $location.path('/contractor');
           };

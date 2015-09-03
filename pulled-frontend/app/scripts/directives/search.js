@@ -1,22 +1,32 @@
 'use strict';
 
 angular.module('pulledApp').
-directive("search", ['Session', '$location', 'Validation', 'API_URL', function(Session, $location, Validation, API_URL){
+directive("search", ['Session', '$location', 'Validation', 'API_URL', '$localStorage', function(Session, $location, Validation, API_URL, $localStorage){
   return {
     restrict: "EA",
     templateUrl: "views/search.html",
     scope: true,
     link: function(scope) {
 
-      scope.autocompleteUrl = API_URL + '/variants/autocomplete_search?page=' + 1 + '&q=';
+      scope.autocompleteUrl = API_URL + '/products/autocomplete_search?page=' + 1 + '&q=';
+
+      scope.$watch('searchedProduct', function(newValue, oldValue){
+        scope.disableField= !Boolean(scope.searchedProduct);
+        if (scope.searchedProduct) {
+          scope.item= scope.searchedProduct.description;
+          console.log(scope.item);
+        };
+      }, true);
 
       scope.search = function() {
-  	    if (!Session.hasCurrentUser()){
-  	      $('#loginModal').modal('show');
-  	    } else {
-  	      scope.saveSearchData();
-  	    }
-  	  };
+        $localStorage.searchInfo = {
+          product_id: scope.item.product_id,
+          stock: scope.quantity,
+          unit: scope.unit,
+          location: scope.location
+        }
+        $location.path('/search_results');
+      };
 
   	  scope.signIn = function(){
   	    Session.signIn({user: scope.user}).then(function(response){
@@ -28,28 +38,6 @@ directive("search", ['Session', '$location', 'Validation', 'API_URL', function(S
   	    });
   	  };
 
-      //TODO, change hardcoded vendor on switch with scope.user.type
-  	  scope.getSearchResults = function (userType) {
-  	    userType = userType || 'vendor';
-        switch(userType) {
-  	      case 'contractor':
-  	        getContractorProducts();
-  	        $location.path('/contractor');
-  	      break;
-  	      case 'vendor':
-  	        $location.path('/vendor');
-  	      break;
-  	    }
-  	  };
-
-      //Private Functions
-
-  	  var saveSearchData = function() {
-        $localStorage = {
-          type: 'single',
-
-        }
-      }
 		}
   };
 }]);

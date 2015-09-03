@@ -45,6 +45,10 @@ angular
         templateUrl: 'views/checkout.html',
         controller: 'MainCtrl',
       })
+      .when('/search_results', {
+        templateUrl: 'views/contractor/search_results.html',
+        controller: 'SearchCtrl',
+      })
       .when('/contractor', {
         templateUrl: 'views/contractor.html',
         controller: 'MainCtrl',

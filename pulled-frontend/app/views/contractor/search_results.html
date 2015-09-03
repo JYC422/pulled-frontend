@@ -1,0 +1,16 @@
+<div id="search-results" class="product-wrapper row" ng-repeat="item in searchResults">
+  <div class="col-xs-3">
+    <img ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
+  </div>
+  <div class="col-xs-2">
+    <p><b>Name: {{item.name}}</b></p>
+    <p>Price: {{item.price | currency}}</p>
+    <p>Manofacturer: {{item.manufacturer}}</p>
+    <p>Size: No size defined for this product </p>
+    <p>Quantity: {{item.stock}}</p>
+  </div>
+  <div class="col-xs-offset-3 col-xs-4" style=" text-align: center;">
+    <p>Price {{item.price | currency}}</p>
+    <button style="padding: 0 34px; border: 1px solid #4bc69a;" class="select-dropdown-btn"> Select</button>
+  </div>
+</div>
