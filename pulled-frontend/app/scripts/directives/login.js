@@ -27,7 +27,10 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
         Session.signIn({user: scope.user}).then(function(response){
           console.log(response);
           toastr.success('Welcome ' + response.email, 'Login Success');
+
           scope.isCollapsed = !scope.isCollapsed;
+          $('#loginModal').modal('hide');
+
           switch(response.user_type){
             case 'Vendor':
               $location.path('/vendor');

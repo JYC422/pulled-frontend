@@ -1,8 +1,8 @@
+@import "compass/css3";
 $greyColor: #ccc;
 
 $fa-font-path: "/bower_components/font-awesome/fonts";
 @import "font-awesome/scss/font-awesome";
-
 @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-Regular.ttf');
@@ -11,10 +11,6 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 @font-face {
   font-family: 'Montserrat Bold';
   src: url('../fonts/Montserrat-Bold.ttf');
-}
-
-.modal-backdrop.in {
-  z-index: 50;
 }
 
 .clear-div {
@@ -32,6 +28,30 @@ body  {
   h1, legend {
     letter-spacing: -1px;
   }
+}
+
+@mixin search-title ($mg-btm) {
+  color: #08354a;
+  font-size: 36px;
+  text-align: center;
+  max-width: 70%;
+  margin: auto;
+  margin-top: 70px;
+  font-weight: 400;
+  margin-bottom: $mg-btm;
+}
+
+.teaser-search-header {
+  @include search-title(50px);
+  text-decoration: underline;
+}
+
+.search-for-items {
+  @include search-title(15px);
+}
+
+#search-teaser-wrapper {
+  padding: 4% 0%;
 }
 
 .error-wrapper {
@@ -141,17 +161,6 @@ textarea {
 .header-item {
   margin: 5px;
   text-align: center;
-}
-
-.search-for-items {
-  color: #08354a;
-  font-size: 36px;
-  text-align: center;
-  max-width: 70%;
-  margin: auto;
-  margin-bottom: 20px;
-  margin-top: 70px;
-  font-weight: 400;
 }
 
 .landing-img {

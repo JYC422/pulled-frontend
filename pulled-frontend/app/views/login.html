@@ -1,25 +1,52 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  <ul class="nav navbar-nav navbar-right black">
-    <li id="header-logout" ng-show="userSession()"  class="dropdown header-item">
-      <a class="dropdown-toggle dropdown-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userCompanyName()}}<span class="caret"></span></a>
-      <ul class="dropdown-menu dropdown-profile">
-        <li><a href="">Edit Information</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="" ng-click="signOut()">Log out</a></li>
-      </ul>
-    </li>
-    <li id="header-login" ng-show="!userSession()" class="header-item">
-      <a id="login-btn" ><span>LOGIN</span></a>
-      <form ng-submit = "signIn()" collapse="isCollapsed">
-        <div class="form-group">
-          <input type="email" class="form-control login-email" placeholder="Email" ng-model="user.email">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control login-pwd" placeholder="Password" ng-model="user.password">
-        </div>
-        <button type="submit" class="btn btn-default">Login</button>
-      </form>
-    </li>
-  </ul>
+<ul class="nav navbar-nav navbar-right black">
+  <li id="header-logout" ng-show="userSession()"  class="dropdown header-item">
+    <a class="dropdown-toggle dropdown-title" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{userCompanyName()}}<span class="caret"></span></a>
+    <ul class="dropdown-menu dropdown-profile">
+      <li><a href="">Edit Information</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="" ng-click="signOut()">Log out</a></li>
+    </ul>
+  </li>
+  <li id="header-login" ng-show="!userSession()" class="header-item">
+    <a id="login-btn" ><span>LOGIN</span></a>
+    <form ng-submit = "signIn()" collapse="isCollapsed">
+      <div class="form-group">
+        <input type="email" class="form-control login-email" placeholder="Email" ng-model="user.email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control login-pwd" placeholder="Password" ng-model="user.password">
+      </div>
+      <button type="submit" class="btn btn-default">Login</button>
+    </form>
+  </li>
+</ul>
 </div><!-- /.navbar-collapse -->
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="loginModalLabel">Login</h4>
+      </div>
+      <form ng-submit = "signIn()" class="login-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="email" class="form-control login-email" placeholder="Email" ng-model ="user.email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control login-pwd" placeholder="Password" ng-model ="user.password">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-default btn-custom">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 

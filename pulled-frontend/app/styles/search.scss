@@ -2,34 +2,31 @@
   padding-top: 10px;
   min-height: 360px;
   margin-bottom: 40px;
+}
 
-  .quad-input .form-control {
-    width: 25%;
-    border-right-width: 0px;
-    background-color: white;
-    border: 1px solid;
-    border-color: #eee;
+.quad-input .form-control {
+  width: 25%;
+  border-right-width: 0px;
+  background-color: white;
+  border: 1px solid;
+  border-color: #eee;
+  z-index: 0;
 
-    &.first {
-      width: 50%;
-      display: inline;
-    }
-
-    &.second {
-      width: 16%;
-    }
-
-    &.third {
-      width: 10%;
-    }
-
-    &.fourth {
-      width: 24%;
-    }
+  &.first {
+    width: 50%;
+    display: inline;
   }
 
-  .triple-input .form-control:focus {
-    border-right-width: 1px;
+  &.second {
+    width: 16%;
+  }
+
+  &.third {
+    width: 10%;
+  }
+
+  &.fourth {
+    width: 24%;
   }
 }
 
@@ -41,7 +38,6 @@
 }
 
 #search .input-search {
-  width: 100%;
   background-color: #eee;
   border: none;
 }
