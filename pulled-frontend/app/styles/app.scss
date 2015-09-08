@@ -41,6 +41,11 @@ body  {
   margin-bottom: $mg-btm;
 }
 
+// .img-responsive {
+//   width: 100%;
+//   height: auto;
+// }
+
 .teaser-search-header {
   @include search-title(50px);
   text-decoration: underline;
@@ -178,7 +183,7 @@ textarea {
 }
 
 .landing-header {
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   right: 0;

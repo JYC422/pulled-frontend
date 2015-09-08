@@ -12,7 +12,7 @@
 
   &:first-child {
     margin-top: 10%;
-    border-top: 1px solid #D9D9D9;
+    border-top: 2px solid #D9D9D9;
   }
 
   &:last-child {
@@ -22,6 +22,23 @@
 
 .search-wrapper {
   margin: 10%;
+}
+
+.cat-title {
+  text-align: left;
+  font-size: 20px;
+  padding: 12px;
+  border-bottom: 2px solid #D9D9D9;
+  margin: 3% 10%;
+}
+
+.sort-by {
+  display: inline;
+  width: 70%;
+}
+
+.search-results-container {
+  padding: 0 5%;
 }
 
 #contractor-search-results {
