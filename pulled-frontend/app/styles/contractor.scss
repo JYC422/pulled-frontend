@@ -3,21 +3,59 @@
   min-height: 700px;
 }
 
-#search-results {
+.product-wrapper {
   border: solid 2px #D9D9D9;
-  padding-top: 3%;
-  border-left: 3px solid green;
-  margin: 0px 10%;
-  border-top: 0;
+  padding: 2%;
+  border-left: 5px solid green;
+  margin: 0px 3%;
 
-  &:first-child {
-    margin-top: 10%;
-    border-top: 2px solid #D9D9D9;
+  .product-name {
+    font-size: 20px
+  }
+
+  .product-img {
+    margin: auto;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  &.first_child {
+    border-top: 1px solid #D9D9D9;
   }
 
   &:last-child {
-    margin-bottom: 10%;
+    margin-bottom: 3%;
   }
+}
+
+.filters {
+  border: 1px solid #D9D9D9;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  .price-filter-wrapper {
+    padding-left: 5%;
+  }
+
+  .filter-title {
+    background-color: #f4f8f9;
+    width: 100%;
+    text-align: left;
+    padding: 5%;
+    font-size: 15px;
+
+    .fa {
+      margin-right: 5%;
+    }
+  }
+}
+
+.total-product-price {
+  font-size: 19px;
+  font-weight: bold;
 }
 
 .search-wrapper {
@@ -29,16 +67,23 @@
   font-size: 20px;
   padding: 12px;
   border-bottom: 2px solid #D9D9D9;
-  margin: 3% 10%;
+  margin: 0 3% 3% 3%;
 }
 
 .sort-by {
   display: inline;
   width: 70%;
+  border: 1px solid;
+  border-color: #eee;
 }
 
 .search-results-container {
   padding: 0 5%;
+
+  .search-bar {
+    margin-bottom: 2%;
+  }
+
 }
 
 #contractor-search-results {

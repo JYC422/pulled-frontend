@@ -1,36 +1,83 @@
 <div class="search-results-container">
-  <div class="row">
-    <div class="col-xs-6">
+  <div class="row search-bar">
+    <div class="col-xs-12 col-sm-8">
       <single-item-search></single-item-search>
     </div>
-    <div class=" col-xs-offset-4 col-xs-2">
+    <div class="col-sm-offset-1 col-sm-3 col-md-offset-2 col-md-2">
       <label>Sort by: </label>
       <select class="form-control sort-by">
         <option>Price (low to high)</option>
       </select>
     </div>
   </div>
-<div class="row">
-  <div class="col-xs-12 col-sm-2 col-md-3 col-lg-2 your-list"></div>
-  <div class="col-xs-12 col-sm-10 col-md-9 col-lg-10 ">
-    <h3 class="cat-title">Irrigation - Pipes</h3>
-    <div id="search-results" class="product-wrapper row" ng-repeat="item in searchResults">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <img class="img-responsive" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-md-3 col-lg-2 your-list">
+      <div class="filters">
+        <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
+        <div class="price-filter-wrapper">
+          <h5>Price</h5>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than $50</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than $100</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than $200</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than $300</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than $500</label>
+          </div>
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <p><b>Name: {{item.name}}</b></p>
-        <p>Price: {{item.price | currency}}</p>
-        <p>Manofacturer: {{item.manufacturer}}</p>
-        <p>Size: No size defined for this product </p>
-        <p>Quantity: {{item.stock}}</p>
-      </div>
-      <div class="col-xs-12 col-md-offset-1 col-md-4" style=" text-align: center;">
-        <p>Price {{item.price | currency}}</p>
-        <button style="padding: 0 34px; border: 1px solid #4bc69a;" class="select-dropdown-btn"> Select</button>
+      <div class="filters">
+        <div class="price-filter-wrapper">
+          <h5>Distance from job site</h5>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than 100 miles</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than 200 miles</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" value="">Less than 300 miles</label>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-10">
+      <h3 class="cat-title">Irrigation - Pipes</h3>
+      <div class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <p class="product-name">{{item.name}}</p>
+          <p>Price: {{item.price | currency}}</p>
+          <p>Manofacturer: {{item.manufacturer}}</p>
+          <p>Size: No size defined for this product </p>
+          <p>Quantity: {{item.stock}}</p>
+        </div>
+        <div class="col-xs-12 col-md-offset-2 col-md-2">
+          <p class="total-product-price">$2350/Total</p>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Select
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="">Purchase</a></li>
+              <li><a href="">Bid</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right">
+      <pagination total-items="30"  ng-model="currentPage" ng-change="pageChanged()"></pagination>
+    </div>
   </div>
-</div>
-
 </div>
