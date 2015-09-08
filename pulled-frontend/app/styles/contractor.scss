@@ -63,6 +63,170 @@
 .total-product-price {
   font-size: 19px;
   font-weight: bold;
+
+  .total-outer {
+    position: relative;
+    font-size: 26px;
+    min-height: 200px;
+
+    .total-inner {
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 50%;
+      text-align: center;
+
+      .select-dropdown-btn {
+        position: relative;
+        padding: 0 34px;
+        border: 1px solid #4bc69a;
+        width: 148px;
+        margin-bottom: 5px;
+        font-weight: normal;
+        padding-right: 52px;
+
+        i {
+          position: absolute;
+          line-height: 44px;
+          right: 12px;
+        }
+      }
+
+      a {
+        margin-top: 5px;
+        color: #4bc69a;
+        font-size: 12px;
+        cursor: pointer;
+        text-decoration: underline;
+        display: block;
+        width: 150px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.single-item {
+    border-left: 3px solid green;
+    padding-top: 3%;
+    margin: 0px 10%;
+
+    &:first-child {
+      margin-top: 10%;
+    }
+
+    &:last-child {
+      margin-bottom: 10%;
+    }
+  }
+
+  &.multiple-items {
+    margin-top: 10px;
+    min-height: 200px;
+
+    .table-title {
+      padding-left: 15px;
+    }
+
+    table {
+      font-size: 12px;
+
+      tbody > tr {
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      th {
+        border-color: #4bc69a;
+
+        &.empty-head {
+          width: 1px;
+          border-bottom-color: transparent;
+        }
+      }
+
+      .align-left {
+        text-align: left;
+      }
+
+      td {
+        position: relative;
+        border-color: transparent;
+        line-height: 30px;
+
+        img {
+          position: absolute;
+          width: 38px;
+          left: 0;
+          margin-top: -8px;
+        }
+
+        .inner-text {
+          text-align: left;
+          padding-left: 40px;
+          margin-right: -40px;
+        }
+      }
+    }
+
+    .company-image {
+      position: relative;
+      height: 100%;
+      min-height: 200px;
+
+      .company-image-wrapper {
+        position: absolute;
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        top: 25px;
+        right: 0;
+        left: 0;
+        border: 2px solid #4bc69a;
+        border-radius: 100px;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          width: 100%;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs li {
+  a {
+    background: none;
+    color: #333;
+    font-size: 18px;
+    min-width: 200px;
+    text-align: center;
+  }
+
+  &.active > a,
+  &.active > a:hover,
+  &.active > a:focus {
+    border: none;
+    border-bottom: 3px solid #29518e;
+    color: #333;
+  }
+}
+
+.multiple-items-container {
+  margin-bottom: 10%;
 }
 
 .search-wrapper {

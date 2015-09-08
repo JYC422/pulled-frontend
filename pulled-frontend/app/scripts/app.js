@@ -49,6 +49,10 @@ angular
         templateUrl: 'views/contractor/search_results.html',
         controller: 'SearchCtrl',
       })
+      .when('/multiple_search_results', {
+        templateUrl: 'views/contractor/multiple_search_results.html',
+        controller: 'SearchCtrl'
+      })
       .when('/contractor', {
         templateUrl: 'views/contractor.html',
         controller: 'MainCtrl',
