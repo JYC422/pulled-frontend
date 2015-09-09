@@ -10,7 +10,6 @@ directive("contractorHeader", [ '$location', '$rootScope', 'Session', function($
 
       scope.$watch(function(){return $location.path()}, function(value){
         $(".contractor-header-item").removeClass('active');
-        console.log(value);
         $('.contractor-header').find('a[href="/#' + value + '"]').find('.contractor-header-item').addClass('active');
       }, true);
     }

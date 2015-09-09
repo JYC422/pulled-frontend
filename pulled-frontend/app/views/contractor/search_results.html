@@ -5,11 +5,14 @@
     </div>
     <div class="col-sm-offset-1 col-sm-3 col-md-offset-2 col-md-2">
       <label>Sort by: </label>
-      <select class="form-control sort-by">
-        <option>Price (low to high)</option>
-        <option>Price (high to low)</option>
-        <option>Name (A - Z)</option>
-        <option>Name (Z - A)</option>
+      <select ng-model="orderValue" ng-change= "sort()" class="form-control sort-by">
+      <option disabled ng-selected="true">-- Select your order</option>
+        <option value="PriceLow">Price (low to high)</option>
+        <option value="PriceHigh">Price (high to low)</option>
+        <option value="ManuFacturerAsc">Manofacturer (A - Z)</option>
+        <option value="ManuFacturerDsc">Manofacturer (Z - A)</option>
+        <option value="StockAsc">Stock (low to high)</option>
+        <option value="StockDsc">Stock (high to low)</option>
       </select>
     </div>
   </div>
@@ -38,7 +41,7 @@
       </div>
       <div class="filters">
         <div class="price-filter-wrapper">
-          <h5>Distance from job site</h5>
+          <h5>Distance from zip code</h5>
           <div class="checkbox">
             <label><input type="checkbox" value="">Less than 100 miles</label>
           </div>
@@ -53,7 +56,7 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-md-9 col-lg-10">
       <h3 class="cat-title">Irrigation - Pipes</h3>
-      <div class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults">
+      <div only-number class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults | orderBy:orderByField:reverseSort">
         <div class="col-xs-12 col-sm-6 col-md-3">
           <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
         </div>
@@ -62,6 +65,7 @@
           <p>Price: {{item.price | currency}}</p>
           <p>Manofacturer: {{item.manufacturer}}</p>
           <p>Size: No size defined for this product </p>
+          <p>Stock: {{item.stock}} </p>
           <label>Quantity:</label>
           <input ng-init="item.quantity=0" ng-model="item.quantity" type="number" class=" product-quantity"></input>
         </div>
