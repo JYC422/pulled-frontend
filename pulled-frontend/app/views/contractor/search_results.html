@@ -7,6 +7,9 @@
       <label>Sort by: </label>
       <select class="form-control sort-by">
         <option>Price (low to high)</option>
+        <option>Price (high to low)</option>
+        <option>Name (A - Z)</option>
+        <option>Name (Z - A)</option>
       </select>
     </div>
   </div>
@@ -59,16 +62,17 @@
           <p>Price: {{item.price | currency}}</p>
           <p>Manofacturer: {{item.manufacturer}}</p>
           <p>Size: No size defined for this product </p>
-          <p>Quantity: {{item.stock}}</p>
+          <label>Quantity:</label>
+          <input ng-init="item.quantity=0" ng-model="item.quantity" type="number" class=" product-quantity"></input>
         </div>
         <div class="col-xs-12 col-md-offset-2 col-md-2">
-          <p class="total-product-price">$2350/Total</p>
+          <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
           <div class="dropdown">
-            <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="select-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Select
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" aria-labelledby="select-product">
               <li><a href="">Purchase</a></li>
               <li><a href="">Bid</a></li>
             </ul>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pulledApp').
-directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', '$localStorage', function(Session, $location, Validation, API_URL, $localStorage){
+directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', '$localStorage', '$route', function(Session, $location, Validation, API_URL, $localStorage, $route){
   return {
     restrict: "EA",
     templateUrl: "views/search/single_search_bar.html",
@@ -25,7 +25,11 @@ directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', 
           unit: scope.unit,
           location: scope.location
         }
-        $location.path('/search_results');
+        if (angular.equals('/search_results', $location.path())) {
+          $route.reload();
+        } else {
+          $location.path('/search_results');          
+        }
       };
     }
   };
