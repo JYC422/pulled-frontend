@@ -4,7 +4,7 @@ angular.module('pulledApp').
 directive("scrollHeader", [ '$location', function($location){
   return {
     restrict: "A",
-    link: function(scope) {
+    link: function() {
 
       var header = $("#landing-header");
       header.removeClass("not-transparent");

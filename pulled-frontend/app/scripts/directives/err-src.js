@@ -7,7 +7,7 @@ directive("errSrc", function(){
       if (!attrs.ngSrc) {
         attrs.ngSrc = attrs.errSrc;
         attrs.$set('src', attrs.errSrc);
-      };
+      }
     }
   };
 });

@@ -20,40 +20,40 @@ angular.module('pulledApp')
   };
 
   $scope.updateProduct = function(product) {
-    InventoryService.updateProduct(product).then(function(data){
+    InventoryService.updateProduct(product).then(function(){
       InventoryService.getInventory().then(function(inventory){
         $scope.inventory = inventory;
         $('#EditInventoryModal').modal('hide');
         toastr.success('Your product was succesfully updated', 'Update Success');
-      })
+      });
     }, function(reason) {
       Validation.validate(reason);
-    })
-  }
+    });
+  };
 
   $scope.createProduct = function(product) {
-    product.variant_id = product.id
-    InventoryService.createProduct(product).then(function(data){
+    product.variant_id = product.id;
+    InventoryService.createProduct(product).then(function(){
       InventoryService.getInventory().then(function(inventory){
         $scope.inventory = inventory;
         $('#NewInventoryModal').modal('hide');
         toastr.success('Your product was succesfully created', 'Creation Success');
-      })
+      });
     }, function(reason) {
       Validation.validate(reason);
-    })
-  }
+    });
+  };
 
   $scope.deleteProduct = function(product) {
-    InventoryService.deleteProduct(product).then(function(data){
+    InventoryService.deleteProduct(product).then(function(){
       InventoryService.getInventory().then(function(inventory){
         $scope.inventory = inventory;
         toastr.success('Your product  was succesfully removed from your inventory', 'Success');
-      })
+      });
     }, function(reason) {
       Validation.validate(reason);
-    })
-  }
+    });
+  };
 
   var newItem = function() {
     return {
@@ -68,7 +68,7 @@ angular.module('pulledApp')
       main_sub_category_id: { id: ''},
       units: [],
       sub_categories: []
-    }
-  }
+    };
+  };
 
 }]);

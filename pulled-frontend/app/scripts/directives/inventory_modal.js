@@ -13,13 +13,13 @@ directive('inventoryModal', ['$rootScope', 'Session', 'Validation', '$location',
         }
       };
 
-      scope.autocompleteUrl = API_URL + '/variants/autocomplete_search?page=' + 1 + '&q='
+      scope.autocompleteUrl = API_URL + '/variants/autocomplete_search?page=' + 1 + '&q=';
 
-      scope.$watch('searchedProduct', function(newValue, oldValue){
+      scope.$watch('searchedProduct', function(){
         scope.disableField= !Boolean(scope.searchedProduct) && scope.disableMode;
         if (!scope.disableField && scope.searchedProduct) {
           angular.extend(scope.item, scope.searchedProduct.description);
-        };
+        }
       }, true);
 
       var setEditModal = function() {

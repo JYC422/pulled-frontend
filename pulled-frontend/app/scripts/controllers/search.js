@@ -30,16 +30,14 @@ angular.module('pulledApp')
       }
     };
 
-
     var getSingleSearchResults = function(pageNum) {
       SearchService.singleSearch(pageNum).then(function(data){
         $scope.searchResults = data.vendor_variants;
         console.log(data);
       }, function(reason){
         console.log(reason);
-      })
-    }
-
+      });
+    };
 
     $scope.sort = function() {
       $scope.reverseSort = sortOptions[$scope.orderValue].reverseSort;
@@ -49,7 +47,7 @@ angular.module('pulledApp')
     $scope.pageChanged = function() {
       $localStorage.searchInfo.page = $scope.currentPage;
       getSingleSearchResults($scope.currentPage);
-    }
+    };
 
     $scope.currentPage = ($localStorage.searchInfo) ? $localStorage.searchInfo.page : 1;
     getSingleSearchResults();

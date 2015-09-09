@@ -59,7 +59,7 @@ angular.module('pulledApp')
 
     service.isVendor = function() {
       return ($localStorage.user) ?  $localStorage.user.user_type === 'Vendor': false;
-    }
+    };
 
     service.setSession = function(user){
       console.log(user);

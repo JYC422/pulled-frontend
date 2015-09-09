@@ -10,12 +10,12 @@ directive("search", ['Session', '$location', 'Validation', 'API_URL', '$localSto
 
       scope.autocompleteUrl = API_URL + '/products/autocomplete_search?page=' + 1 + '&q=';
 
-      scope.$watch('searchedProduct', function(newValue, oldValue){
+      scope.$watch('searchedProduct', function(){
         scope.disableField= !Boolean(scope.searchedProduct);
         if (scope.searchedProduct) {
           scope.item= scope.searchedProduct.description;
           console.log(scope.item);
-        };
+        }
       }, true);
 
       scope.search = function() {
@@ -24,7 +24,7 @@ directive("search", ['Session', '$location', 'Validation', 'API_URL', '$localSto
           stock: scope.quantity,
           unit: scope.unit,
           location: scope.location
-        }
+        };
         $location.path('/search_results');
       };
 

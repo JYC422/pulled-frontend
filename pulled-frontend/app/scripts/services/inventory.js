@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('pulledApp')
-  .factory('InventoryService', ['Vendor', '$q', 'Session', function (Vendor, $q, Session) {
+  .factory('InventoryService', ['Vendor', '$q', function (Vendor, $q) {
 
     var service = {};
 

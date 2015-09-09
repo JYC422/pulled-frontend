@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('pulledApp').
-  directive('onlyNumber',[ '$location', function($location) {
+  directive('onlyNumber', function() {
     return {
       restrict: 'A',
-      link: function(scope, elem, attrs) {
+      link: function(scope, elem) {
         setTimeout(function() {
           elem.on('keydown', "input[type='number']", function (e) {
             // Allow: backspace, delete, tab, escape, enter and .
@@ -28,5 +28,5 @@ angular.module('pulledApp').
           });
         }, 1);
       }
-    }
-  }]);
+    };
+  });
