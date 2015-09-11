@@ -22,40 +22,43 @@
         <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
         <div class="price-filter-wrapper">
           <h5>Price</h5>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than $50</label>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="50">Less than $50</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than $100</label>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="100">Less than $100</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than $200</label>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="200">Less than $200</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than $300</label>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="300">Less than $300</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than $500</label>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="500">Less than $500</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-model="priceFilter" ng-click="applyFilter()" value="" >All products</label>
           </div>
         </div>
       </div>
       <div class="filters">
         <div class="price-filter-wrapper">
           <h5>Distance from zip code</h5>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than 100 miles</label>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 100 miles</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than 200 miles</label>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 200 miles</label>
           </div>
-          <div class="checkbox">
-            <label><input type="checkbox" value="">Less than 300 miles</label>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 300 miles</label>
           </div>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-sm-10 col-md-9 col-lg-10">
-      <h3 class="cat-title">Irrigation - Pipes</h3>
+      <h3 class="cat-title">{{searchResults[0].category.name}}</h3>
       <div only-number class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults | orderBy:orderByField:reverseSort">
         <div class="col-xs-12 col-sm-6 col-md-3">
           <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
@@ -67,7 +70,7 @@
           <p>Size: No size defined for this product </p>
           <p>Stock: {{item.stock}} </p>
           <label>Quantity:</label>
-          <input ng-init="item.quantity=0" ng-model="item.quantity" type="number" class=" product-quantity"></input>
+          <input ng-init="item.quantity=0" min="0" max="{{item.stock}}" ng-model="item.quantity" type="number" class=" product-quantity"></input>
         </div>
         <div class="col-xs-12 col-md-offset-2 col-md-2">
           <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
@@ -85,7 +88,7 @@
       </div>
     </div>
     <div class="pull-right">
-      <pagination total-items="30"  ng-model="currentPage" ng-change="pageChanged()"></pagination>
+      <pagination total-items="totalItemResults" items-per-page="itemPerPage"  ng-model="currentPage" ng-change="changePage()"></pagination>
     </div>
   </div>
 </div>

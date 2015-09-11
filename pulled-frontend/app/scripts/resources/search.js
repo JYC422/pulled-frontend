@@ -7,6 +7,10 @@ angular.module('pulledApp')
       singleSearch: {
         method: 'GET',
         url: API_URL + '/vendor_variants/single_item_search'
+      },
+      multipleSearch: {
+        method: 'POST',
+        url: API_URL + '/vendor_variants/list_item_search'
       }
     });
 }]);

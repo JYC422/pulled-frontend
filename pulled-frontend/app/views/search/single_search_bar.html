@@ -2,8 +2,8 @@
   <div class="row">
     <div class="form-group col-xs-12 input_wrapper">
       <div class="input-group quad-input">
-        <div angucomplete-alt id="ex5" placeholder="Product you are looking for" pause="500" selected-object="searchedProduct" remote-url="{{autocompleteUrl}}" remote-url-data-field="products" title-field="name" minlength="2" input-class="first form-control input-search" match-class="highlight"></div>
-        <input ng-model="quantity" type="number" placeholder="Quantity" class=" second form-control input-search"/>
+        <div angucomplete-alt id="ex5" placeholder="Product you are looking for" pause="500" selected-object="searchedProduct" remote-url="{{autocompleteUrl}}" remote-url-data-field="products" title-field="name" minlength="1" input-class="first form-control input-search" match-class="highlight"></div>
+        <input ng-model="quantity" type="number" placeholder="Quantity" class="second form-control input-search"/>
         <select ng-options="unit for unit in item.units" ng-model="unit" ng-disabled="disableField" type="text" placeholder="Each" class=" third form-control input-search">
           <option value ="" disabled> Unit</option>
         </select>

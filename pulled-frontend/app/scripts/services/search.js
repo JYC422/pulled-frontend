@@ -18,6 +18,20 @@ angular.module('pulledApp')
       return promise;
     };
 
+    service.multipleSearch = function() {
+      var defered= $q.defer();
+      var promise= defered.promise;
+      console.log($localStorage.multipleSearchInfo);
+
+      Search.multipleSearch({items: $localStorage.multipleSearchInfo}, function(data){
+        defered.resolve(data);
+      }, function(responseHeaders){
+        defered.reject(responseHeaders);
+      });
+
+      return promise;
+    };
+
     return service;
 
   }]);

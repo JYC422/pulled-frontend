@@ -10,11 +10,10 @@ directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', 
 
       scope.autocompleteUrl = API_URL + '/products/autocomplete_search?page=' + 1 + '&q=';
 
-      scope.$watch('searchedProduct', function(newValue, oldValue){
+      scope.$watch('searchedProduct', function(){
         scope.disableField= !Boolean(scope.searchedProduct);
         if (scope.searchedProduct) {
           scope.item= scope.searchedProduct.description;
-          console.log(scope.item);
         };
       }, true);
 
@@ -28,7 +27,7 @@ directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', 
         if (angular.equals('/search_results', $location.path())) {
           $route.reload();
         } else {
-          $location.path('/search_results');          
+          $location.path('/search_results');
         }
       };
     }

@@ -47,14 +47,14 @@ angular
       })
       .when('/search_results', {
         templateUrl: 'views/contractor/search_results.html',
-        controller: 'SearchCtrl',
+        controller: 'SingleSearchCtrl',
       })
       .when('/multiple_search_results', {
         templateUrl: 'views/contractor/multiple_search_results.html',
-        controller: 'SearchCtrl'
+        controller: 'MultipleSearchCtrl'
       })
       .when('/contractor', {
-        templateUrl: 'views/contractor.html',
+        templateUrl: 'views/contractor/contractor.html',
         controller: 'MainCtrl',
       })
       .when('/contractor_register', {

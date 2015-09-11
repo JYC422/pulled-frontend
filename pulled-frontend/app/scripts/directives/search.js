@@ -4,7 +4,7 @@ angular.module('pulledApp').
 directive("search", ['Session', '$location', 'Validation', 'API_URL', '$localStorage', function(Session, $location, Validation, API_URL, $localStorage){
   return {
     restrict: "EA",
-    templateUrl: "views/search.html",
+    templateUrl: "views/search/search.html",
     scope: true,
     link: function(scope) {
 

@@ -1,0 +1,40 @@
+<div class="col-xs-12 col-sm-2 col-md-3 col-lg-2 your-list">
+  <div class="filters">
+    <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
+    <div class="price-filter-wrapper">
+      <h5>Price</h5>
+      <div class="radio">
+        <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="50">Less than $50</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="100">Less than $100</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="200">Less than $200</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="300">Less than $300</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="500">Less than $500</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" ng-model="priceFilter" ng-click="applyFilter()" value="" >All products</label>
+      </div>
+    </div>
+  </div>
+  <div class="filters">
+    <div class="price-filter-wrapper">
+      <h5>Distance from zip code</h5>
+      <div class="radio">
+        <label><input type="radio" value="">Less than 100 miles</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" value="">Less than 200 miles</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" value="">Less than 300 miles</label>
+      </div>
+    </div>
+  </div>
+</div>

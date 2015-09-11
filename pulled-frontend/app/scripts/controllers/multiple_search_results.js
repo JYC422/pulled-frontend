@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SearchCtrl', ['SearchService', '$scope', '$localStorage', function (SearchService, $scope, $localStorage) {
+  .controller('MultipleSearchCtrl', ['SearchService', '$scope', '$localStorage', function (SearchService, $scope, $localStorage) {
 
     var sortOptions = {
       PriceLow: {
@@ -30,9 +30,18 @@ angular.module('pulledApp')
       }
     };
 
-    var getSingleSearchResults = function(pageNum) {
-      SearchService.singleSearch(pageNum).then(function(data){
-        $scope.searchResults = data.vendor_variants;
+
+    $scope.showMore = function(parentIndex, index) {
+      $scope.showMore[parentIndex][index].quantity = ($scope.showMore[parentIndex][index].quantity == 3) ? 100 : 3;
+      $scope.showMore[parentIndex][index].mode = ($scope.showMore[parentIndex][index].mode == 'Hide') ? 'View All' : 'Hide';
+      $scope.showMore[parentIndex][index].iconClass = ($scope.showMore[parentIndex][index].iconClass == 'fa-angle-double-down') ? 'fa-angle-double-up' : 'fa-angle-double-down';
+    }
+
+    var getSearchResults = function(pageNum) {
+      SearchService.multipleSearch(pageNum).then(function(data){
+        $scope.searchResults = data.products;
+        // $scope.totalItemResults = data.total_products;
+        // $scope.currentPage = data.current_page;
         console.log(data);
       }, function(reason){
         console.log(reason);
@@ -44,12 +53,6 @@ angular.module('pulledApp')
       $scope.orderByField = sortOptions[$scope.orderValue].orderByField;
     };
 
-    $scope.pageChanged = function() {
-      $localStorage.searchInfo.page = $scope.currentPage;
-      getSingleSearchResults($scope.currentPage);
-    };
-
-    $scope.currentPage = ($localStorage.searchInfo) ? $localStorage.searchInfo.page : 1;
-    getSingleSearchResults();
+    getSearchResults();
 
 }]);
