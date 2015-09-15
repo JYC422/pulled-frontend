@@ -79,7 +79,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-init="showMore[$parent.$index][$index].quantity = 3" ng-repeat="vendor_variant in vendor.vendor_variants | limitTo:showMore[$parent.$index][$index].quantity |  orderBy:orderByField:reverseSort" >
+                  <tr ng-init="showMore[$parent.$index][$index].quantity = 3" ng-repeat="vendor_variant in vendor.vendor_variants | limitTo:(showMore[$parent.$index][$index].quantity || 3) |  orderBy:orderByField:reverseSort" >
                     <td>
                       <input type="checkbox">
                     </td>

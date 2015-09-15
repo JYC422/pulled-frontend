@@ -225,3 +225,31 @@
   margin-bottom: 10px;
   margin-right: 0px;
 }
+
+#payment-methods {
+
+  td {
+    font-weight: bold;
+
+    input {
+      background-color: lightgray;
+      border: 1px solid lightgray;
+
+      &:hover, &:focus {
+        outline: lightgrey auto 3px;
+      }
+    }
+  }
+
+  .payment-instruction {
+    text-align: left;
+  }
+
+  .cr-appliction-heading {
+    font-size: 14px;
+    text-align: left;
+    color: gray;
+  }
+
+
+}

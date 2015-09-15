@@ -34,7 +34,8 @@ angular.module('pulledApp')
     var unrestrictedContractorPaths = [
       '/contractor',
       '/search_results',
-      '/multiple_search_results'
+      '/multiple_search_results',
+      '/checkout'
     ];
 
    unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages);
