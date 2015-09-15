@@ -20,12 +20,12 @@ angular.module('pulledApp')
     $scope.changePage = function() {
       $localStorage.searchInfo.page = $scope.currentPage;
       getSingleSearchResults();
-    }
+    };
 
     $scope.applyFilter = function() {
       $localStorage.searchInfo.price = angular.copy($scope.priceFilter);
       getSingleSearchResults();
-    }
+    };
 
     getSingleSearchResults();
 

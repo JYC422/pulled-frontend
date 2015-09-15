@@ -23,7 +23,7 @@ angular.module('pulledApp')
       var promise= defered.promise;
 
       //Add priceFilter to each product
-      angular.forEach($localStorage.multipleSearchInfo, function(value, index){
+      angular.forEach($localStorage.multipleSearchInfo, function(value){
         value.price = angular.copy($localStorage.multipleSearchInfo.price);
       });
 
