@@ -2,33 +2,27 @@
 $greyColor: #ccc;
 
 $fa-font-path: "/bower_components/font-awesome/fonts";
-@import "font-awesome/scss/font-awesome";
-@font-face {
-  font-family: 'Montserrat';
-  src: url('../fonts/Montserrat-Regular.ttf');
-}
 
-@font-face {
-  font-family: 'Montserrat Bold';
-  src: url('../fonts/Montserrat-Bold.ttf');
-}
+@import "font-awesome/scss/font-awesome";
+@import "utils/mixins";
+@import "base/fonts";
 
 .clear-div {
   clear: both;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-}
+// html {
+//   -webkit-font-smoothing: antialiased;
+// }
 
-body  {
-  font-family: Futura, Arial, sans-serif;
-  font-weight: 400;
+// body  {
+//   font-family: Futura, Arial, sans-serif;
+//   font-weight: 400;
 
-  h1, legend {
-    letter-spacing: -1px;
-  }
-}
+//   h1, legend {
+//     letter-spacing: -1px;
+//   }
+// }
 
 @mixin search-title ($mg-btm) {
   color: #08354a;
@@ -40,11 +34,6 @@ body  {
   font-weight: 400;
   margin-bottom: $mg-btm;
 }
-
-// .img-responsive {
-//   width: 100%;
-//   height: auto;
-// }
 
 .teaser-search-header {
   @include search-title(50px);
@@ -69,22 +58,22 @@ input[type="text"] {
   border-radius: 0;
 }
 
-h3 {
-  text-align: center;
-  margin-bottom: 50px;
-}
+// h3 {
+//   text-align: center;
+//   margin-bottom: 50px;
+// }
 
-hr {
-  border-top: 3px solid grey;
-}
+// hr {
+//   border-top: 3px solid grey;
+// }
 
-p {
-  text-align: center;
-}
+// p {
+//   text-align: center;
+// }
 
-ol {
-  margin-bottom: 50px;
-}
+// ol {
+//   margin-bottom: 50px;
+// }
 
 input[type=checkbox].glyphicon{
   visibility: hidden;
@@ -103,9 +92,9 @@ input[type=checkbox].glyphicon.glyphicon-unchecked:checked:before {
   content: "\e067";
 }
 
-textarea {
-  resize:vertical;
-}
+// textarea {
+//   resize:vertical;
+// }
 
 .navbar-brand {
   margin-top: 5px;
