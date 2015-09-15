@@ -7,7 +7,6 @@ angular.module('pulledApp')
     var getSingleSearchResults = function(pageNum) {
       SearchService.singleSearch(pageNum).then(function(data){
         $scope.searchResults = data.vendor_variants;
-        console.log(data);
         $scope.totalItemResults = data.total_products;
         $scope.currentPage = data.current_page;
         $scope.itemPerPage = 12;
