@@ -104,6 +104,9 @@
               </div>
             </div>
           </div>
+          <div class="pull-right">
+            <pagination total-items="category.total_vendors" items-per-page="itemPerPage"  ng-model="category.current_page" ng-change="changePage(category.product_id, category.current_page)"></pagination>
+          </div>
         </tab>
       </tabset>
     </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('MultipleSearchCtrl', ['SearchService', '$scope', '$localStorage', function (SearchService, $scope, $localStorage) {
+  .controller('MultipleSearchCtrl', ['SearchService', '$scope', '$localStorage', '$filter', function (SearchService, $scope, $localStorage, $filter) {
 
     $scope.showMore = function(parentIndex, index) {
       $scope.showMore[parentIndex][index].quantity = ($scope.showMore[parentIndex][index].quantity == 3) ? 100 : 3;
@@ -10,7 +10,8 @@ angular.module('pulledApp')
     };
 
     var getSearchResults = function(pageNum) {
-      SearchService.multipleSearch(pageNum).then(function(data){
+      SearchService.multipleSearch(pageNum).then(function(data) {
+        $scope.itemPerPage = 5;
         $scope.searchResults = data.products;
         $scope.priceFilter = angular.copy($localStorage.multipleSearchInfo.price);
       }, function(reason){
@@ -20,6 +21,12 @@ angular.module('pulledApp')
 
     $scope.applyFilter = function() {
       $localStorage.multipleSearchInfo.price = $scope.priceFilter;
+      getSearchResults();
+    };
+
+    $scope.changePage = function(id, nextPage) {
+      var product = $filter('filter')($localStorage.multipleSearchInfo, {product_id: id});
+      product[0].page = nextPage;
       getSearchResults();
     };
 
