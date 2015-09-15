@@ -4,15 +4,50 @@
       <single-item-search></single-item-search>
     </div>
     <div class=" col-xs-offset-4 col-xs-2">
-      <label>Sort by: </label>
-      <select class="form-control sort-by">
-        <option>Price (low to high)</option>
-      </select>
+      <sort-products></sort-products>
     </div>
   </div>
 
   <div class='row multiple-items-container'>
-    <div class='col-md-2 filters'>
+    <div class='col-md-2'>
+      <div class="filters">
+        <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
+        <div class="price-filter-wrapper">
+          <h5>Price</h5>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="50">Less than $50</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="100">Less than $100</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="200">Less than $200</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="300">Less than $300</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="500">Less than $500</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" ng-model="priceFilter" ng-click="applyFilter()" value="" >All products</label>
+          </div>
+        </div>
+      </div>
+      <div class="filters">
+        <div class="price-filter-wrapper">
+          <h5>Distance from zip code</h5>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 100 miles</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 200 miles</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" value="">Less than 300 miles</label>
+          </div>
+        </div>
+      </div>
     </div>
     <div class='col-md-10'>
       <tabset>
@@ -44,7 +79,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-init="showMore[$parent.$index][$index].quantity = 3" ng-repeat="vendor_variant in vendor.vendor_variants | limitTo:showMore[$parent.$index][$index].quantity" >
+                  <tr ng-init="showMore[$parent.$index][$index].quantity = 3" ng-repeat="vendor_variant in vendor.vendor_variants | limitTo:showMore[$parent.$index][$index].quantity |  orderBy:orderByField:reverseSort" >
                     <td>
                       <input type="checkbox">
                     </td>

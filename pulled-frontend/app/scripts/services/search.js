@@ -21,7 +21,11 @@ angular.module('pulledApp')
     service.multipleSearch = function() {
       var defered= $q.defer();
       var promise= defered.promise;
-      console.log($localStorage.multipleSearchInfo);
+
+      //Add priceFilter to each product
+      angular.forEach($localStorage.multipleSearchInfo, function(value, index){
+        value.price = angular.copy($localStorage.multipleSearchInfo.price);
+      });
 
       Search.multipleSearch({items: $localStorage.multipleSearchInfo}, function(data){
         defered.resolve(data);

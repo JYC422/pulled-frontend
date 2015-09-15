@@ -1,0 +1,10 @@
+<label>Sort by: </label>
+<select ng-model="orderValue" ng-change= "sort()" class="form-control sort-by">
+<option disabled ng-selected="true">-- Select your order</option>
+  <option value="PriceLow">Price (low to high)</option>
+  <option value="PriceHigh">Price (high to low)</option>
+  <option value="ManuFacturerAsc">Manofacturer (A - Z)</option>
+  <option value="ManuFacturerDsc">Manofacturer (Z - A)</option>
+  <option value="StockAsc">Stock (low to high)</option>
+  <option value="StockDsc">Stock (high to low)</option>
+</select>
