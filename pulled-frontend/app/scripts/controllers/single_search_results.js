@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('SingleSearchCtrl', ['SearchService', '$scope', '$localStorage', function (SearchService, $scope, $localStorage) {
-
+  .controller('SingleSearchCtrl', ['SearchService', '$scope', '$localStorage', 'CartService', 'Validation', function (SearchService, $scope, $localStorage, CartService, Validation) {
 
     var getSingleSearchResults = function(pageNum) {
       SearchService.singleSearch(pageNum).then(function(data){
@@ -20,6 +19,15 @@ angular.module('pulledApp')
       $localStorage.searchInfo.page = $scope.currentPage;
       getSingleSearchResults();
     };
+
+    $scope.addToCart = function(item) {
+      CartService.updateCart([item]).then(function(){
+        toastr.success('Your product was succesfully added to cart', 'Product added');
+      }, function(reason){
+        //TODO ADD NECESSARY VALIDATIONS TO ValidationService ONCE BACKEND IMPLEMENTED
+        Validation.validate(reason);
+      })
+    }
 
     $scope.applyFilter = function() {
       $localStorage.searchInfo.price = angular.copy($scope.priceFilter);

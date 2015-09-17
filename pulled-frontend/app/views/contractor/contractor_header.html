@@ -18,41 +18,4 @@
       <div class="" data-container="vendors"><span class="fa fa fa-shopping-cart fa-2x"></span></div>
     </a>
 </div>
-<div id="cart" class="cart-wrapper collapse">
-  <div ng-repeat="vendor in [1,2,3,4,5,6,7,8]">
-    <div class="vendor-header-container" data-toggle="collapse" data-target="#vendor{{$index}}">
-      <label class="vendor-title">Vendor</label>
-      <label class="vendor-total-price">$100</label>
-    </div>
-    <div id="vendor{{$index}}" class="cart-vendor-products collapse in">
-      <div class="cart-product-container" ng-repeat="pr in [1,2,3,4]">
-        <img src='http://images.lowes.com/product/converted/025528/025528145286lg.jpg'>
-        <label class="product-name">Sch 40 Tee</label>
-        <div class="pricing-wrapper">
-          <p class="price-info">Single Price: $112</p>
-          <div class="quantity-info">
-            <label>Quantity: </label>
-            <input type="number"></input>
-          </div>
-        </div>
-        <div class="product-actions">
-          <a href="" data-toggle="collapse" data-target="#comment{{$index}}{{$parent.$index}}">
-            <i class="fa fa-pencil add-comment"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-times remove-pr"></i>
-          </a>
-          <p>$120.00</p>
-        </div>
-        <div id="comment{{$index}}{{$parent.$index}}" class="product-comment collapse">
-          <textarea rows="1"></textarea>
-          <button class="btn-custom pull-right comment-btn">Add</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="checkout-cart">
-    <label class="total-amount">Total: $15,00</label>
-    <button class="btn-custom checkout-btn pull-right">Check out</button>
-  </div>
-</div>
+<cart></cart>
