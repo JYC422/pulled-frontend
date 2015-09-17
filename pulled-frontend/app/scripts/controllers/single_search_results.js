@@ -26,8 +26,8 @@ angular.module('pulledApp')
       }, function(reason){
         //TODO ADD NECESSARY VALIDATIONS TO ValidationService ONCE BACKEND IMPLEMENTED
         Validation.validate(reason);
-      })
-    }
+      });
+    };
 
     $scope.applyFilter = function() {
       $localStorage.searchInfo.price = angular.copy($scope.priceFilter);
