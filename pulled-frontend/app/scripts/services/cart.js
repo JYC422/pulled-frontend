@@ -1,15 +1,15 @@
 "use strict";
 
 angular.module('pulledApp')
-  .factory('CartService', ['Cart', '$q', '$rootScope', function (Cart, $q, $rootScope) {
+  .factory('CartService', ['Job', '$q', '$rootScope', function (Job, $q, $rootScope) {
 
     var service = {};
 
-    service.getCart = function() {
+    service.getCart = function(jobId) {
       var defered= $q.defer();
       var promise= defered.promise;
 
-      Cart.get(function(data){
+      Job.getCart({id: 3},function(data){
         defered.resolve(data);
       }, function(responseHeaders){
         console.log(responseHeaders);

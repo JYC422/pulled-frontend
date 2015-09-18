@@ -36,3 +36,66 @@
     <button class="btn-custom checkout-btn pull-right">Check out</button>
   </div>
 </div>
+
+<!-- Assign To Job Modal -->
+<div class="modal fade" id="assign-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">ASSIGN TO A JOB</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="sel1">Select list:</label>
+          <select ng-options="job.id as job.name for job in jobs" ng-model="selectedJob" class="form-control" id="sel1">
+          <option disabled="true">Select a job</option>
+          </select>
+        </div>
+        <a class="add-new-job" data-toggle="collapse" data-target="#newJob">
+          + Add new job
+        </a>
+        <div id="newJob" class="clearfix collapse">
+          <div class="form-group top-spacing">
+            <input type="name" class="form-control input-grey-box" placeholder="Job Name">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-1-title">Job Address</div>
+          </div>
+          <div class="col-sm-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>City</option>
+            </select>
+          </div>
+          <div class="col-sm-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>State</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <input type="name" class="form-control input-grey-box" placeholder="Zip">
+          </div>
+
+          <div class="clearfix">
+            <div class="input-1-title">Shipping Address</div>
+          </div>
+          <div class="col-sm-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>City</option>
+            </select>
+          </div>
+          <div class="col-sm-4 form-group">
+            <select class="form-control input-grey-box">
+              <option>State</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <input type="name" class="form-control input-grey-box" placeholder="Zip">
+          </div>
+        </div>
+        <div ng-click="saveJob()" class="save-btn pull-right" data-dismiss="modal" aria-label="Close">SAVE</div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

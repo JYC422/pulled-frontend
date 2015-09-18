@@ -36,6 +36,7 @@ directive('login', ['$rootScope', 'Session', 'Validation', '$location', function
               $location.path('/vendor');
               break;
             case 'Contractor':
+              $rootScope.$broadcast('initializeCart');
               $location.path('/contractor');
               break;
           }
