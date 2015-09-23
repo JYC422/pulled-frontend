@@ -31,7 +31,8 @@
       </div>
     </div>
   </div>
-  <div class="checkout-cart">
+  <h4 class="empty-cart" ng-show="isEmptyCart()">Your shopping cart is empty</h4>
+  <div class="checkout-cart" ng-hide="isEmptyCart()">
     <label class="total-amount">Total: $15,00</label>
     <button class="btn-custom checkout-btn pull-right">Check out</button>
   </div>
@@ -39,130 +40,149 @@
 
 <!-- Assign To Job Modal -->
 <form disable-enter id="jobModal" ng-submit="saveJob()">
-  <div class="modal fade" id="assign-job-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="assign-job-modal" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">ASSIGN TO A JOB</h4>
         </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="sel1">Select list:</label>
-            <select ng-disabled="isNewJobMode()" ng-options="job.id as job.name for job in jobs" ng-model="selectedJob" class="form-control" id="sel1" ng-required="!isNewJobMode()">
-            <option value="" disabled>Select a job</option>
-            </select>
-            {{isNewJobMode()}}
-          </div>
-          <a class="add-new-job" ng-click="toggleJobAssign()" data-toggle="collapse" data-target="#newJob">
-            + Add new job
-          </a>
-          <div id="newJob" class="clearfix collapse">
-            <div class='row'>
-              <div class='col-xs-12'>
-                <div class="form-group">
-                  <label>JOB NAME</label>
-                  <input type="text" ng-model="jobName" class="form-control input-grey-box" ng-required="isNewJobMode()"/>
-                </div>
-              </div>
-              <div class='col-xs-12'>
-                <div class="form-group">
-                  <label>JOB ADDRESS</label>
-                  <input type="text" ng-model="autocomplete.jobAddress" class="form-control input-grey-box" ng-autocomplete options="options" details="details.jobAddress" ng-required="isNewJobMode()"/>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="form-group">
-                  <label>Street address</label>
-                  <div class='row'>
-                    <div class='col-xs-4'>
-                      <input class="form-control input-grey-box" ng-model="details.jobAddress.street_number" ng-disabled='details.jobAddress == null' ng-required="isNewJobMode()">
-                    </div>
-                    <div class='col-xs-8'>
-                      <input class="form-control input-grey-box" ng-model="details.jobAddress.route" ng-disabled='details.jobAddress == null' ng-required="isNewJobMode()">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-2">
-                <div class="form-group">
-                  <label>Apartment</label>
-                  <input class="form-control input-grey-box" ng-model="details.jobAddress.secondary_address" ng-disabled='details.jobAddress == null'>
-                </div>
-              </div>
-              <div class="col-xs-4">
-                <div class="form-group">
-                  <label>Zip</label>
-                  <input class="form-control input-grey-box" ng-model="details.jobAddress.postal_code" ng-disabled='details.jobAddress == null' ng-required="isNewJobMode()">
-                </div>
-              </div>
-            </div>
-            <div class='row'>
-              <div class="col-xs-2">
-                <div class="form-group">
-                  <label>State</label>
-                  <input class="form-control input-grey-box" ng-model="details.jobAddress.administrative_area_level_1" ng-disabled='details.jobAddress == null' maxlength="2" size="2" ng-required="isNewJobMode()">
-                </div>
-              </div>
-              <div class="col-xs-10">
-                <div class="form-group">
-                  <label>City</label>
-                  <input class="form-control input-grey-box" ng-model="details.jobAddress.locality" ng-disabled='details.jobAddress == null' ng-required="isNewJobMode()">
-                </div>
-              </div>
-            </div>
+        <div class="modal-body container-fluid">
 
-            <div class='row'>
-              <div class='col-xs-12'>
-                <div class="form-group">
-                  <label>SHIPPING ADDRESS</label>
-                  <input type="text" ng-model="autocomplete.shippingAddress" class="form-control input-grey-box" ng-autocomplete options="options" details="details.shippingAddress"/>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <div class="form-group">
-                  <label>Street address</label>
-                  <div class='row'>
-                    <div class='col-xs-4'>
-                      <input class="form-control input-grey-box" ng-model="details.shippingAddress.street_number" ng-disabled='details.shippingAddress == null' ng-required="isNewJobMode()">
-                    </div>
-                    <div class='col-xs-8'>
-                      <input class="form-control input-grey-box" ng-model="details.shippingAddress.route" ng-disabled='details.shippingAddress == null' ng-required="isNewJobMode()">
-                    </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label>Select list:</label>
+                <select ng-disabled="isNewJobMode()" ng-options="job.id as job.name for job in jobs" ng-model="selectedJob" class="form-control" ng-required="!isNewJobMode()">
+                <option value="" disabled>Select a job</option>
+                </select>
+              </div>    
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <a class="add-new-job" ng-click="toggleJobAssign()" data-toggle="collapse" data-target="#newJob">+ Add new job</a>   
+            </div>
+          </div>
+          <div class="row collapse" id="newJob" style="margin-top:20px">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label>JOB NAME</label>
+                    <input type="text" ng-model="jobName" class="form-control input-grey-box" ng-required="isNewJobMode()"/>
                   </div>
                 </div>
               </div>
-              <div class="col-xs-2">
-                <div class="form-group">
-                  <label>Apartment</label>
-                  <input class="form-control input-grey-box" ng-model="details.shippingAddress.secondary_address" ng-disabled='details.shippingAddress == null'>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label>JOB ADDRESS</label>
+                    <input type="text" ng-model="autocomplete.jobAddress" class="form-control input-grey-box" ng-autocomplete options="options" details="details.jobAddress" ng-required="isNewJobMode()"/>
+                  </div>
                 </div>
               </div>
-              <div class="col-xs-4">
-                <div class="form-group">
-                  <label>Zip</label>
-                  <input class="form-control input-grey-box" ng-model="details.shippingAddress.postal_code" ng-disabled='details.shippingAddress == null' ng-required="isNewJobMode()">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="form-group">
+                    <label>Street address</label>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <input class="form-control input-grey-box" ng-model="details.jobAddress.street_number" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                      </div>
+                      <div class='col-xs-8'>
+                        <input class="form-control input-grey-box" ng-model="details.jobAddress.route" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                  <div class="form-group">
+                    <label>Apartment</label>
+                    <input class="form-control input-grey-box" ng-model="details.jobAddress.secondary_address" ng-disabled="details.jobAddress == null">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                  <div class="form-group">
+                    <label>Zip</label>
+                    <input class="form-control input-grey-box" ng-model="details.jobAddress.postal_code" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                  </div>
                 </div>
               </div>
+              <div class="row">
+                <div class="col-xs-4 col-md-2">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input class="form-control input-grey-box" ng-model="details.jobAddress.administrative_area_level_1" ng-disabled="details.jobAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+                <div class="col-xs-8 col-md-10">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control input-grey-box" ng-model="details.jobAddress.locality" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group">
+                    <label>SHIPPING ADDRESS</label>
+                    <input type="text" ng-model="autocomplete.shippingAddress" class="form-control input-grey-box" ng-autocomplete options="options" details="details.shippingAddress"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="form-group">
+                    <label>Street address</label>
+                    <div class="row">
+                      <div class="col-xs-4">
+                        <input class="form-control input-grey-box" ng-model="details.shippingAddress.street_number" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
+                      </div>
+                      <div class="col-xs-8">
+                        <input class="form-control input-grey-box" ng-model="details.shippingAddress.route" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                  <div class="form-group">
+                    <label>Apartment</label>
+                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.secondary_address" ng-disabled="details.shippingAddress == null">
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                  <div class="form-group">
+                    <label>Zip</label>
+                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.postal_code" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-4 col-md-2">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.administrative_area_level_1" ng-disabled="details.shippingAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+                <div class="col-xs-8 col-md-10">
+                  <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.locality" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+              </div>
+            </div>      
+          </div> <!-- /.collapsed-row --> 
+
+          <div class="row">
+            <div class="col-xs-12">
+              <button type="submit" class="btn btn-default btn-custom pull-right">SAVE</button>
             </div>
-            <div class='row'>
-              <div class="col-xs-2">
-                <div class="form-group">
-                  <label>State</label>
-                  <input class="form-control input-grey-box" ng-model="details.shippingAddress.administrative_area_level_1" ng-disabled='details.shippingAddress == null' maxlength="2" size="2" ng-required="isNewJobMode()">
-                </div>
-              </div>
-              <div class="col-xs-10">
-                <div class="form-group">
-                  <label>City</label>
-                  <input class="form-control input-grey-box" ng-model="details.shippingAddress.locality" ng-disabled='details.shippingAddress == null' ng-required="isNewJobMode()">
-                </div>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-default btn-custom pull-right" aria-label="Close">SAVE</button>
-          <div class="clearfix"></div>
-        </div>
-      </div>
+          </div>          
+
+        </div> <!-- /.container-fluid -->
+      </div> 
     </div>
   </div>
 </form>

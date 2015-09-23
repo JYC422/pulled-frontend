@@ -9,30 +9,14 @@
   padding-right: 0;
 }
 
-.invalid-quantity {
+.invalid_quantity {
   background-color: lightpink;
 }
 
-.popover {
-  background-color: #1a8eab;
-}
-
-.popover-title {
-  background-color: #1a8eab;
-  border: 0;
-  color: white;
-}
-
-.popover.left {
-  .arrow {
-    &:after {
-      border-left-color: #1a8eab;
-    }
-  }
-}
-
-.popover-content {
-  padding: 0px;
+.invalid-quantity-message {
+  color: red;
+  font-size: 12px;
+  font-weight: 100;
 }
 
 .quad-input .form-control {

@@ -90,7 +90,7 @@
                     <td>{{vendor_variant.manufacturer}}</td>
                     <td>1''</td>
                     <td>{{vendor_variant.stock}}</td>
-                    <td><input ng-init="vendor_variant.quantity=0" ng-model="vendor_variant.quantity" class="form-control multple-product-quantity" type="number"></input></td>
+                    <td><input name="vendor_variant{{$index}}" ng-init="vendor_variant.quantity=1" min="1" max="{{vendor_variant.stock}}" ng-model="vendor_variant.quantity" class="form-control multple-product-quantity" type="number"></input></td>
                     <td>{{vendor_variant.price | currency}}</td>
                     <td>{{(vendor_variant.quantity * vendor_variant.price) | currency}}</td>
                   </tr>

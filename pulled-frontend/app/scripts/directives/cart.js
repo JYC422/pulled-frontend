@@ -51,6 +51,10 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
           console.log(reason);
           //TODO: ADD VALIDATIONS
         })
+      };
+
+      scope.isEmptyCart = function() {
+        return (scope.cart) && ($rootScope._.isEmpty(scope.cart.vendors));
       }
 
       scope.isNewJobMode = function() {

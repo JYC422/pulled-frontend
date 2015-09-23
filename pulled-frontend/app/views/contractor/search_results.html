@@ -62,7 +62,8 @@
             <p>Size: No size defined for this product </p>
             <p>Stock: {{item.stock}} </p>
             <label>Quantity:</label>
-            <input quantity-validation data-placement="left" data-original-title="Invalid quantity" ng-change="validateQuantity((puchaseForm{{$index}}).$error)" ng-init="item.quantity=1" min="1" max="{{item.stock}}" ng-model="item.quantity" type="number" class="product-quantity"></input>
+            <input ng-init="item.quantity=1" min="1" max="{{item.stock}}" ng-class="{invalid_quantity:(puchaseForm{{$index}}).$invalid}" ng-model="item.quantity" type="number" class="product-quantity" required></input>
+            <label class="invalid-quantity-message" ng-show="(puchaseForm{{$index}}).$invalid">Invalid quantity</label>
           </div>
           <div class="col-xs-12 col-md-offset-2 col-md-2">
             <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
