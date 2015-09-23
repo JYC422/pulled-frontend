@@ -21,7 +21,12 @@ angular.module('pulledApp')
     };
 
     $scope.addToCart = function(item) {
-      CartService.updateCart([item]).then(function(){
+      var lineItem = {
+        vendor_variant_id: item.id,
+        quantity: item.quantity
+      };
+
+      CartService.addToCart(lineItem).then(function(){
         toastr.success('Your product was succesfully added to cart', 'Product added');
       }, function(reason){
         //TODO ADD NECESSARY VALIDATIONS TO ValidationService ONCE BACKEND IMPLEMENTED

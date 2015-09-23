@@ -48,14 +48,13 @@
     <link rel="stylesheet" type="text/css" href="styles/checkout.css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
-
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
   </head>
   <body ng-app="pulledApp" ng-controller="ApplicationCtrl">
     <ng-include src="'views/header.html'" ng-show="!showingError"></ng-include>
     <div autoscroll="true" ng-view=""></div>
     <ng-include src="'views/footer.html'"></ng-include>
 
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -95,6 +94,8 @@
 
     <!-- directives  -->
     <script src="scripts/directives/login.js"></script>
+    <script src="scripts/directives/quantity_validation.js"></script>
+    <script src="scripts/directives/disable_keypress_enter.js"></script>
     <script src="scripts/directives/cart.js"></script>
     <script src="scripts/directives/sort.js"></script>
     <script src="scripts/directives/only-number.js"></script>
@@ -126,7 +127,6 @@
     <script src="scripts/js/jquery.multi-select.js"></script>
 
     <!-- resources  -->
-    <script src="scripts/resources/cart.js"></script>
     <script src="scripts/resources/job.js"></script>
     <script src="scripts/resources/user.js"></script>
     <script src="scripts/resources/search.js"></script>

@@ -51,31 +51,33 @@
     <div class="col-xs-12 col-md-9 col-lg-10">
       <h3 class="cat-title">{{searchResults[0].category.name}}</h3>
       <div only-number class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults | orderBy:orderByField:reverseSort">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <p class="product-name">{{item.name}}</p>
-          <p>Price: {{item.price | currency}}</p>
-          <p>Manofacturer: {{item.manufacturer}}</p>
-          <p>Size: No size defined for this product </p>
-          <p>Stock: {{item.stock}} </p>
-          <label>Quantity:</label>
-          <input ng-init="item.quantity=0" min="0" max="{{item.stock}}" ng-model="item.quantity" type="number" class=" product-quantity"></input>
-        </div>
-        <div class="col-xs-12 col-md-offset-2 col-md-2">
-          <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
-          <div class="dropdown">
-            <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="select-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Select
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="select-product">
-              <li><a href="">Purchase</a></li>
-              <li><a href="">Bid</a></li>
-            </ul>
+        <form name="puchaseForm{{$index}}" novalidate>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
           </div>
-        </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <p class="product-name">{{item.name}}</p>
+            <p>Price: {{item.price | currency}}</p>
+            <p>Manofacturer: {{item.manufacturer}}</p>
+            <p>Size: No size defined for this product </p>
+            <p>Stock: {{item.stock}} </p>
+            <label>Quantity:</label>
+            <input quantity-validation data-placement="left" data-original-title="Invalid quantity" ng-change="validateQuantity((puchaseForm{{$index}}).$error)" ng-init="item.quantity=1" min="1" max="{{item.stock}}" ng-model="item.quantity" type="number" class="product-quantity"></input>
+          </div>
+          <div class="col-xs-12 col-md-offset-2 col-md-2">
+            <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
+            <div class="dropdown" ng-disabled="">
+              <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="select-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-disabled="(puchaseForm{{$index}}).$invalid">
+                Select
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="select-product">
+                <li><a href="" ng-click="addToCart(item)">Purchase</a></li>
+                <li><a href="">Bid</a></li>
+              </ul>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <div class="pull-right">

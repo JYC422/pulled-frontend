@@ -4,9 +4,17 @@ angular.module('pulledApp')
 .factory('Job', ['$resource', 'API_URL', function($resource, API_URL){
   return $resource(API_URL + '/jobs/:id/', { id: '@id' },
     {
-      deleteProduct: {
+      removeLineItem: {
         method: 'DELETE',
         url: API_URL + '/jobs/:id/delete_product'
+      },
+      updateCartProduct: {
+        method: 'PUT',
+        url: API_URL + '/jobs/:id/update_product'
+      },
+      addToCart: {
+        method: 'POST',
+        url: API_URL + '/jobs/:id/create_product'
       },
       updateCart: {
         method: 'POST',

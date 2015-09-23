@@ -9,6 +9,32 @@
   padding-right: 0;
 }
 
+.invalid-quantity {
+  background-color: lightpink;
+}
+
+.popover {
+  background-color: #1a8eab;
+}
+
+.popover-title {
+  background-color: #1a8eab;
+  border: 0;
+  color: white;
+}
+
+.popover.left {
+  .arrow {
+    &:after {
+      border-left-color: #1a8eab;
+    }
+  }
+}
+
+.popover-content {
+  padding: 0px;
+}
+
 .quad-input .form-control {
   width: 25%;
   border-right-width: 0px;
