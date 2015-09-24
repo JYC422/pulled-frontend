@@ -1,4 +1,6 @@
 #subCategoryTable {
+ font-size: 14px;
+
   a {
     color: black;
     text-decoration: none;
@@ -42,6 +44,26 @@
 
 .inventory-sorter .dropdown-menu .check-mark:before {
   color: #4ac59a;
+}
+
+%add-item-to-inventory {
+  border-radius: 0;
+  width: 84px;
+  margin-top: 15px;
+}
+
+.btn.edit-pr-btn {
+  @extend %add-item-to-inventory;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.btn.delete-pr-btn {
+  @extend %add-item-to-inventory;
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
 }
 
 .inventory-form .input-half-width {
@@ -165,11 +187,6 @@
   width: 30%;
 }
 
-.btn-add-item-inventory {
-  margin-left: 40%;
-  width: 23%;
-}
-
 #inventory-summary .green-table .product-image {
   float: left;
   min-width: 30%;
@@ -253,4 +270,10 @@
 
 #inventory-summary tbody tr:nth-child(even) {
   background-color: #f7f7f7;
+}
+
+@media (max-width: 970px) {
+   #subCategoryTable {
+    font-size: 12px;
+  }
 }

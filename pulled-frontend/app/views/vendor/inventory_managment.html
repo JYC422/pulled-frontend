@@ -33,7 +33,7 @@
                 </div>
                 <div id="subcategories-collapse-{{$parent.$index}}{{$index}}" class="panel-collapse collapse in" role="tabpanel">
                   <div class="panel-body panel-without-padding">
-                    <table id="subCategoryTable" class="green-table green-border mobile-card-table">
+                    <table wt-responsive-table id="subCategoryTable" class="green-table green-border mobile-card-table">
                       <thead>
                         <tr>
                           <th><a ng-click="orderByField='status'; reverseSort = !reverseSort" href="">Status <i class="fa fa-angle-down hidden-xs"></i></a></th>
@@ -63,10 +63,10 @@
                           <td>{{vendor_variant.updated_at | date : 'short'}}</td>
                           <td>{{vendor_variant.stock}}</td>
                           <td>
-                            <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#EditInventoryModal" data-toggle="modal">
+                            <button class="btn edit-pr-btn" ng-click="editProduct(vendor_variant)" data-target="#EditInventoryModal" data-toggle="modal">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>
                             </button>
-                            <button ng-click="deleteProduct(vendor_variant)" class="btn btn-warning add-item-to-inventory">
+                            <button ng-click="deleteProduct(vendor_variant)" class="btn delete-pr-btn">
                               <span>Delete&nbsp;</span><i class="fa fa-times"></i>
                             </button>
                           </td>

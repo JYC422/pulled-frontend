@@ -12,7 +12,8 @@ angular
     'ui.bootstrap',
     'ui.bootstrap.fontawesome',
     'ngAutocomplete',
-    'angucomplete-alt'
+    'angucomplete-alt',
+    'wt.responsive'
   ])
   .constant('API_URL', 'http://localhost:3000/api/v1')
   .constant('HOST_URL', 'http://localhost:3000')

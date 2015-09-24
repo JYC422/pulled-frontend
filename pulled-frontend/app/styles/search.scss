@@ -183,6 +183,13 @@
   }
 }
 
+@media (max-width: 750px) {
+   .remove-search-bar {
+      position:absolute;
+      left: 87%;
+  }
+}
+
 @media (max-width: 650px) {
   #search .nav-tabs-custom {
     li {
