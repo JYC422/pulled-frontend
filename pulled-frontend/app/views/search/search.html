@@ -1,41 +1,49 @@
 <!-- SEARCH SECTION -->
-<div id="search" class="section-wrapper container">
-  <h3 class="search-for-items">Start Search</h3>
-  <ul class="nav nav-tabs-custom">
-    <li role="presentation" class="active">
-      <a data-target="#single-item" data-toggle="tab">
-        Single item
-        <hr>
-      </a>
-    </li>
-    <li role="presentation">
-      <a data-target="#list-of-items" data-toggle="tab">
-        List of items
-        <hr class="hr-left"></a>
-    </li>
-    <li role="presentation">
-      <a data-target="#attach-items" data-toggle="tab">
-        Attach your own list
-        <hr class="hr-left"></a>
-    </li>
-  </ul>
-  <div class="clear-div"></div>
-  <div class="clear-div"></div>
-
-  <div class="tab-content">
-    <div class="tab-pane pane-list-items active" id="single-item">
-      <single-item-search></single-item-search>
+<div id="search" class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="search-for-items">Start Search</h3>  
     </div>
-
-    <div class="tab-pane pane-list-items" id="list-of-items">
-    <multiple-item-search></multiple-item-search>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="nav search-container nav-tabs-custom">
+      <li role="presentation" class="active">
+        <a data-target="#single-item" data-toggle="tab">
+          Single item
+          <hr>
+        </a>
+      </li>
+      <li role="presentation">
+        <a data-target="#list-of-items" data-toggle="tab">
+          List of items
+          <hr class="hr-left"></a>
+      </li>
+      <li role="presentation">
+        <a data-target="#attach-items" data-toggle="tab">
+          Attach your own list
+          <hr class="hr-left"></a>
+      </li>
+    </ul>  
     </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="tab-content">
+        <div class="tab-pane pane-list-items active search-container" id="single-item">
+          <single-item-search></single-item-search>
+        </div>
 
-    <div class="tab-pane pane-list-items" id="attach-items">
-      <div class="attach-wrapper">
-        <button type="button" class="btn btn-default btn-attach">Attach your own list</button>
-      </div>
+        <div class="tab-pane pane-list-items" id="list-of-items">
+        <multiple-item-search></multiple-item-search>
+        </div>
+
+        <div class="tab-pane pane-list-items" id="attach-items">
+          <div class="attach-wrapper">
+            <button type="button" class="btn btn-default btn-attach">Attach your own list</button>
+          </div>
+        </div>
+      </div>  
     </div>
-
   </div>
 </div>
