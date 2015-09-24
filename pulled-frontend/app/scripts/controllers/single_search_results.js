@@ -26,10 +26,10 @@ angular.module('pulledApp')
         quantity: item.quantity
       };
 
-      CartService.addToCart(lineItem).then(function(){
+      CartService.addToCart([lineItem]).then(function(){
         toastr.success('Your product was succesfully added to cart', 'Product added');
       }, function(reason){
-        //TODO ADD NECESSARY VALIDATIONS TO ValidationService ONCE BACKEND IMPLEMENTED
+        //TODO ADD NECESSARY VALIDATIONS TO ValidationService
         Validation.validate(reason);
       });
     };

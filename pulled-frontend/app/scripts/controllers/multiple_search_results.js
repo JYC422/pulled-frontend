@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pulledApp')
-  .controller('MultipleSearchCtrl', ['SearchService', '$scope', '$localStorage', '$filter', function (SearchService, $scope, $localStorage, $filter) {
+  .controller('MultipleSearchCtrl', ['SearchService', '$scope', '$localStorage', '$filter', 'CartService', function (SearchService, $scope, $localStorage, $filter, CartService) {
 
     $scope.showMore = function(parentIndex, index) {
       $scope.showMore[parentIndex][index].quantity = (angular.equals($scope.showMore[parentIndex][index].quantity, undefined) || angular.equals($scope.showMore[parentIndex][index].quantity, 3)) ? 100 : 3;
@@ -30,6 +30,28 @@ angular.module('pulledApp')
       product[0].page = nextPage;
       getSearchResults();
     };
+
+    $scope.addToCart = function(items) {
+      var lineItems = [];
+      for (var i = items.length - 1; i >= 0; i--) {
+        if (items[i].selected) {
+          console.log(items[i]);
+          var lineItem = {
+            vendor_variant_id :items[i].id,
+            quantity: items[i].quantity
+          }
+          lineItems.push(lineItem);
+        }
+      };
+      if (lineItems.length != 0) {
+        CartService.addToCart(lineItems).then(function() {
+          toastr.success('Your products were succesfully added to cart', 'Products added');
+        }, function(reason) {
+          //TODO ADD NECESSARY VALIDATIONS TO ValidationService
+          console.log(reason);
+        })
+      };
+    }
 
     getSearchResults();
 

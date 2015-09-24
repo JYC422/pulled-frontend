@@ -42,7 +42,6 @@
                           <th><a ng-click="orderByField='created_at'; reverseSort = !reverseSort" href="">Date Created <i class="fa fa-angle-down hidden-xs"></i></a></th>
                           <th><a ng-click="orderByField='updated_at'; reverseSort = !reverseSort" href="">Last Modified <i class="fa fa-angle-down hidden-xs"></i></a></th>
                           <th><a ng-click="orderByField='stock'; reverseSort = !reverseSort" href="">Available <i class="fa fa-angle-down hidden-xs"></i></a></th>
-                          <th>Sub Categories</th>
                           <th>Actions</th>
                         </tr>
                       </thead>
@@ -63,9 +62,6 @@
                           <td>{{vendor_variant.created_at | date : 'short'}}</td>
                           <td>{{vendor_variant.updated_at | date : 'short'}}</td>
                           <td>{{vendor_variant.stock}}</td>
-                          <td>
-                            <span ng-repeat="secondarySubcategory in vendor_variant.sub_categories" class="label label-default secondary-subcategory">{{secondarySubcategory.name}}</span>
-                          </td>
                           <td>
                             <button class="btn btn-primary add-item-to-inventory" ng-click="editProduct(vendor_variant)" data-target="#EditInventoryModal" data-toggle="modal">
                               <span>Edit&nbsp;</span><i class="fa fa-pencil"></i>

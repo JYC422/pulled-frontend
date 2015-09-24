@@ -23,23 +23,20 @@
   z-index: 0;
   position: relative;
   display: block;
+  border: none;
   border-collapse: separate;
 
   .first {
     width: 36%;
   }
 
-  .second {
+  .middle {
     width: 15%;
     background-color: #eee;
+    border: none;
   }
 
-  .third {
-    width: 15%;
-    background-color: #eee;
-  }
-
-  .fourth {
+  .last {
     width: 21%;
   }
 }
@@ -194,7 +191,7 @@
   }
 
   .quad-input {
-    .first, .second, .third, .fourth {
+    .first, .middle, .last {
       width: 100%;
       margin: 2%;
     }

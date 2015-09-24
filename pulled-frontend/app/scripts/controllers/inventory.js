@@ -11,7 +11,7 @@ angular.module('pulledApp')
 
   $scope.editProduct = function(product) {
     $scope.item = angular.copy(product);
-    $scope.item.main_sub_category_id = $scope.item.main_sub_category.id;
+    $scope.item.sub_category_id = $scope.item.sub_category.id;
     $scope.disableField = false;
   };
 
@@ -65,7 +65,7 @@ angular.module('pulledApp')
       sku: "",
       status: "",
       unit: "",
-      main_sub_category_id: { id: ''},
+      sub_category_id: { id: ''},
       units: [],
       sub_categories: []
     };

@@ -86,7 +86,7 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
         scope.jobMode = (angular.equals(scope.jobMode, 'selection')) ? 'new' : 'selection';
       };
 
-      Session.hasCurrentUser() && initializeCart();
+      Session.isContractor() && initializeCart();
 
       $rootScope.$on('updateCart', function(event, cart) {
         scope.cart = cart;

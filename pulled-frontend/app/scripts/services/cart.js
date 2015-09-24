@@ -22,8 +22,8 @@ angular.module('pulledApp')
     service.addToCart = function(lineItem) {
       var defered= $q.defer();
       var promise= defered.promise;
-       Job.addToCart({id: JobService.getCurrentJob(),
-                     line_item: lineItem},
+       Job.updateCart({id: JobService.getCurrentJob(),
+                     line_items_attributes: lineItem},
         function(data){
         $rootScope.$broadcast('updateCart', data.current_order);
         defered.resolve(data);
@@ -42,21 +42,6 @@ angular.module('pulledApp')
                      line_item_id: lineItemId},
         function(data){
         $rootScope.$broadcast('updateCart', data.current_order);
-        defered.resolve(data);
-      }, function(responseHeaders){
-        console.log(responseHeaders);
-        defered.reject(responseHeaders);
-      });
-
-      return promise;
-    };
-
-    service.updateCart = function(updatedCart) {
-      var defered= $q.defer();
-      var promise= defered.promise;
-      //TODO, SEND NECESSARY DATA ONCE BACKEND IMPLEMENTED
-       Job.save({cart: updatedCart}, function(data){
-        $rootScope.$broadcast('addToCart', data.cart);
         defered.resolve(data);
       }, function(responseHeaders){
         console.log(responseHeaders);

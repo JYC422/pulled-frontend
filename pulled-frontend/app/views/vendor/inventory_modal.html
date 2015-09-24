@@ -55,11 +55,11 @@
             </div>
             <div class="row variant-field">
               <div class="col-xs-3">
-                <label>Main Sub category:</label>
+                <label>Sub category:</label>
               </div>
               <div class="col-xs-5">
-               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories" ng-model="item.main_sub_category_id" ng-disabled="disableField" required>
-                 <option value ="" disabled>Select main subcategory</option>
+               <select class="form-control" ng-options="subCategory.id as subCategory.name for subCategory in item.sub_categories" ng-model="item.sub_category_id" ng-disabled="disableField" required>
+                 <option value ="" disabled>Select subcategory</option>
                </select>
               </div>
             </div>
