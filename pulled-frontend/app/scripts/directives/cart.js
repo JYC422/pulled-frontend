@@ -41,7 +41,7 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
           zip: addr.postal_code,
           state: addr.administrative_area_level_1,
           city: addr.locality
-        }
+        };
       };
 
       scope.removeProduct = function(lineItem) {
@@ -50,16 +50,16 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
         }, function(reason) {
           console.log(reason);
           //TODO: ADD VALIDATIONS
-        })
+        });
       };
 
       scope.isEmptyCart = function() {
         return (scope.cart) && ($rootScope._.isEmpty(scope.cart.vendors));
-      }
+      };
 
       scope.isNewJobMode = function() {
        return angular.equals(scope.jobMode, 'new');
-      }
+      };
 
       scope.saveJob = function () {
         if (scope.isNewJobMode()) {
@@ -68,15 +68,15 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
             name: scope.jobName,
             job_address_attributes: setAddressAttributes(scope.details.jobAddress),
             shipping_address_attributes: setAddressAttributes(scope.details.shippingAddress)
-          }
+          };
 
-          JobService.createJob({job: address}).then(function(data) {
+          JobService.createJob({job: address}).then(function() {
             getCart();
           }, function(reason) {
             console.log(reason);
-          })
+          });
         } else {
-          JobService.saveCurrentJob(scope.selectedJob)
+          JobService.saveCurrentJob(scope.selectedJob);
           getCart();
         }
         $('#assign-job-modal').modal('hide');
@@ -86,7 +86,7 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
         scope.jobMode = (angular.equals(scope.jobMode, 'selection')) ? 'new' : 'selection';
       };
 
-      Session.isContractor() && initializeCart();
+      Session.isContractor() && initializeCart(); // jshint ignore:line
 
       $rootScope.$on('updateCart', function(event, cart) {
         scope.cart = cart;

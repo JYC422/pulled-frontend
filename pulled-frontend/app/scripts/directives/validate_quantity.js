@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('pulledApp').
-directive("validateQuantity", ['Session', '$location', 'Validation', 'API_URL', '$localStorage', function(Session, $location, Validation, API_URL, $localStorage){
+directive("validateQuantity", function(){
   return {
     restrict: "A",
 
     scope: false,
-    link: function(scope, elem, attrs) {
+    link: function(scope) {
 
       scope.validateProduct = function (quantity, isSelected) {
         return isSelected &&  !Boolean(quantity);
-      }
+      };
 
     }
   };
-}]);
+});

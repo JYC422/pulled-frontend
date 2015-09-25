@@ -25,7 +25,7 @@ angular.module('pulledApp')
       var promise= defered.promise;
 
       Job.save(newJob, function(data){
-        service.saveCurrentJob(data.id)
+        service.saveCurrentJob(data.id);
         defered.resolve(data);
       }, function(responseHeaders){
         console.log(responseHeaders);

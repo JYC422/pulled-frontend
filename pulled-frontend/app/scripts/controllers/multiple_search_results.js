@@ -39,19 +39,19 @@ angular.module('pulledApp')
           var lineItem = {
             vendor_variant_id :items[i].id,
             quantity: items[i].quantity
-          }
+          };
           lineItems.push(lineItem);
         }
-      };
-      if (lineItems.length != 0) {
+      }
+      if (lineItems.length !== 0) {
         CartService.addToCart(lineItems).then(function() {
           toastr.success('Your products were succesfully added to cart', 'Products added');
         }, function(reason) {
           //TODO ADD NECESSARY VALIDATIONS TO ValidationService
           console.log(reason);
-        })
-      };
-    }
+        });
+      }
+    };
 
     getSearchResults();
 
