@@ -10,7 +10,6 @@ directive("emptyList", [ '$location', '$rootScope', function($location, $rootSco
 
       scope.$watch('inventory', function(){
         scope.emptyInventory = Boolean(scope.inventory) && $rootScope._.isEmpty(scope.inventory);
-        console.log(scope.emptyInventory);
       }, true);
 
     }
