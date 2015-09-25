@@ -24,9 +24,12 @@ describe('Service: Session', function () {
   // Set up the mock http service responses
    $httpBackend = $injector.get('$httpBackend');
 
-   fakedMainResponse = {"token":"B8PH2ZsMz25WKzdTcNyy",
-                            "email":"foo@test.com"
-                           };
+   fakedMainResponse = { "token":"B8PH2ZsMz25WKzdTcNyy",
+                         "email":"foo@test.com",
+                         "company_name":"Dooley and Sons",
+                         "user_type": "Contractor",
+                         "id": 13
+                       };
 
    $httpBackend.when('POST', API_URL + '/users/sign_in').respond(fakedMainResponse);
    $httpBackend.when('DELETE', API_URL + '/users/sign_out').respond('success');
@@ -63,7 +66,9 @@ describe('Service: Session', function () {
       Session.signIn();
       $httpBackend.flush();
       expect($localStorage.user).toEqual({ email: 'foo@test.com',
-                                           authToken: 'B8PH2ZsMz25WKzdTcNyy'
+                                           authToken: 'B8PH2ZsMz25WKzdTcNyy',
+                                           company_name:"Dooley and Sons",
+                                           user_type:"Contractor"
                                          });
     });
   });

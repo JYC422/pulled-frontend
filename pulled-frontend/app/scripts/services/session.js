@@ -67,8 +67,7 @@ angular.module('pulledApp')
         email: user.email,
         authToken: user.token,
         company_name: user.company_name,
-        user_type: user.user_type,
-        id: user.id
+        user_type: user.user_type
       };
     };
 

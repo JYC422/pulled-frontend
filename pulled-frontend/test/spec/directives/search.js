@@ -10,7 +10,7 @@ describe('Directive: search', function() {
 
   // Load the myApp module, which contains the directive
   beforeEach(module('pulledApp'));
-  beforeEach(module('views/search.html'));
+  beforeEach(module('views/search/search.html'));
 
   // Store references to $rootScope and $compile
   // so they are available to all tests in this describe block
