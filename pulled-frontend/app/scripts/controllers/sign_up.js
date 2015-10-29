@@ -25,7 +25,7 @@ angular.module('pulledApp')
   };
 
   $scope.setAddressAttributes = function(addr) {
-    addr.street_address = $scope.details.street_number + ' ' + $scope.details.route;
+    addr.street_address = $scope.details.name;
     addr.secondary_address = $scope.details.secondary_address;
     addr.zip = $scope.details.postal_code;
     addr.state = $scope.details.administrative_area_level_1;
@@ -37,8 +37,16 @@ angular.module('pulledApp')
     $scope.setAddressAttributes(user.address_attributes);
     console.log(user);
     Register.signUp({user: user}).then(function(response){
-    toastr.success('Welcome ' + response.email, 'Registration Success');
-    $location.path('/');
+      toastr.success('Welcome ' + response.email, 'Registration Success');
+      switch(response.user_type){
+        case 'Vendor':
+          $location.path('/vendor');
+          break;
+        case 'Contractor':
+          $rootScope.$broadcast('initializeCart');
+          $location.path('/contractor');
+          break;
+      }
     }, function(reason){
       Validation.validate(reason);
     });

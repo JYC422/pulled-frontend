@@ -36,7 +36,7 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
 
        var setAddressAttributes = function(addr) {
         return {
-          street_address: addr.street_number + ' ' + addr.route,
+          street_address: addr.name,
           secondary_address: addr.secondary_address,
           zip: addr.postal_code,
           state: addr.administrative_area_level_1,

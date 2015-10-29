@@ -55,13 +55,13 @@
                 <select ng-disabled="isNewJobMode()" ng-options="job.id as job.name for job in jobs" ng-model="selectedJob" class="form-control" ng-required="!isNewJobMode()">
                 <option value="" disabled>Select a job</option>
                 </select>
-              </div>    
+              </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12">
-              <a class="add-new-job" ng-click="toggleJobAssign()" data-toggle="collapse" data-target="#newJob">+ Add new job</a>   
+              <a class="add-new-job" ng-click="toggleJobAssign()" data-toggle="collapse" data-target="#newJob">+ Add new job</a>
             </div>
           </div>
           <div class="row collapse" id="newJob" style="margin-top:20px">
@@ -69,7 +69,7 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <label>JOB NAME</label>
+                    <label>Job name</label>
                     <input type="text" ng-model="jobName" class="form-control input-grey-box" ng-required="isNewJobMode()"/>
                   </div>
                 </div>
@@ -77,32 +77,23 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="form-group">
-                    <label>JOB ADDRESS</label>
+                    <label>Job address</label>
                     <input type="text" ng-model="autocomplete.jobAddress" class="form-control input-grey-box" ng-autocomplete options="options" details="details.jobAddress" ng-required="isNewJobMode()"/>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-7">
                   <div class="form-group">
                     <label>Street address</label>
                     <div class="row">
-                      <div class="col-xs-4">
-                        <input class="form-control input-grey-box" ng-model="details.jobAddress.street_number" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
-                      </div>
-                      <div class='col-xs-8'>
-                        <input class="form-control input-grey-box" ng-model="details.jobAddress.route" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                      <div class='col-xs-12'>
+                        <input class="form-control input-grey-box" ng-model="details.jobAddress.name" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-6 col-md-2">
-                  <div class="form-group">
-                    <label>Apartment</label>
-                    <input class="form-control input-grey-box" ng-model="details.jobAddress.secondary_address" ng-disabled="details.jobAddress == null">
-                  </div>
-                </div>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-12 col-md-5">
                   <div class="form-group">
                     <label>Zip</label>
                     <input class="form-control input-grey-box" ng-model="details.jobAddress.postal_code" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
@@ -110,16 +101,16 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-4 col-md-2">
-                  <div class="form-group">
-                    <label>State</label>
-                    <input class="form-control input-grey-box" ng-model="details.jobAddress.administrative_area_level_1" ng-disabled="details.jobAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
-                  </div>
-                </div>
                 <div class="col-xs-8 col-md-10">
                   <div class="form-group">
                     <label>City</label>
                     <input class="form-control input-grey-box" ng-model="details.jobAddress.locality" ng-disabled="details.jobAddress == null" ng-required="isNewJobMode()">
+                  </div>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input class="form-control input-grey-box" ng-model="details.jobAddress.administrative_area_level_1" ng-disabled="details.jobAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
                   </div>
                 </div>
               </div>
@@ -132,26 +123,17 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-7">
                   <div class="form-group">
                     <label>Street address</label>
                     <div class="row">
-                      <div class="col-xs-4">
-                        <input class="form-control input-grey-box" ng-model="details.shippingAddress.street_number" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
-                      </div>
-                      <div class="col-xs-8">
-                        <input class="form-control input-grey-box" ng-model="details.shippingAddress.route" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
+                      <div class="col-xs-12">
+                        <input class="form-control input-grey-box" ng-model="details.shippingAddress.name" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-6 col-md-2">
-                  <div class="form-group">
-                    <label>Apartment</label>
-                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.secondary_address" ng-disabled="details.shippingAddress == null">
-                  </div>
-                </div>
-                <div class="col-xs-6 col-md-4">
+                <div class="col-xs-12 col-md-5">
                   <div class="form-group">
                     <label>Zip</label>
                     <input class="form-control input-grey-box" ng-model="details.shippingAddress.postal_code" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
@@ -159,30 +141,30 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-4 col-md-2">
-                  <div class="form-group">
-                    <label>State</label>
-                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.administrative_area_level_1" ng-disabled="details.shippingAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
-                  </div>
-                </div>
                 <div class="col-xs-8 col-md-10">
                   <div class="form-group">
                     <label>City</label>
                     <input class="form-control input-grey-box" ng-model="details.shippingAddress.locality" ng-disabled="details.shippingAddress == null" ng-required="isNewJobMode()">
                   </div>
                 </div>
+                <div class="col-xs-4 col-md-2">
+                  <div class="form-group">
+                    <label>State</label>
+                    <input class="form-control input-grey-box" ng-model="details.shippingAddress.administrative_area_level_1" ng-disabled="details.shippingAddress == null" maxlength="2" size="2" ng-required="isNewJobMode()">
+                  </div>
+                </div>
               </div>
-            </div>      
-          </div> <!-- /.collapsed-row --> 
+            </div>
+          </div> <!-- /.collapsed-row -->
 
           <div class="row">
             <div class="col-xs-12">
               <button type="submit" class="btn btn-default btn-custom pull-right">SAVE</button>
             </div>
-          </div>          
+          </div>
 
         </div> <!-- /.container-fluid -->
-      </div> 
+      </div>
     </div>
   </div>
 </form>
