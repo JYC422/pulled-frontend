@@ -54,11 +54,11 @@ angular.module('pulledApp')
     };
 
     service.isContractor = function() {
-      return ($localStorage.user) ?  $localStorage.user.user_type === 'Contractor': false;
+      return ($localStorage.user) ? angular.equals($localStorage.user.user_type, 'Contractor') : false;
     };
 
     service.isVendor = function() {
-      return ($localStorage.user) ?  $localStorage.user.user_type === 'Vendor': false;
+      return ($localStorage.user) ? angular.equals($localStorage.user.user_type, 'Vendor') : false;
     };
 
     service.setSession = function(user){

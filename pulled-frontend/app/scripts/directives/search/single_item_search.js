@@ -13,7 +13,7 @@ directive("singleItemSearch", ['Session', '$location', 'Validation', 'API_URL', 
       scope.$watch('searchedProduct', function(){
         scope.disableField= !Boolean(scope.searchedProduct);
         if (scope.searchedProduct) {
-          scope.item= scope.searchedProduct.description;
+          scope.item = scope.searchedProduct.originalObject;
         };
       }, true);
 

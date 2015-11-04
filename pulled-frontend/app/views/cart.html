@@ -6,7 +6,7 @@
     </div>
     <div only-number id="vendor{{$index}}" class="cart-vendor-products collapse in">
       <div class="cart-product-container" ng-repeat="lineItem in vendor.line_items">
-        <img src='http://images.lowes.com/product/converted/025528/025528145286lg.jpg'>
+        <img ng-src="{{lineItem.vendor_variant.avatar}}" err-src="img/no-thumb.png">
         <label class="product-name">{{lineItem.vendor_variant.name}}</label>
         <div class="pricing-wrapper">
           <p class="price-info">Single Price: {{lineItem.vendor_variant.price | currency}}</p>

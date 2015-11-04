@@ -15,7 +15,6 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
       var getCart = function() {
         CartService.getCart().then(function(cart){
             scope.cart = cart.current_order;
-            console.log(scope.cart);
           }, function(reason){
             console.log(reason);
         });

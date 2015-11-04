@@ -5,6 +5,7 @@ angular.module('pulledApp')
 
   	toastr.options = {
   		positionClass: "toast-top-center",
+      preventDuplicates: true,
       escapeHtml: true
   	};
 
@@ -38,6 +39,7 @@ angular.module('pulledApp')
       '/checkout'
     ];
 
+   restrictedLoggedPaths = restrictedLoggedPaths.concat(errorPages);
    unrestrictedVendorPaths = unrestrictedVendorPaths.concat(errorPages);
    unrestrictedContractorPaths = unrestrictedContractorPaths.concat(errorPages);
 
