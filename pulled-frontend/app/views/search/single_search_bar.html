@@ -3,7 +3,7 @@
     <div class="input-group quad-input">
       <div angucomplete-alt id="ex5" placeholder="Product you are looking for" pause="500" selected-object="searchedProduct" image-field="avatar" remote-url="{{autocompleteUrl}}" remote-url-data-field="products" description-field="category.name" title-field="name" minlength="1" input-class="first form-control input-search" match-class="highlight"></div>
       <input ng-model="quantity" type="number" placeholder="Quantity" class="middle form-control input-search"/>
-      <select ng-options="unit for unit in item.units" ng-model="unit" ng-disabled="disableField" type="text" placeholder="Each" class=" middle form-control input-search">
+      <select ng-options="unit for unit in item.units" ng-model="unit" ng-disabled="disableField" type="text" placeholder="Each" class=" quantity-search form-control input-search">
         <option value ="" disabled> Unit</option>
       </select>
        <input type="text" placeholder="Location zipcode" class=" last form-control input-search" ng-disabled="disableField" ng-model="location"/>

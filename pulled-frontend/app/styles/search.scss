@@ -45,6 +45,16 @@
   width: 13%;
 }
 
+.quantity-search {
+  @extend .middle;
+  text-indent: 2em;
+  font-size: 11px;
+  color: #8C97A3;
+
+  &:disabled {
+    background-color: #eee;
+  }
+}
 
 .search-container {
   margin: 0 12%
