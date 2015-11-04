@@ -32,8 +32,8 @@
 
   .middle {
     width: 15%;
-    background-color: #eee;
-    border: none;
+    background-color: #f4f9f9;
+    border: 1px solid #c2cbd4;
   }
 
   .last {
@@ -42,7 +42,7 @@
 }
 
 .single-search-btn {
-  width: auto;
+  width: 13%;
 }
 
 
@@ -207,6 +207,7 @@
   .single-search-btn {
     margin: 2%;
     float: right;
+    width: auto;
   }
 
 }
