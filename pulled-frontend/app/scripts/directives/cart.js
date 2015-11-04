@@ -15,7 +15,6 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
       var getCart = function() {
         CartService.getCart().then(function(cart){
             scope.cart = cart.current_order;
-            console.log(scope.cart);
           }, function(reason){
             console.log(reason);
         });
@@ -36,7 +35,7 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
 
        var setAddressAttributes = function(addr) {
         return {
-          street_address: addr.street_number + ' ' + addr.route,
+          street_address: addr.name,
           secondary_address: addr.secondary_address,
           zip: addr.postal_code,
           state: addr.administrative_area_level_1,

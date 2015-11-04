@@ -90,7 +90,7 @@
                           <input type="checkbox" ng-model="vendor_variant.selected">
                         </td>
                         <td class="multiple-product-name">
-                          <img src='http://images.lowes.com/product/converted/025528/025528145286lg.jpg'>
+                          <img ng-src="{{vendor_variant.avatar}}" err-src="img/no-thumb.png">
                           <div class='inner-text'>{{vendor_variant.name}}</div>
                         </td>
                         <td>{{vendor_variant.manufacturer}}</td>

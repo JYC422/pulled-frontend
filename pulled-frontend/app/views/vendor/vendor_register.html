@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div style="margin-top: 4%; margin-bottom: 4%;}" class="register-container col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    <h1> Vendor register </h1>
-    <form disableEnter class="register-form" ng-submit="signUp(vendor)">
+    <h1> Vendor registration </h1>
+    <form disable-enter class="register-form" ng-submit="signUp(vendor)">
       <fieldset>
         <legend>General information</legend>
         <div class='row'>
@@ -28,7 +28,7 @@
         <div class='row'>
           <div class="col-xs-6">
             <div class="form-group">
-              <label>Contact email</label>
+              <label>Point of contact</label>
               <input type='email' ng-model='vendor.email' class="form-control input-grey-box" required>
             </div>
           </div>
@@ -40,19 +40,13 @@
           </div>
         </div>
         <div class='row'>
-          <div class="col-xs-4">
-            <div class="form-group">
-              <label>Local ID number</label>
-              <input class="form-control input-grey-box" ng-model="vendor.local_id_number" required>
-            </div>
-          </div>
-          <div class="col-xs-4">
+          <div class="col-xs-6">
             <div class="form-group">
               <label>License number</label>
               <input class="form-control input-grey-box" ng-model="vendor.license_number" required >
             </div>
           </div>
-          <div class="col-xs-4">
+          <div class="col-xs-6">
             <div class="form-group">
               <label>Tax ID number</label>
               <input class="form-control input-grey-box" ng-model="vendor.tax_id_number" required >
@@ -70,11 +64,8 @@
             <div class="form-group">
               <label>Street address</label>
               <div class='row'>
-                <div class='col-xs-4'>
-                  <input class="form-control input-grey-box" ng-model="details.street_number" ng-disabled='details == null' required>
-                </div>
-                <div class='col-xs-8'>
-                  <input class="form-control input-grey-box" ng-model="details.route" ng-disabled='details == null' required>
+                <div class='col-xs-12'>
+                  <input class="form-control input-grey-box" ng-model="details.name" ng-disabled='details == null' required>
                 </div>
               </div>
             </div>
@@ -93,16 +84,16 @@
           </div>
         </div>
         <div class='row'>
-          <div class="col-xs-2">
-            <div class="form-group">
-              <label>State</label>
-              <input class="form-control input-grey-box" ng-model="details.administrative_area_level_1" ng-disabled='details == null' maxlength="2" size="2" required>
-            </div>
-          </div>
           <div class="col-xs-10">
             <div class="form-group">
               <label>City</label>
               <input class="form-control input-grey-box" ng-model="details.locality" ng-disabled='details == null' required>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="form-group">
+              <label>State</label>
+              <input class="form-control input-grey-box" ng-model="details.administrative_area_level_1" ng-disabled='details == null' maxlength="2" size="2" required>
             </div>
           </div>
         </div>

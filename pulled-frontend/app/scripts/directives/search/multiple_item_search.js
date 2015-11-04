@@ -34,7 +34,7 @@ directive("multipleItemSearch", ['$rootScope', 'API_URL', '$localStorage', '$loc
         var searchData = [];
         for (var i = 0; i < scope.searchList.length; i++) {
           searchData[i] = {
-           product_id: scope.searchList[i].product_info.description.product_id,
+           product_id: scope.searchList[i].product_info.originalObject.product_id,
            stock: scope.searchList[i].quantity
           }
         };

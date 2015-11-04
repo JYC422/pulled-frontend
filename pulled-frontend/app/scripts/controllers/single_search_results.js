@@ -25,7 +25,6 @@ angular.module('pulledApp')
         vendor_variant_id: item.id,
         quantity: item.quantity
       };
-
       CartService.addToCart([lineItem]).then(function(){
         toastr.success('Your product was succesfully added to cart', 'Product added');
       }, function(reason){
