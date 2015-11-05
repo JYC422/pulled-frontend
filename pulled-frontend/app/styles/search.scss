@@ -32,8 +32,8 @@
 
   .middle {
     width: 15%;
-    background-color: #eee;
-    border: none;
+    background-color: #f4f9f9;
+    border: 1px solid #c2cbd4;
   }
 
   .last {
@@ -42,9 +42,18 @@
 }
 
 .single-search-btn {
-  width: auto;
+  width: 13%;
 }
 
+.quantity-search {
+  @extend .middle;
+  font-size: 11px;
+  color: #8C97A3;
+
+  &:disabled {
+    background-color: #eee;
+  }
+}
 
 .search-container {
   margin: 0 12%
@@ -56,7 +65,6 @@
   .multiple-input-search {
     width: 100%;
   }
-
 }
 
 #search .search-form, #search .contractor-search-form {
@@ -66,10 +74,6 @@
   margin: auto;
 }
 
-#search .input-search {
-  background-color: #eee;
-  border: 1px solid lightgrey;
-}
 
 #search .search-form .list-of-items-form-container {
   padding: 0 80px;
@@ -80,7 +84,7 @@
 }
 
 #search .search-form .btn-search {
-  height: 46px;
+  height: 35px;
 }
 
 #search .search-form .btn-search-list {
@@ -207,6 +211,7 @@
   .single-search-btn {
     margin: 2%;
     float: right;
+    width: auto;
   }
 
 }
