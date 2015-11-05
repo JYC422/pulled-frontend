@@ -2,11 +2,11 @@
 <form id="multiple-search" class="search-form" role="search" ng-submit="search()" no-validate>
   <div class="row form-group" ng-repeat=" item in searchList">
     <div class="col-xs-12 col-sm-7 col-md-8 input_wrapper">
-      <div angucomplete-alt id="ex5" placeholder="Product you are looking for" pause="500" selected-object="item.product_info" image-field="avatar" description-field="category.name" remote-url="{{autocompleteUrl}}" remote-url-data-field="products" title-field="name" minlength="1" input-class="first form-control input-search" match-class="highlight" field-required="true">
+      <div angucomplete-alt id="ex5" placeholder="Product you are looking for" pause="500" selected-object="item.product_info" image-field="avatar" description-field="category.name" remote-url="{{autocompleteUrl}}" remote-url-data-field="products" title-field="name" minlength="1" input-class="first form-control" match-class="highlight" field-required="true">
       </div>
     </div>
     <div only-number class="col-xs-12 col-sm-4 col-md-3">
-      <input ng-init="item.quantity=0" ng-model="item.quantity" type="number" placeholder="Quantity" class=" second form-control input-search"/>
+      <input ng-init="item.quantity=0" ng-model="item.quantity" type="number" placeholder="Quantity" class=" second form-control"/>
     </div>
     <div class="col-xs-12 col-sm-1 remove-search-bar" >
       <button type="button" ng-click="deleteSearchItem(item)" class="close"><span aria-hidden="true">&times;</span></button>

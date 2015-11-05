@@ -17,6 +17,7 @@ $lightgrey: #D9D9D9;
   padding: 2%;
   border-left: 5px solid green;
   margin: 0px 3%;
+  text-align: left;
 
   .product-name {
     font-size: 20px
@@ -24,10 +25,9 @@ $lightgrey: #D9D9D9;
 
   .product-img {
     margin: auto;
-  }
-
-  p {
-    text-align: left;
+    display: block;
+    max-width: 160px;
+    height: auto;
   }
 
   &.first_child {
@@ -39,7 +39,9 @@ $lightgrey: #D9D9D9;
   }
 }
 
-
+.product-options {
+  margin-top: 5%;
+}
 
 .filters {
   border: 1px solid #D9D9D9;
@@ -103,22 +105,6 @@ $lightgrey: #D9D9D9;
       margin: auto;
       height: 50%;
       text-align: center;
-
-      .select-dropdown-btn {
-        position: relative;
-        padding: 0 34px;
-        border: 1px solid #4bc69a;
-        width: 148px;
-        margin-bottom: 5px;
-        font-weight: normal;
-        padding-right: 52px;
-
-        i {
-          position: absolute;
-          line-height: 44px;
-          right: 12px;
-        }
-      }
 
       a {
         margin-top: 5px;

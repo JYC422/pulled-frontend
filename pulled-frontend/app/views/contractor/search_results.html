@@ -13,61 +13,39 @@
         <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
         <div class="price-filter-wrapper">
           <h5>Price</h5>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="50">Less than $50</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="100">Less than $100</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="200">Less than $200</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="300">Less than $300</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="500">Less than $500</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-model="priceFilter" ng-click="applyFilter()" value="" >All products</label>
+          <div class="radio" ng-repeat="price in [50,100,200,300,500]">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="$parent.priceFilter" value="{{price}}">Less than ${{price}}</label>
           </div>
         </div>
       </div>
       <div class="filters">
         <div class="price-filter-wrapper">
           <h5>Distance from zip code</h5>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 100 miles</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 200 miles</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 300 miles</label>
+          <div class="radio" ng-repeat="miles in [100,200,300]">
+            <label><input type="radio" value="">Less than {{miles}} miles</label>
           </div>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-9 col-lg-10">
       <h3 class="cat-title">{{searchResults[0].category.name}}</h3>
-      <div only-number class="product-wrapper row" ng-class="{first_child:$first}" ng-repeat="item in searchResults | orderBy:orderByField:reverseSort">
-        <form name="puchaseForm{{$index}}" novalidate>
+      <form ng-repeat="item in searchResults | orderBy:orderByField:reverseSort" name="puchaseForm{{$index}}" novalidate>
+        <div only-number class="product-wrapper row" ng-class="{first_child:$first}">
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <img class="img-responsive product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
+            <img class="product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-            <p class="product-name">{{item.name}}</p>
-            <p>Price: {{item.price | currency}}</p>
-            <p>Manofacturer: {{item.manufacturer}}</p>
-            <p>Size: No size defined for this product </p>
-            <p>Stock: {{item.stock}} </p>
+          <div class="col-xs-12 col-sm-6 col-md-4 m-t-md">
+            <p class="text-left">Price: {{item.price | currency}}</p>
+            <p class="text-left">Manofacturer: {{item.manufacturer}}</p>
+            <p class="text-left">Size: No size defined for this products</p>
+            <p class="text-left">Stock: {{item.stock}}</p>
             <label>Quantity:</label>
             <input ng-init="item.quantity=1" min="1" max="{{item.stock}}" ng-class="{invalid_quantity:(puchaseForm{{$index}}).$invalid}" ng-model="item.quantity" type="number" class="product-quantity" required></input>
             <label class="invalid-quantity-message" ng-show="(puchaseForm{{$index}}).$invalid">Invalid quantity</label>
           </div>
-          <div class="col-xs-12 col-md-offset-2 col-md-2">
+          <div class="col-xs-12 col-md-offset-2 col-md-3 product-options">
             <p class="total-product-price">{{(item.price*item.quantity)| currency}} / Total</p>
-            <div class="dropdown" ng-disabled="">
+            <div class="dropdown text-center" ng-disabled="">
               <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="select-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-disabled="(puchaseForm{{$index}}).$invalid">
                 Select
                 <span class="caret"></span>
@@ -78,8 +56,8 @@
               </ul>
             </div>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
     <div class="pull-right">
       <pagination total-items="totalItemResults" items-per-page="itemPerPage"  ng-model="currentPage" ng-change="changePage()"></pagination>

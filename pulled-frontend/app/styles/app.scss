@@ -43,7 +43,13 @@ body  {
 
 .teaser-search-header {
   @include search-title(50px);
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+.emerging-login {
+  &:hover, :active, :focus {
+    text-decoration: none;
+  }
 }
 
 .search-for-items {
@@ -442,17 +448,17 @@ textarea {
 
 ::-webkit-input-placeholder {
   font-size:10px;
-  text-align:center;
+  line-height: 2em;
 }
 ::-moz-placeholder {
   font-size:10px;
-  text-align:center;
+  line-height: 2em;
 }
 :-ms-input-placeholder {
   font-size:10px;
-  text-align:center;
+  line-height: 2em;
 }
 input:-moz-placeholder {
   font-size:10px;
-  text-align:center;
+  line-height: 2em;
 }

@@ -47,7 +47,6 @@
 
 .quantity-search {
   @extend .middle;
-  text-indent: 2em;
   font-size: 11px;
   color: #8C97A3;
 
@@ -66,7 +65,6 @@
   .multiple-input-search {
     width: 100%;
   }
-
 }
 
 #search .search-form, #search .contractor-search-form {
@@ -76,10 +74,6 @@
   margin: auto;
 }
 
-#search .input-search {
-  background-color: #eee;
-  border: 1px solid lightgrey;
-}
 
 #search .search-form .list-of-items-form-container {
   padding: 0 80px;
