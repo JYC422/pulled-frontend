@@ -13,37 +13,16 @@
         <p class="filter-title"><span class="fa fa-list-alt"></span>Filter Products</p>
         <div class="price-filter-wrapper">
           <h5>Price</h5>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="50">Less than $50</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="100">Less than $100</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="200">Less than $200</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="300">Less than $300</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-click="applyFilter()" ng-model="priceFilter" value="500">Less than $500</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" ng-model="priceFilter" ng-click="applyFilter()" value="" >All products</label>
+          <div class="radio" ng-repeat="price in [50,100,200,300,500]">
+            <label><input type="radio" ng-click="applyFilter()" ng-model="$parent.priceFilter" value="{{price}}">Less than ${{price}}</label>
           </div>
         </div>
       </div>
       <div class="filters">
         <div class="price-filter-wrapper">
           <h5>Distance from zip code</h5>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 100 miles</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 200 miles</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" value="">Less than 300 miles</label>
+          <div class="radio" ng-repeat="miles in [100,200,300]">
+            <label><input type="radio" value="">Less than {{miles}} miles</label>
           </div>
         </div>
       </div>
@@ -55,6 +34,7 @@
               <div ng-repeat="vendor in category.vendors" id='search-results' class='row multiple-items'>
                 <div class='col-md-3 total-outer'>
                   <div class='total-inner'>
+                    <label class="product-name">{{vendor.name}}</label>
                     <p>$2,350/Total</p>
                     <div class="dropdown">
                       <button class="btn dropdown-toggle select-dropdown-btn" type="button" id="select-product" data-toggle="dropdown" ng-disabled="(puchaseForm{{$index}}).$invalid">
@@ -69,7 +49,7 @@
                     <a>Select products individually</a>
                   </div>
                 </div>
-                <div class='col-md-7'>
+                <div class='col-md-9'>
                   <h4 class='table-title'>Details</h4>
                   <table class="table table-striped">
                     <thead>
@@ -103,11 +83,6 @@
                     </tbody>
                   </table>
                   <a ng-show="vendor.vendor_variants.length > 3" class="pull-right show-more-items" ng-init="showMore[$parent.$index][$index].mode = 'View All'; showMore[$parent.$index][$index].iconClass = 'fa-angle-double-down'" ng-click="showMore($parent.$index, $index)">{{showMore[$parent.$index][$index].mode}}&nbsp&nbsp <i class="fa" ng-class="showMore[$parent.$index][$index].iconClass"></i></a>
-                </div>
-                <div class='col-md-2 company-image'>
-                  <div class='company-image-wrapper'>
-                    <img src='images/company-placeholder.png'>
-                  </div>
                 </div>
               </div>
               <div class="pull-right">
