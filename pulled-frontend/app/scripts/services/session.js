@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('pulledApp')
-  .factory('Session', ['User', '$localStorage', '$q', function (User, $localStorage, $q) {
+  .factory('Session', ['User', '$localStorage', '$q', '$rootScope', function (User, $localStorage, $q, $rootScope) {
 
     var service = {};
 
@@ -24,15 +24,8 @@ angular.module('pulledApp')
       var promise= defered.promise;
 
       clearSession();
+      $rootScope.$broadcast('emptyCart');
       defered.resolve('nothing');
-      // User.signOut(function(data){
-      //   console.log(data);
-      //   clearSession();
-      //   defered.resolve(data);
-      // }, function(responseHeaders){
-      //   console.log(responseHeaders);
-      //   defered.reject(responseHeaders);
-      // });
 
       return promise;
     };

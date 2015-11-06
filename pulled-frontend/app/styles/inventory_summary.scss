@@ -1,3 +1,5 @@
+$greenish-blue: #249cba;
+
 #subCategoryTable {
  font-size: 14px;
 
@@ -55,15 +57,25 @@
 .btn.edit-pr-btn {
   @extend %add-item-to-inventory;
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #37a27d;
+  border-color: #37a27d;
+
+  &:hover, :focus, :active {
+    background-color: #45B38C;
+    color: white;
+  }
 }
 
 .btn.delete-pr-btn {
   @extend %add-item-to-inventory;
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea236;
+  background-color: $greenish-blue;
+  border-color: $greenish-blue;
+
+  &:hover, :focus, :active {
+    background-color: #1C839C;
+    color: white;
+  }
 }
 
 .inventory-form .input-half-width {

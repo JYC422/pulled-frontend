@@ -95,6 +95,10 @@ directive('cart', ['$rootScope', '$localStorage', 'Session', 'CartService', 'Job
         initializeCart();
       });
 
+      $rootScope.$on('emptyCart', function() {
+        delete scope.cart;
+        $('#cart').collapse('hide');
+      });
     }
   };
 }]);
