@@ -15,18 +15,8 @@ angular
     'angucomplete-alt',
     'wt.responsive'
   ])
-  // .constant('API_URL', 'http://localhost:4000/api/v1')
-  // .constant('HOST_URL', 'http://localhost:4000')
-  .constant('API_URL', '//pulled-backend.herokuapp.com/api/v1')
-  .constant('HOST_URL', '//pulled-backend.herokuapp.com')
-
-  //For testing purposes
-  .constant('toastr', toastr)
-  // lodash support
-  .constant('_', window._)
 
   .config(function ($routeProvider, $httpProvider) {
-
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $httpProvider.defaults.headers.common.Accept = "application/json";
