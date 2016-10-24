@@ -36,7 +36,6 @@ module.exports = function(config) {
       'bower_components/toastr/toastr.js',
       'bower_components/lodash/lodash.js',
       'bower_components/angucomplete-alt/angucomplete-alt.js',
-      'bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js',
       'bower_components/angular-ui-bootstrap-fontawesome/dist/ui-bootstrap-fontawesome-latest.js',
       'bower_components/angular-responsive-tables/release/angular-responsive-tables.js',
       'bower_components/angular-mocks/angular-mocks.js',

@@ -24,6 +24,7 @@ directive('inventoryModal', ['$rootScope', 'Session', 'Validation', '$location',
 
       var setEditModal = function() {
         scope.modalTitle = 'EDIT ITEM';
+        scope.modalConfirmButton = 'Edit Item';
         scope.disableSearch = true;
         scope.submitForm = scope.updateProduct;
         scope.modalId = 'EditInventoryModal';
@@ -34,6 +35,7 @@ directive('inventoryModal', ['$rootScope', 'Session', 'Validation', '$location',
 
       var setNewModal = function() {
         scope.modalTitle = 'NEW ITEM';
+        scope.modalConfirmButton = 'Add Item';
         scope.disableSearch = false;
         scope.submitForm = scope.createProduct;
         scope.modalId = 'NewInventoryModal';

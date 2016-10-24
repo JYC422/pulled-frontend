@@ -32,7 +32,7 @@
       <form ng-repeat="item in searchResults | orderBy:orderByField:reverseSort" name="puchaseForm{{$index}}" novalidate>
         <div only-number class="product-wrapper row" ng-class="{first_child:$first}">
           <div class="col-xs-12 col-sm-6 col-md-3">
-            <img class="product-img" ng-src="{{item.avatar}}" err-src="img/no-thumb.png"/>
+            <img class="product-img" ng-src="{{item.variant.avatar}}" err-src="img/no-thumb.png"/>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-4 m-t-md">
             <p class="text-left">Price: {{item.price | currency}}</p>
