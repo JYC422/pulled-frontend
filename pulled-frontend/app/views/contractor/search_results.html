@@ -37,10 +37,11 @@
           <div class="col-xs-12 col-sm-6 col-md-4 m-t-md">
             <p class="text-left">Price: {{item.price | currency}}</p>
             <p class="text-left">Manofacturer: {{item.manufacturer}}</p>
+            <p class="text-left">Unit: {{item.unit}}</p>
             <p class="text-left">Size: No size defined for this products</p>
             <p class="text-left">Stock: {{item.stock}}</p>
             <label>Quantity:</label>
-            <input ng-init="item.quantity=1" min="1" max="{{item.stock}}" ng-class="{invalid_quantity:(puchaseForm{{$index}}).$invalid}" ng-model="item.quantity" type="number" class="product-quantity" required></input>
+            <input ng-init="item.quantity = stockRequested" min="1" max="{{item.stock}}" ng-class="{invalid_quantity:(puchaseForm{{$index}}).$invalid}" ng-model="item.quantity" type="number" class="product-quantity" required></input>
             <label class="invalid-quantity-message" ng-show="(puchaseForm{{$index}}).$invalid">Invalid quantity</label>
           </div>
           <div class="col-xs-12 col-md-offset-2 col-md-3 product-options">

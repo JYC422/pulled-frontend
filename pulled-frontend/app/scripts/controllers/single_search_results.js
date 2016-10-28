@@ -10,6 +10,7 @@ angular.module('pulledApp')
         $scope.currentPage = data.current_page;
         $scope.itemPerPage = 12;
         $scope.priceFilter = angular.copy($localStorage.searchInfo.price);
+        $scope.stockRequested = SearchService.getStockSelectedSingleSearch();
       }, function(reason){
         console.log(reason);
       });

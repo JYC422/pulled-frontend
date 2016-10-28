@@ -29,7 +29,7 @@
     </div>
     <div class='col-md-10'>
       <tabset>
-        <tab ng-repeat="category in searchResults" heading="{{category.category.name}}">
+        <tab ng-repeat="category in searchResults" heading="{{category.category.name}}" ng-init="indexCategory = $index">
             <form name="purchaseForm{{$index}}" novalidate>
               <div ng-repeat="vendor in category.vendors" id='search-results' class='row multiple-items'>
                 <div class='col-md-3 total-outer'>
@@ -58,6 +58,7 @@
                         <th>Manufacturer</th>
                         <th>Size</th>
                         <th>Stock</th>
+                        <th>Unit</th>
                         <th>Quantity</th>
                         <th>Price</th>
                         <th>Total price</th>
@@ -65,9 +66,7 @@
                     </thead>
                     <tbody>
                       <tr ng-init="showMore[$parent.$index][$index].quantity = 3" ng-repeat="vendor_variant in vendor.vendor_variants | limitTo:(showMore[$parent.$index][$index].quantity || 3) |  orderBy:orderByField:reverseSort" >
-                        <td>
-                          <input type="checkbox" ng-model="vendor_variant.selected">
-                        </td>
+                        <td><input type="checkbox" ng-model="vendor_variant.selected"></td>
                         <td class="multiple-product-name">
                           <img ng-src="{{vendor_variant.avatar}}" err-src="img/no-thumb.png">
                           <div class='inner-text'>{{vendor_variant.name}}</div>
@@ -75,7 +74,12 @@
                         <td>{{vendor_variant.manufacturer}}</td>
                         <td>1''</td>
                         <td>{{vendor_variant.stock}}</td>
-                        <td><input validate-quantity name="vendor_variant{{$index}}" ng-init="vendor_variant.quantity=1" min="1" max="{{vendor_variant.stock}}" ng-model="vendor_variant.quantity" class="form-control multple-product-quantity" type="number" ng-class="{ invalid_quantity: validateProduct(vendor_variant.quantity, vendor_variant.selected) }" ng-disabled="!vendor_variant.selected"  required></input></td>
+                        <td>{{vendor_variant.unit}}</td>
+                        <td>
+                          <input validate-quantity name="vendor_variant{{$index}}" ng-init="vendor_variant.quantity = getStockSelected(indexCategory)" min="1" max="{{vendor_variant.stock}}"
+                                 ng-model="vendor_variant.quantity" class="form-control multple-product-quantity" type="number"
+                                 ng-class="{ invalid_quantity: validateProduct(vendor_variant.quantity, vendor_variant.selected) }" ng-disabled="!vendor_variant.selected" required></input>
+                        </td>
                         <td>{{vendor_variant.price | currency}}</td>
                         <td>{{(vendor_variant.quantity * vendor_variant.price) | currency}}</td>
                       </tr>

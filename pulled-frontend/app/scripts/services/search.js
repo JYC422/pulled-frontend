@@ -36,6 +36,21 @@ angular.module('pulledApp')
       return promise;
     };
 
+    service.getStockSelectedMultipleSearch = function(indexCategory) {
+      var productsStockSearched = $localStorage.multipleSearchInfo;
+      if (productsStockSearched.length > 0 && productsStockSearched[indexCategory].hasOwnProperty('stock') && productsStockSearched[indexCategory].stock > 0) {
+        return productsStockSearched[indexCategory].stock;
+      }
+      return 1;
+    };
+
+    service.getStockSelectedSingleSearch = function() {
+      if ($localStorage.searchInfo.hasOwnProperty('stock') && $localStorage.searchInfo.stock > 0) {
+        return $localStorage.searchInfo.stock;
+      }
+      return 1;
+    }
+
     return service;
 
   }]);
