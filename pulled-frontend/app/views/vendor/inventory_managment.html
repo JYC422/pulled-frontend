@@ -52,7 +52,10 @@
                                 <img ng-src="{{vendor_variant.avatar}}" err-src="img/no-thumb.png"/>
                               </div>
                               <div class="product-desc col-xs-8">
-                                ID: {{vendor_variant.vvid}}<br>{{vendor_variant.manufacturer}}<br>{{vendor_variant.price | currency}}
+                                <span class="product-item-description">{{vendor_variant.name}}</span>
+                                <span class="product-item-description">ID: {{vendor_variant.vvid}}</span>
+                                <span class="product-item-description">{{vendor_variant.manufacturer}}</span>
+                                <span class="product-item-description">{{vendor_variant.price | currency}}</span>
                               </div>
                             </div>
                           </td>

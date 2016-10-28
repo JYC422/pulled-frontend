@@ -214,10 +214,13 @@ $greenish-blue: #249cba;
   text-align: left;
 }
 
+.product-item-description {
+  display: block;
+}
+
 #inventory-summary .green-table td {
   height: 100%;
 }
-
 
 /* CATEGORIES COLLAPSE */
 #inventory-summary a[data-toggle="collapse"] {
