@@ -20,6 +20,10 @@ angular.module('pulledApp')
       });
     };
 
+    $scope.getStockSelected = function(indexCategory) {
+      return SearchService.getStockSelectedMultipleSearch(indexCategory);
+    }
+
     $scope.applyFilter = function() {
       $localStorage.multipleSearchInfo.price = $scope.priceFilter;
       getSearchResults();

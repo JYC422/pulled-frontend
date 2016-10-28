@@ -8,7 +8,6 @@
     <empty-list></empty-list>
     <div ng-hide="emptyInventory" ng-repeat="inventory_item in inventory" class="categories-collapse panel-group" aria-multiselectable="true">
       <div class="panel panel-default">
-
         <div class="panel-heading" role="tab">
           <h4 class="panel-title">
             <a data-toggle="collapse" data-target="#category-collapse-{{$index}}" aria-expanded="true">
@@ -17,10 +16,8 @@
             </a>
           </h4>
         </div>
-
         <div id="category-collapse-{{$index}}" class="panel-collapse collapse in">
           <div class="panel-body">
-
             <div ng-repeat="sub_category in inventory_item.sub_categories" class="subcategories-collapse panel-group" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
@@ -38,7 +35,7 @@
                         <tr>
                           <th><a ng-click="orderByField='status'; reverseSort = !reverseSort" href="">Status <i class="fa fa-angle-down hidden-xs"></i></a></th>
                           <th><a ng-click="orderByField='sku'; reverseSort = !reverseSort" href="">SKU <i class="fa fa-angle-down hidden-xs"></i></a></th>
-                          <th>Product Descripion</th>
+                          <th>Product Description</th>
                           <th><a ng-click="orderByField='created_at'; reverseSort = !reverseSort" href="">Date Created <i class="fa fa-angle-down hidden-xs"></i></a></th>
                           <th><a ng-click="orderByField='updated_at'; reverseSort = !reverseSort" href="">Last Modified <i class="fa fa-angle-down hidden-xs"></i></a></th>
                           <th><a ng-click="orderByField='stock'; reverseSort = !reverseSort" href="">Available <i class="fa fa-angle-down hidden-xs"></i></a></th>
