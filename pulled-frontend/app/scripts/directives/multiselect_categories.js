@@ -6,19 +6,11 @@ directive('multiselectCategories', ['$rootScope', 'Session', 'Validation', '$loc
     templateUrl: 'views/multiselect_categories.html',
     scope: false,
     link: function(scope) {
-
-      $("#my-select").multiSelect('refresh');
-      scope.$watch('selectedCategory', function(newValue, oldValue){
-        if(oldValue !== newValue) {
-          CategoriesService.getSubCategories(newValue).then(function(data){
-            scope.subCategories = data;
-            $timeout(function(){
-              $("#my-select").multiSelect("refresh");
-            });
-          });
-        }
-      }, true);
-
+      $('#selectCategories').multiSelect('refresh');
+      $('#selectCategories').multiSelect({ selectableOptgroup: true });
+      $timeout(function(){
+        $('#selectCategories').multiSelect('refresh');
+      });
     }
   };
 }]);
